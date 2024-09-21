@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Blog - [Your Name]</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pap3MG7PpKQeB6gnP9h3pVtp25OAt6uPcq6Z5xVw1L/J+UZhItD8iZoT3eG0U0kLuv3Km1nlhHPgyR5bUzUxjg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+
+
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section with Parallax Background -->
+    <section id="home" class="section parallax">
+        <div class="content-img">
+            <!-- <img src="/images/pexels-karolina-grabowska-4464918.jpg" alt=""> -->
+            <div class="content">
+                <h1>ABDUL WAHAB BASIT</h1>
+            </div>
+            <div class="hi-con">
+                <br>HI, YOU ARE WELCOME TO MY WEBSITE. FEEL FREE TO </br>
+                <a href="#contact"><button><strong>CONTACT ME!</strong></button></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <div class="about-text">
+            <p>My love for teaching, and supporting my cohorts as well as others with less privileges to 
+                access the kind of education I have had is unquestionably remarkable.
+                I organized tutored classes from Level 100 to Level 400 classes in my 
+                University to support students facing academic challenges. Most of these classes were tutored by
+                myself while others tutored by students I hired to tutor. My efforts in this directions 
+                has seen many students complete the University with desirable and favorable CWA/GPA.
+                My efforts little efforts have caused me to receive most gifts from parents and a chance to work with 
+                <a href="https://www.iduapriemmine.com/"> AngloGold Ashanti Iduapriem Limited</a>. 
+        </div>
+        <img src="images/profile1.png" alt="Profile Picture" class="profile-image">
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects-section">
+        <h2>Projects</h2>
+        <div class="project one">
+            <div>
+                <h3>Project 1</h3>
+                <div class="one-content">
+                    <p>Description of Project 1</p>
+                    <a href="https://github.com/yourusername/project1" target="_blank" class="btn">View on GitHub</a>
+                </div>
+            </div>
+            
+        </div>
+        <div class="project two">
+            <h3>Project 2</h3>
+            <div class="two-content">
+                <p>Description of Project 2</p>
+                <a href="https://github.com/yourusername/project2" target="_blank" class="btn">View on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <h2>Skills</h2>
+        <ul class="skills-list">
+            <li>
+                <i class="fas fa-code"></i>
+                <strong>Programming Languages:</strong> C++, Python, JavaScript, HTML, CSS, Node.js, Flask, React
+            </li>
+            <li>
+                <i class="fas fa-cogs"></i>
+                <strong>Frameworks:</strong> Pandas, NumPy, Scikit-learn, TensorFlow, Keras, PyTorch, Flask, React
+            </li>
+            <li>
+                <i class="fas fa-tools"></i>
+                <strong>Tools:</strong> Tableau, MySQL, Google Chart, Microsoft Office (Word, PowerPoint, Access, Excel), 
+                    Colaboratory, GitHub, Docker, AWS
+            </li>
+            <li>
+                <i class="fas fa-database"></i>
+                <strong>Databases:</strong> SQL, MongoDB
+            </li>
+            <li>
+                <i class="fas fa-cloud"></i>
+                <strong>Cloud Platforms:</strong> AWS, Google Cloud Platform
+            </li>
+        </ul>
+        <section class="skills-section">
+            <h2>Programming Languages</h2>
+            <div class="skills-container"> 
+              <div class="skill">
+                <div class="skill-header">
+                  <span>C++</span>
+                  <span>60%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress C" data-percentage="60%"></div>
+                </div>
+              </div>
+              
+              <div class="skill">
+                <div class="skill-header">
+                  <span>Python</span>
+                  <span>85%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress python" data-percentage="85%"></div>
+                </div>
+              </div>
+              
+              <div class="skill">
+                <div class="skill-header">
+                  <span>JavaScript</span>
+                  <span>82%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress js" data-percentage="82%"></div>
+                  </div>
+              </div>
+              
+              <div class="skill">
+                <div class="skill-header">
+                  <span>HTML & CSS</span>
+                  <span>90%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress Html" data-percentage="90%"></div>
+                </div>
+              </div>
+              
+              <div class="skill">
+                <div class="skill-header">
+                  <span>Node.js</span>
+                  <span>70%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress Node" data-percentage="70%"></div>
+                </div>
+              </div>
+              
+              <div class="skill">
+                <div class="skill-header">
+                  <span>Flask</span>
+                  <span>80%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress Flask" data-percentage="80%"></div>
+                </div>
+              </div>
+              
+              <div class="skill">
+                <div class="skill-header">
+                  <span>React</span>
+                  <span>50%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress React" data-percentage="50%"></div>
+                </div>
+              </div>
+              
+            </div>
+        </section>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="section publications-section">
+        <h2>Publications</h2>
+        <ul>
+            <li><a href="publication-link" target="_blank">Publication Title 1</a></li>
+            <li><a href="publication-link" target="_blank">Publication Title 2</a></li>
+        </ul>
+    </section>
+
+    <!-- Certifications Section -->
+     <section id="certifications" class="section certifications-section">
+        <h2>Certifications</h2>
+        <!-- Optional: Filter Buttons -->
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="data-science">Data Science</button>
+            <button class="filter-btn" data-filter="machine-learning">Machine Learning</button>
+            <button class="filter-btn" data-filter="others">Others</button>
+        </div>
+        <ul class="certifications-list">
+            <li class="certification-item data-science">
+                <div class="accordion-header">
+                    <i class="fas fa-certificate certification-icon"></i>
+                    <span>Diploma in Using Python for Data Science, <strong>Alison</strong></span>
+                    <i class="fas fa-chevron-down accordion-icon"></i>
+                </div>
+                <div class="accordion-content">
+                    <p>Completed with distinction in data science applications using Python. Covered topics such as data manipulation, visualization, and machine learning algorithms.</p>
+                </div>
+            </li>
+            <li class="certification-item machine-learning">
+                <div class="accordion-header">
+                    <i class="fas fa-certificate certification-icon"></i>
+                    <span>Deep Learning and Reinforcement Learning, <strong>Coursera</strong></span>
+                    <i class="fas fa-chevron-down accordion-icon"></i>
+                </div>
+                <div class="accordion-content">
+                    <p>Focused on neural networks, convolutional networks, and reinforcement learning techniques applied to various real-world problems.</p>
+                </div>
+            </li>
+            <li class="certification-item machine-learning">
+                <div class="accordion-header">
+                    <i class="fas fa-certificate certification-icon"></i>
+                    <span>Unsupervised Machine Learning, <strong>Coursera</strong></span>
+                    <i class="fas fa-chevron-down accordion-icon"></i>
+                </div>
+                <div class="accordion-content">
+                    <p>Studied clustering algorithms, dimensionality reduction techniques, and their applications in pattern recognition.</p>
+                </div>
+            </li>
+            <li class="certification-item machine-learning">
+                <div class="accordion-header">
+                    <i class="fas fa-certificate certification-icon"></i>
+                    <span>Supervised Machine Learning: Classification, <strong>Coursera</strong></span>
+                    <i class="fas fa-chevron-down accordion-icon"></i>
+                </div>
+                <div class="accordion-content">
+                    <p>Explored classification algorithms like SVM, Decision Trees, and Random Forests with practical implementations.</p>
+                </div>
+            </li>
+            <li class="certification-item machine-learning">
+                <div class="accordion-header">
+                    <i class="fas fa-certificate certification-icon"></i>
+                    <span>Supervised Machine Learning: Regression, <strong>Coursera</strong></span>
+                    <i class="fas fa-chevron-down accordion-icon"></i>
+                </div>
+                <div class="accordion-content">
+                    <p>Delved into regression techniques including Linear Regression, Polynomial Regression, and their applications.</p>
+                </div>
+            </li>
+            <li class="certification-item data-science">
+                <div class="accordion-header">
+                    <i class="fas fa-certificate certification-icon"></i>
+                    <span>Exploratory Data Analysis, <strong>Coursera</strong></span>
+                    <i class="fas fa-chevron-down accordion-icon"></i>
+                </div>
+                <div class="accordion-content">
+                    <p>Learned techniques for summarizing datasets, identifying patterns, and visualizing data insights.</p>
+                </div>
+            </li>
+            <li class="certification-item data-science">
+                <div class="accordion-header">
+                    <i class="fas fa-certificate certification-icon"></i>
+                    <span>Data Analytics (Foundations: Data, Data, Everywhere), <strong>Coursera</strong></span>
+                    <i class="fas fa-chevron-down accordion-icon"></i>
+                </div>
+                <div class="accordion-content">
+                    <p>Covered fundamental concepts in data analytics, data management, and the importance of data in decision-making.</p>
+                </div>
+            </li>
+            <li class="certification-item others">
+                <div class="accordion-header">
+                    <i class="fas fa-certificate certification-icon"></i>
+                    <span>Certification from Kaggle for a contest, <strong>Kaggle</strong></span>
+                    <i class="fas fa-chevron-down accordion-icon"></i>
+                </div>
+                <div class="accordion-content">
+                    <p>Achieved a certification by participating and performing well in a Kaggle competition focused on [specific contest topic].</p>
+                </div>
+            </li>
+            <li class="certification-item others">
+                <div class="accordion-header">
+                    <i class="fas fa-certificate certification-icon"></i>
+                    <span>Complete Machine Learning, NLP Bootcamp and Deployment (Ongoing), <strong>Udemy</strong></span>
+                    <i class="fas fa-chevron-down accordion-icon"></i>
+                </div>
+                <div class="accordion-content">
+                    <p>Currently enrolled in an extensive bootcamp covering machine learning, natural language processing, and deployment strategies.</p>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <h2>Contact</h2>
+        <div class="contact-info">
+            <p>
+                <i class="fas fa-envelope"></i> 
+                Email: <a href="mailto:nanaqwadjobarima@gmail.com">nanaqwadjobarima@gmail.com</a>
+            </p>
+            <p>
+                <i class="fab fa-linkedin"></i> 
+                LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn Profile</a>
+            </p>
+            <p>
+                <i class="fas fa-map-marker-alt"></i>
+                Location: Nungua, Accra, Ghana
+            </p>
+        </div>
+    
+        <!-- Embedded Google Map for Nungua, Accra, Ghana -->
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15905.449154859028!2d-0.05413893170298803!3d5.587900246068229!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9d004a2f0aeb%3A0xb2eaf85b02f8b65f!2sNungua%2C%20Accra%2C%20Ghana!5e0!3m2!1sen!2sgh!4v1695294030115!5m2!1sen!2sgh" 
+                width="600" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+    </section>
+    
+    <!-- Downloading CV -->
+    <section id="download-cv-section" class="section">
+        <h2>Download My CV</h2>
+        <a href="/assets/cv/Recommendation For Basit.pdf" download class="download-btn" title="Click to download my CV" onclick="gtag('event', 'download', {'event_category': 'CV', 'event_label': 'Download CV Button'});">
+            <i class="fas fa-download"></i> Download CV
+        </a>       
+    </section>
+
+    <!-- Footer Section -->
+  <footer class="footer-section">
+    <p>&copy; 2024 Abdul Wahab Basit. All rights reserved.</p>
+  </footer>
+
+    <!-- JavaScript for smooth scrolling and advanced animations -->
+    <script src="script.js"></script>
+</body>
+</html>
