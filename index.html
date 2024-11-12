@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abdul Wahab Basit</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="main.css">
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pap3MG7PpKQeB6gnP9h3pVtp25OAt6uPcq6Z5xVw1L/J+UZhItD8iZoT3eG0U0kLuv3Km1nlhHPgyR5bUzUxjg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -21,16 +21,23 @@
 
     <!-- Navigation Bar -->
     <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#publications">Publications</a></li>
-            <li><a href="#certifications">Certifications</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="nav-container">
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">&#9776;</label>
+            <ul class="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#news-section">News</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </nav>
+    
+    
 
     <!-- Home Section with Parallax Background -->
     <section id="home" class="section parallax">
@@ -49,7 +56,7 @@
     <!-- About Section -->
     <section id="about" class="section">
         <h2>About Me</h2>
-        <div class="about-text">
+        <div class="about-texts">
             <p>My love for teaching, and supporting my cohorts as well as others with less privileges to 
                 access the kind of education I have had is unquestionably remarkable.
                 I organized tutored classes from Level 100 to Level 400 classes in my 
@@ -57,32 +64,23 @@
                 myself while others tutored by students I hired to tutor. My efforts in this directions 
                 has seen many students complete the University with desirable and favorable CWA/GPA.
                 My efforts little efforts have caused me to receive most gifts from parents and a chance to work with 
-                <a href="https://www.iduapriemmine.com/"> AngloGold Ashanti Iduapriem Limited</a>. 
+                <a href="https://www.iduapriemmine.com/"> AngloGold Ashanti Iduapriem Limited </a>
+            </p>
         </div>
+        <div>
         <img src="images/profile1.png" alt="Profile Picture" class="profile-image">
+        </div>
     </section>
 
     <!-- Projects Section -->
     <section id="projects" class="section projects-section">
-        <h2>Projects</h2>
-        <div class="project one">
-            <div>
-                <h3>Project 1</h3>
-                <div class="one-content">
-                    <p>Description of Project 1</p>
-                    <a href="https://github.com/yourusername/project1" target="_blank" class="btn">View on GitHub</a>
-                </div>
-            </div>
-            
-        </div>
-        <div class="project two">
-            <h3>Project 2</h3>
-            <div class="two-content">
-                <p>Description of Project 2</p>
-                <a href="https://github.com/yourusername/project2" target="_blank" class="btn">View on GitHub</a>
+        <div class="container">
+            <h2>Projects</h2>
+            <div id="projects-container" class="row">
             </div>
         </div>
     </section>
+    
 
     <!-- Skills Section -->
     <section id="skills" class="section">
@@ -99,7 +97,7 @@
             <li>
                 <i class="fas fa-tools"></i>
                 <strong>Tools:</strong> Tableau, MySQL, Google Chart, Microsoft Office (Word, PowerPoint, Access, Excel), 
-                    Colaboratory, GitHub, Docker, AWS
+                    Colaboratory, GitHub, Docker
             </li>
             <li>
                 <i class="fas fa-database"></i>
@@ -115,7 +113,7 @@
             <div class="skills-container"> 
               <div class="skill">
                 <div class="skill-header">
-                  <span>C++</span>
+                  <span><i class="fas fa-code"></i>C++</span>
                   <span>60%</span>
                 </div>
                 <div class="progress-bar">
@@ -125,8 +123,8 @@
               
               <div class="skill">
                 <div class="skill-header">
-                  <span>Python</span>
-                  <span>85%</span>
+                    <span><i class="fab fa-python"></i> Python</span>
+                    <span>85%</span>
                 </div>
                 <div class="progress-bar">
                     <div class="progress python" data-percentage="85%"></div>
@@ -135,7 +133,7 @@
               
               <div class="skill">
                 <div class="skill-header">
-                  <span>JavaScript</span>
+                  <span><i class="fab fa-js"></i>JavaScript</span>
                   <span>82%</span>
                 </div>
                 <div class="progress-bar">
@@ -145,7 +143,7 @@
               
               <div class="skill">
                 <div class="skill-header">
-                  <span>HTML & CSS</span>
+                  <span><i class="fas fa-code"></i>HTML & CSS</span>
                   <span>90%</span>
                 </div>
                 <div class="progress-bar">
@@ -155,7 +153,7 @@
               
               <div class="skill">
                 <div class="skill-header">
-                  <span>Node.js</span>
+                  <span><i class="fab fa-node-js"></i>Node.js</span>
                   <span>70%</span>
                 </div>
                 <div class="progress-bar">
@@ -165,7 +163,7 @@
               
               <div class="skill">
                 <div class="skill-header">
-                  <span>Flask</span>
+                  <span><i class="fa fa-flask"></i>Flask</span>
                   <span>80%</span>
                 </div>
                 <div class="progress-bar">
@@ -175,7 +173,7 @@
               
               <div class="skill">
                 <div class="skill-header">
-                  <span>React</span>
+                  <span><i class="fab fa-react"></i>React</span>
                   <span>50%</span>
                 </div>
                 <div class="progress-bar">
@@ -189,11 +187,37 @@
 
     <!-- Publications Section -->
     <section id="publications" class="section publications-section">
-        <h2>Publications</h2>
-        <ul>
-            <li><a href="publication-link" target="_blank">Publication Title 1</a></li>
-            <li><a href="publication-link" target="_blank">Publication Title 2</a></li>
-        </ul>
+        <div class="research">
+            <h2>Research Experiences</h2>
+            <ul>
+                <li>Blockchain-Enabled Cocoa Supply Chain Management</li>
+                <li>Leveraging Blockchain for Sustainable Small-Scale Mining</li>
+                <li>Advancing Network Intrusion Detection Leveraging Deep Convolutional Neural Network</li>
+                <li>Hypothyroid Disease Prediction Using Machine Learning</li>
+                <li>Application of machine learning algorithms to predict rock types using geochemical data: A case study from the Obuasi Gold District mining district, Ghana</li>
+                <li>Hydrogeochemical Appraisal Of The Co-Occurrence Of Fluoride And Nitrate In Groundwater Of Gushegu Municipality In The Northen Region, Ghana</li>
+                <li>Design and development of vehicle logging and access control system with ANPR integration</li>
+                <li>Machine learning-based sentiment analysis in combating misinformation: techniques, challenges, and applications</li>
+                <li>Speech Therapy Application for Aphasic people</li>
+            </ul>
+            <h2>Research Collaborators</h2>
+                <ul>
+                    <li>Assistant Professor Emmanuel Daanoba Sunkari, Lecturer UMaT</li>
+                    <li>Dr. Eric Affum, Lecturer UMaT</li>
+                    <li>Eng. George Essah Yaw Okai, Lecturer UMaT</li>
+                    <li>Eng. Umaru Muhammad, Lecturer UMaT</li>
+                    <li>A few other colleagues, Abdul-Osman Majeed, Muhammad Bello, Eyram Kuwornu Dela.</li>
+                </ul>
+                <h2>Research Interests</h2>
+                <ul>
+                    <li>Machine Learning</li>
+                    <li>Artificial Intelligence</li>
+                    <li>Deep Learning</li>
+                    <li>Natural Language Processing</li>
+                    <li>Cryptography</li>
+                    <li>Quantum Computing</li>
+                </ul>
+        </div>
     </section>
 
     <!-- Certifications Section -->
@@ -300,6 +324,41 @@
         </ul>
     </section>
 
+    <section id="news-section">
+        <div class="container">
+            <h2>Latest News</h2>
+            <div id="news-list" class="news-list">
+                <ul>
+                    <li>
+                        <h3>Publication</h3>
+                        <p>I am glad to inform you that my work with Associate Professor Emmanuel Daanoba Sunkari
+                    on Application of Machine Learning Algorithms to Predict Rock Types Using Geochemical Data: A Case
+                    Study from the Obuasi Gold District, Ghana has been accepted for publication by Springer Nature 
+                    in Earth and Environmental Sciences Library (https://www.springer.com/series/16637/books) to an upcoming book,
+                    Geology and Gold Mineralization in and around Ghana
+                        </p>
+                    </li>
+                    <li>
+                        <h3>Publication</h3>
+                        <p>I am glad to inform you that my work with Dr. Eric Affum has been sent to Ghana Journal of Technology for 
+                    publication
+                        </p>
+                    </li>
+                    <li>
+                        <h3>International Conference</h3>
+                        <p>Two research papers have been submitted to the International Conference VI. 
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <form id="news-form">
+                <input type="text" id="news-title" placeholder="Enter news title" required>
+                <textarea id="news-content" placeholder="Enter news content" required></textarea>
+                <button type="submit">Add News</button>
+            </form>
+        </div>
+    </section>
+
 
     <!-- Contact Section -->
     <section id="contact" class="section contact-section">
@@ -307,7 +366,7 @@
         <div class="contact-info">
             <p>
                 <i class="fas fa-envelope"></i> 
-                Email: <a href="mailto:nanaqwadjobarima@gmail.com">nanaqwadjobarima@gmail.com</a>
+                Email: <a href="mailto:awbasit99@gmail.com">awbasit99@gmail.com</a>
             </p>
             <p>
                 <i class="fab fa-linkedin"></i> 

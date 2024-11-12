@@ -1,0 +1,27 @@
+{
+    "projects": [
+      {
+        "title": "Speech Therapy application",
+        "description": "This is a speech therapy application for aphasic people",
+        "image": "./images/Screenshot.png",
+        "liveLink": "https://alphasia-research-site.onrender.com/",
+        "githubLink": "https://github.com/yourusername/projectone",
+        "tags": ["HTML", "CSS", "JavaScript"]
+      },
+      {
+        "title": "Rock Classifier",
+        "description": "This project was built to classify rocks",
+        "image": "./images/rock.jpg",
+        "githubLink": "https://github.com/awbasit/Rocks-Classification",
+        "tags": ["React", "Node.js", "Express"]
+      },
+      {
+        "title": "Employee Retention Prediction",
+        "description": "This project was built to predict employee retaining or leaving",
+        "image": "static/assets/images/project3.jpg",
+        "githubLink": "https://github.com/awbasit/employee-retention-predictor",
+        "tags": ["Python", "Django", "REST API"]
+      }
+    ]
+  }
+  

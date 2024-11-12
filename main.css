@@ -1,5 +1,3 @@
-/* Basic Reset */
-
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Noto+Sans+Warang+Citi&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Noto+Sans+Warang+Citi&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sofadi+One&display=swap');
@@ -20,56 +18,60 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f4f4f4;
-    /* background-image: url('/images/pexels-juanpphotoandvideo-1242348.jpg'); */
-    image-resolution:inherit();
-    padding: 0px 0px 0px 0px;
+    padding: 0;
 }
 
-/* Apply Merriweather for headings */
+/* Headings */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Merriweather', serif;
-    font-weight: 700; /* Bold for better emphasis */
+    font-weight: 700;
 }
 
-/* Apply Open Sans for body text */
+/* Body Text */
 body, p, li, a {
     font-family: 'Open Sans', sans-serif;
-    font-weight: 400; /* Regular for body text */
+    font-weight: 400;
 }
 
-/* Optional: lighter font weight for additional elements */
 p, li {
-    font-weight: 300;
+    text-align: justify;
+    padding: 1px 3px;
+    margin: 10px;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-size: medium;
 }
-
-/* Stronger font weight for call-to-actions or emphasis */
-a, .btn, .project h3 {
-    font-weight: 600;
-}
-
 
 /* Navigation Bar */
+/* Basic Navigation Styling */
 nav {
     background-color: #333;
     color: #fff;
-    padding: 1px 0;
-    text-align: center;
     position: fixed;
     width: 100%;
-    border-radius: 1px;
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    animation: slideIn 1s ease-in-out;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 10px 0;
 }
 
 nav ul {
     list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
 }
 
 nav ul li {
-    display: inline;
-    margin-right: 10px;
+    margin: 0 10px;
 }
 
 nav ul li a {
@@ -79,24 +81,69 @@ nav ul li a {
     transition: color 0.3s ease;
 }
 
-nav ul li:hover {
+nav ul li a:hover {
     color: #007bff;
 }
 
-a:hover {
-    color:antiquewhite;
+/* Responsive Styles */
+#menu-toggle {
+    display: none;
 }
 
+.menu-icon {
+    display: none;
+    font-size: 1.8em;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+@media (max-width: 768px) {
+    /* Hide the menu initially and show the hamburger icon */
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+    }
+
+    /* Display menu icon */
+    .menu-icon {
+        display: block;
+    }
+
+    /* Show the menu when the toggle is checked */
+    #menu-toggle:checked ~ .menu {
+        display: flex;
+    }
+
+    /* Style for each dropdown item */
+    nav ul li {
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        font-size: 1.2em;
+        padding: 10px 0;
+        display: block;
+    }
+}
 
 
 /* Section Styling */
 .section {
-    padding: 100px; /* Increased padding to adjust for fixed navbar */
+    padding: 100px;
     margin: 20px 0;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-color: #333;
     opacity: 0;
     transform: translateY(50px) scale(0.95);
     animation: fadeInUp 1s ease forwards;
@@ -113,10 +160,8 @@ a:hover {
     margin-bottom: 20px;
 }
 
-/* General Section Styling (Ensures uniform layout with other sections) */
 .projects-section, .publications-section {
-    /* max-width: 900px; */
-    margin: 0 auto; /* Centers the items */
+    margin: 0 auto;
     padding: 20px;
     background-color: #ffffff;
     border-radius: 10px;
@@ -137,7 +182,7 @@ a:hover {
     content: '';
     width: 60px;
     height: 4px;
-    background-color: #ff4d4d; /* Accent color */
+    background-color: #ff4d4d;
     display: block;
     margin: 10px auto 0;
     border-radius: 2px;
@@ -179,7 +224,7 @@ a:hover {
     padding: 10px 20px;
     font-size: 1.1em;
     color: #ffffff;
-    background-color: #ff4d4d; /* Accent red color */
+    background-color: #ff4d4d;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease, transform 0.3s ease;
@@ -191,18 +236,21 @@ a:hover {
     transform: translateY(-2px);
 }
 
+/* .project .profile-image {
+    width: fit-content;
+    height: auto;
+} */
+
 /* Publications Section Styling */
 .publications-section ul {
     list-style: none;
-    /* padding: 30px 20px; */
 }
 
 .publications-section ul li {
     margin-bottom: 5px;
-    list-style: none; /* Remove default list styling */
     max-width: 900px;
-    margin: 10px 50px 10px 130px; /* Centers the skill items */
-    padding: 10px;
+    margin: 10px 50px 10px 130px;
+    padding: 2px;
 }
 
 .publications-section ul li a {
@@ -212,53 +260,11 @@ a:hover {
     transition: color 0.3s ease;
 }
 
+
 /* Hover effect for publication links */
 .publications-section ul li a:hover {
     color: #d43f3f;
     text-decoration: underline;
-}
-
-/* Responsive Styling */
-@media (max-width: 768px) {
-    .project h3 {
-        font-size: 1.5em;
-    }
-
-    .project p {
-        font-size: 1em;
-    }
-
-    .project .btn {
-        font-size: 1em;
-        padding: 8px 15px;
-    }
-
-    .publications-section ul li a {
-        font-size: 1.1em;
-    }
-}
-
-p, li {
-    text-align: justify;
-    padding: 1px 3px 1px 3px;
-    margin: 10px;
-    font-family: "Playfair Display", serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-    font-size: medium;
-}
-
-.contact-info a {
-    color: #333;
-    text-decoration: underline;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.project a:hover, .contact-info a:hover {
-    text-decoration: none;
-    color: #007bff;
-    transform: scale(1.05);
 }
 
 /* Contact Section Styling */
@@ -279,7 +285,7 @@ p, li {
 .contact-info i {
     margin-right: 10px;
     font-size: 1.5em;
-    color: #ff4d4d; /* Accent color for icons */
+    color: #ff4d4d;
 }
 
 /* Map Container Styling */
@@ -295,22 +301,6 @@ p, li {
     max-width: 100%;
     height: auto;
 }
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .contact-section .contact-info {
-        padding: 15px;
-    }
-
-    .contact-info p {
-        font-size: 1em;
-    }
-
-    .contact-section .map-container iframe {
-        height: 300px;
-    }
-}
-
 
 /* Animations */
 @keyframes fadeInUp {
@@ -336,38 +326,23 @@ p, li {
 }
 
 /* Adding delay to each section animation for a staggered effect */
-#about {
-    animation-delay: 0.2s;
-}
+#about { animation-delay: 0.2s; }
+#projects { animation-delay: 0.5s; }
+#skills { animation-delay: 0.7s; }
+#publications { animation-delay: 1.0s; }
+#certifications { animation-delay: 1.3s; }
+#contact { animation-delay: 1.5s; }
 
-#projects {
-    animation-delay: 0.5s;
-}
-
-#skills {
-    animation-delay: 0.7s;
-}
-
-#publications {
-    animation-delay: 1.0s;
-}
-
-#certifications {
-    animation-delay: 1.3s;
-}
-
-#contact {
-    animation-delay: 1.5s;
-}
+/* Profile Image Styling */
 .profile-image {
     width: 250px;
     height: 250px; 
-    border-radius: 50%;  /* Circular profile image */
-    object-fit: cover;  /*Ensures image covers the entire area */
-    margin: 0;
-    display: block;
-    /* border: 5px solid #007bff; */
-} 
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 10px;
+    display: inline;
+}
+
 /* Responsive Image Styling */
 @media (max-width: 600px) {
     .profile-image {
@@ -379,47 +354,50 @@ p, li {
     }
 }
 
+/* Link Styling */
 span.career, a {
     color: rgba(203, 110, 110, 0.575);
-  }
+}
 
 a {
     text-decoration: none;
-    font-size:medium;
+    font-size: medium;
 }
 
 a:hover {
     cursor: pointer;
 }
 
+/* Content Styling */
 .content {
     text-align: center;
     font-family: "Oswald", sans-serif;
     font-optical-sizing: auto;
     font-weight: 500;
     font-size: xx-large;
-    font-style: normal;
     color: white;
     padding-top: 5%;
 }
 
+/* Home Section */
 #home {
     filter: brightness(70%);
     background-image: url("/images/pexels-pixabay-256381.jpg");
     height: 70vh;
-    background-size:cover;
+    background-size: cover;
     background-position: center;
 }
 
+/* Welcome Section */
 .hi-con {
     font-family: "League Spartan", sans-serif;
     font-optical-sizing: auto;
     font-weight: 200;
-    font-style: normal;
     text-align: center;
-    color:rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
 }
 
+/* Skills Section */
 .skills-section {
     max-width: 800px;
     margin: 60px auto;
@@ -428,18 +406,18 @@ a:hover {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-  
+
 .skills-section h2 {
     text-align: center;
     margin-bottom: 40px;
     color: #333333;
     font-size: 2em;
 }
-  
+
 .skills-container .skill {
     margin-bottom: 25px;
 }
-  
+
 .skill-header {
     display: flex;
     justify-content: space-between;
@@ -456,10 +434,9 @@ a:hover {
 
 /* Skills section styling */
 .skill-section ul {
-    list-style: none; /* Remove default bullet points */
+    list-style: none;
     padding: 0;
     max-width: 900px;
-    /* margin: 0 auto;  */
     padding: 20px;
 }
 
@@ -477,17 +454,9 @@ a:hover {
     content: "\f121"; /* FontAwesome icon (example for frameworks) */
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
-    color: #ff4d4d; /* Icon color */
+    color: #ff4d4d;
     margin-right: 10px;
     font-size: 1.5em;
-}
-
-.skill-section ul.skills-list {
-    list-style: none;
-    padding: 0;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
 }
 
 .skills-list li {
@@ -502,97 +471,93 @@ a:hover {
 .skills-list li i {
     margin-right: 10px;
     font-size: 1.5em;
-    color: #ff4d4d; /* Accent color */
+    color: #ff4d4d;
 }
 
-/* Responsive Design */
-@media (max-width: 600px) {
-    .skills-list li {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .skills-list li i {
-        margin-bottom: 5px;
-    }
-}
- 
+/* Progress Bar Styling */
 .progress-bar {
     width: 100%;
     background-color: #e0e0e0;
     border-radius: 25px;
     overflow: hidden;
 }
-  
+
 .progress {
     height: 10px;
     width: 0;
     border-radius: 25px;
     transition: width 1.5s ease-in-out;
 }
-  
-/* Responsive Design */
-@media (max-width: 600px) {
-    .skill-header {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 5px;
-    }
-}
 
-.progress.python {
-    background-color: rgb(50, 121, 14);
-}
-  
-.progress.js {
-    background-color: #26aa33;
-}
-
-.progress.Html {
-    background-color: rgb(23, 66, 2);
-}
-
-.progress.Node {
-    background-color: rgb(144, 223, 104);
-}
-
-.progress.React {
-    background-color: rgb(163, 60, 65);
-}
-
-.progress.C {
-    background-color: rgb(221, 11, 39);
-}
-
-.progress.Flask {
-    background-color: rgb(171, 247, 100);
-}
-
-.about-text {
+/* About Section */
+/* .about-text {
     width: 50%;
     display: flex; 
     float: right;
     justify-items: right; 
     margin-right: 180px;
+} */
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
 }
 
-  /* Download CV Section */
+.about-texts {
+    width: 80%;
+    text-align: center;
+    padding-left: 20%;
+    padding-right: 2%;
+}
+
+.profile-image {
+    width: 150px;
+    height: auto;
+    border-radius: 50%;
+    margin: 20px 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: row;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .about-texts {
+        width: 100%;
+        margin: 0; /* Remove the right margin */
+    }
+
+    .profile-image {
+        order: 1;
+        width: 200px;
+        height: auto;
+    }
+
+    .section {
+        padding: 50px; /* Reduce padding for smaller screens */
+    }
+}
+
+/* Download CV Section */
 #download-cv-section {
     text-align: center;
-    /* margin: 50px 20px; */
     padding: 20px;
     background-color: #ffffff;
-    /* border-radius: 10px; */
-    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
 }
-  
+
 #download-cv-section h2 {
     font-size: 2em;
     margin-bottom: 20px;
     color: #333;
 }
-  
-  /* Download Button Styles */
+
+/* Download Button Styles */
 .download-btn, button {
     display: inline-flex;
     align-items: center;
@@ -600,40 +565,31 @@ a:hover {
     padding: 12px 25px;
     font-size: 1em;
     color: #fff;
-    background-color: #ff4d4d; /* Red color */
+    background-color: #ff4d4d;
     border: none;
     border-radius: 25px;
     text-decoration: none;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
-  
+
 .download-btn i {
     margin-right: 8px;
 }
-  
-  /* Hover Effects */
+
+/* Hover Effects */
 .download-btn:hover, button:hover {
-    background-color: #e04343da; /* Darker shade of red */
+    background-color: #e04343da;
     transform: translateY(-3px);
 }
-  
-  /* Responsive Design */
-@media (max-width: 600px) {
-    .download-btn, button {
-      width: 80%;
-      text-align: center;
-    }
-}
 
-/* Ensure .certifications-section inherits from .section */
+/* Certifications Section */
 .certifications-section {
-    /* padding: 60px 20px; */
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    opacity: 0; /* For animation */
-    transform: translateY(20px); /* For animation */
+    opacity: 0;
+    transform: translateY(20px);
     transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
@@ -644,7 +600,7 @@ a:hover {
 }
 
 /* Section Title Styling */
- h2 {
+h2 {
     text-align: center;
     margin-bottom: 40px;
     font-size: 2.5em;
@@ -657,10 +613,9 @@ h2::after {
     content: '';
     width: 60px;
     height: 4px;
-    background-color: #ff4d4d; /* Accent Red Color */
+    background-color: #ff4d4d;
     display: block;
     margin: 10px auto 0;
-    border-radius: 2px;
 }
 
 /* Filters Styling */
@@ -678,7 +633,6 @@ h2::after {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
     font-size: 1em;
-
 }
 
 .certifications-section .filter-btn.active,
@@ -721,7 +675,7 @@ h2::after {
 /* Certification Icon Styling */
 .certifications-section .certification-icon {
     font-size: 1.5em;
-    color: #ff4d4d; /* Accent Red Color */
+    color: #ff4d4d;
     margin-right: 15px;
     flex-shrink: 0;
 }
@@ -756,7 +710,7 @@ h2::after {
 
 /* Show Accordion Content When Active */
 .certifications-section .certification-item.active .accordion-content {
-    max-height: 200px; /* Adjust based on content */
+    max-height: 200px;
     padding: 15px 20px;
 }
 
@@ -788,55 +742,311 @@ h2::after {
     visibility: visible;
 }
 
+/* Certifications List Padding */
 .certifications-list {
-    /* max-width: 800px; */
     margin-right: 100px;
     padding: 30px 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
 }
 
 /* Responsive Design Adjustments */
-@media (max-width: 600px) {
-    .certifications-section {
-        padding: 40px 15px;
-        opacity: 0;
+@media (max-width: 768px) {
+    .project h3 {
+        font-size: 1.5em;
     }
 
-    .certifications-section h2 {
-        font-size: 2em;
+    .project p {
+        font-size: 1em;
     }
 
-    .certifications-section .filter-btn {
+    .project .btn {
+        font-size: 1em;
         padding: 8px 15px;
-        margin: 5px 3px;
-        font-size: 0.9em;
     }
 
-    .certifications-section .accordion-header {
-        flex-direction: column;
-        align-items: flex-start;
+    .publications-section ul li a {
+        font-size: 1.1em;
     }
 
-    .certifications-section .accordion-header span {
-        margin-top: 10px;
+    .section {
+        padding: 50px 20px; /* Adjust padding for mobile */
+    }
+    
+    .contact-section .contact-info {
+        padding: 15px;
+    }
+
+    /* Contact Section */
+.contact-section {
+    padding: 60px 20px;
+    background-color: #f4f4f4;
+}
+
+.contact-info {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align */
+}
+
+.contact-info p {
+    font-size: 1.2em;
+    color: #555555;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    font-size: 1.5em;
+    color: #ff4d4d;
+}
+
+/* Map Container Styling */
+.map-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.map-container iframe {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%; /* Ensures full width on smaller screens */
+    height: 300px; /* Fixed height for consistency */
+}
+}
+/* Responsive Adjustments for Contact Section */
+@media (max-width: 768px) {
+    .contact-info {
+        padding: 15px;
+    }
+
+    .contact-info p {
+        font-size: 1em; /* Adjust font size for smaller screens */
+    }
+
+    .map-container iframe {
+        height: 200px; /* Adjust height for mobile */
     }
 }
 
-.footer-section {
-    margin-left: 30rem;
+@media (max-width: 480px) {
+    .contact-info p {
+        font-size: 0.9em; /* Further reduce font size for very small screens */
+    }
 }
 
- /* Projects Section */
- #projects h2 {
-    font-family: 'Merriweather', serif;
-  }
-  
-  .card-title {
+/* Project Card Styles */
+.container {
+    padding-left: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+/* Project Card Styles */
+.card {
+    /* background-color: #d43f3f; */
+    margin-top: 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    width: 40rem; /* Adjust width for three cards per row */
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column; /* Keep the layout column-wise */
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s; /* Optional: adds hover effect */
+}
+
+.card:hover {
+    transform: translateY(-3px); /* Lift effect on hover */
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Cover ensures the image fills the area */
+}
+
+.card-body {
+    padding-left: 15px;
+}
+
+.card-title {
     font-size: 1.25rem;
     font-weight: bold;
-  }
-  
-  .card-text {
+    margin-bottom: 10px;
+}
+
+.card-text {
     font-size: 1rem;
-  }
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.btn {
+    padding: 8px 12px;
+    text-align: center;
+    margin-right: 5px; /* Space between buttons */
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: calc(50% - 20px); /* Two cards per row on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 100%; /* One card per row on small screens */
+    }
+}
+
+.badge {
+    font-size: 0.85rem;
+    padding: 5px 10px;
+    margin-right: 5px;
+} 
+
+/* Adjust for screens smaller than 1200px (iPhone 14 Pro Max is 1170px wide) */
+@media (max-width: 1200px) {
+    .section {
+        padding: 50px 20px; /* Reduce padding for smaller screens */
+        margin: 10px 0; /* Adjust margins for better spacing */
+    }
+    
+    .project {
+        margin: 10px 20px; /* Reduce margins for better spacing on mobile */
+        padding: 20px; /* Consistent padding for readability */
+    }
+
+    /* Adjust font size for readability */
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 1.5em; /* Decrease header sizes */
+        font-family: 'Merriweather', serif;
+        font-weight: 700;
+    }
+
+    p {
+        font-size: 1em; /* Adjust paragraph size */
+    }
+}
+
+/* Adjust for screens smaller than 768px */
+@media (max-width: 768px) {
+    .section {
+        padding: 30px 15px;
+    }
+
+    .project {
+        margin: 10px 10px;
+        padding: 15px;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 1.3em; /* Further decrease header sizes */
+    }
+
+    p {
+        font-size: 0.9em; /* Adjust paragraph size */
+    }
+}
+
+/* Adjust for very small screens (e.g., iPhone 14 Pro Max in portrait mode) */
+@media (max-width: 480px) {
+    .section {
+        padding: 20px 10px;
+    }
+
+    .project {
+        margin: 10px 5px;
+        padding: 10px;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 1.1em; /* Further reduce header sizes */
+    }
+
+    p {
+        font-size: 0.8em; /* Adjust paragraph size */
+    }
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+#news-section {
+    margin: 50px 0;
+}
+
+.news-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.news-item {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.news-item h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.news-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    width: 100%;
+}
+
+button {
+    padding: 10px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
