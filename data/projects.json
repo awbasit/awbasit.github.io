@@ -13,14 +13,14 @@
         "description": "This project was built to classify rocks",
         "image": "./images/rock.jpg",
         "githubLink": "https://github.com/awbasit/Rocks-Classification",
-        "tags": ["React", "Node.js", "Express"]
+        "tags": ["SVM", "XGBOOST", "ADABOOST", "RANDOM FOREST"]
       },
       {
         "title": "Employee Retention Prediction",
         "description": "This project was built to predict employee retaining or leaving",
-        "image": "static/assets/images/project3.jpg",
+        "image": "https://images.inc.com/uploaded_files/image/1920x1080/getty_539953664_213316.jpg",
         "githubLink": "https://github.com/awbasit/employee-retention-predictor",
-        "tags": ["Python", "Django", "REST API"]
+        "tags": ["SCIKIT-LEARN", "NUMPY", "PANDAS"]
       }
     ]
   }

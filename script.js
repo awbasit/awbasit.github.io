@@ -69,7 +69,7 @@ window.addEventListener('scroll', () => {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Intersection Observer for Certifications Section Animation
+    // Intersection Observer for Certifications Section Animation
     const certificationsSection = document.querySelector('#certifications');
 
     const observerOptions = {
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sectionObserver.observe(certificationsSection);
 
-    // 2. Filter Functionality
+    // Filter Functionality
     const filterButtons = certificationsSection.querySelectorAll('.filter-btn');
     const certificationItems = certificationsSection.querySelectorAll('.certification-item');
 
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 3. Accordion Functionality
+    // Accordion Functionality
     const accordionHeaders = certificationsSection.querySelectorAll('.accordion-header');
 
     accordionHeaders.forEach(header => {

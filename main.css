@@ -507,9 +507,9 @@ a:hover {
 }
 
 .about-texts {
-    width: 80%;
+    width: 100%;
     text-align: center;
-    padding-left: 20%;
+    padding-left: 5%;
     padding-right: 2%;
 }
 
@@ -852,10 +852,12 @@ h2::after {
 .card {
     /* background-color: #d43f3f; */
     margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 10px;
     border: 1px solid #ddd;
     overflow: hidden;
-    width: 40rem; /* Adjust width for three cards per row */
+    width: 50rem; /* Adjust width for three cards per row */
     display: flex;
     flex-wrap: wrap;
     flex-direction: column; /* Keep the layout column-wise */
@@ -894,6 +896,11 @@ h2::after {
     padding: 8px 12px;
     text-align: center;
     margin-right: 5px; /* Space between buttons */
+}
+
+.p-image {
+    display: flex;
+    justify-content: center;
 }
 
 @media (max-width: 768px) {
@@ -1048,5 +1055,10 @@ button {
 
 button:hover {
     background-color: #4cae4c;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
 }
 
