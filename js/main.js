@@ -68,11 +68,23 @@ document.querySelectorAll('.nav-link').forEach(link => {
 // Enhanced Smooth Scrolling with GSAP
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        
         const targetId = this.getAttribute('href');
+        if (targetId === '#home') {
+            e.preventDefault();
+            gsap.to(window, {
+                scrollTo: { y: 0 },
+                duration: 1,
+                ease: "power2.inOut"
+            });
+            // Update active nav link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            this.classList.add('active');
+            return;
+        }
+        e.preventDefault();
         const targetElement = document.querySelector(targetId);
-        
         if (targetElement) {
             // GSAP smooth scroll
             gsap.to(window, {
