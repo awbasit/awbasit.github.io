@@ -1,0 +1,124 @@
+/* modern.css - Modern UI Styles */
+
+/* General Body and Typography */
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.8;
+    color: #333a45;
+    background-color: #f7f8fc;
+    padding-top: 70px; /* For fixed nav */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    color: #1a253f;
+}
+
+p, li {
+    font-size: 1.1rem;
+}
+
+
+/* Modern Navigation Bar */
+nav {
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+}
+
+.nav-container {
+    padding: 15px 0 !important;
+}
+
+nav ul li a {
+    color: #1a253f !important;
+    font-weight: 600 !important;
+    padding: 5px 15px !important;
+    border-radius: 5px !important;
+    transition: color 0.3s ease, background-color 0.3s ease !important;
+}
+
+nav ul li a:hover {
+    color: #fff !important;
+    background-color: #007bff !important;
+}
+
+
+/* Modern Section Styling */
+.section {
+    padding: 80px 40px !important;
+    margin: 40px auto !important;
+    background-color: #fff !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08) !important;
+    width: 90% !important;
+    max-width: 1200px !important;
+}
+
+.section:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Modern Buttons */
+.download-btn, button {
+    background-color: #007bff !important;
+    color: white !important;
+    padding: 12px 25px !important;
+    border: none !important;
+    border-radius: 25px !important;
+    font-size: 1.1em !important;
+    font-weight: 600 !important;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2) !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+}
+
+.download-btn:hover, button:hover {
+    background-color: #0056b3 !important;
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3) !important;
+    transform: translateY(-3px) !important;
+}
+
+/* Modern Progress Bars */
+.progress-bar {
+    background-color: #e9ecef !important;
+    border-radius: 20px !important;
+    height: 15px !important;
+    overflow: hidden !important;
+}
+
+.progress {
+    background: linear-gradient(45deg, #007bff, #00a6ff) !important;
+}
+
+/* Certifications Section */
+.certifications-section .accordion-header {
+    background-color: #f7f8fc !important;
+    transition: background-color 0.3s !important;
+}
+
+.certifications-section .accordion-header:hover {
+    background-color: #e9ecef !important;
+}
+
+.certifications-section .certification-icon {
+    color: #007bff !important;
+}
+
+/* Skills Section */
+.skills-list li i {
+    color: #007bff !important;
+}
+
+/* Contact Section */
+.contact-info i {
+    color: #007bff !important;
+}
+
+/* Footer */
+.footer {
+    background-color: #1a253f !important;
+    color: #f7f8fc !important;
+} 

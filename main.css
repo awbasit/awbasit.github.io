@@ -9,50 +9,38 @@
     box-sizing: border-box;
 }
 
-/* Body Styling */
+/* Modern Body and Typography */
 body {
-    font-family: "Playfair Display", serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
-    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.8;
+    color: #333a45;
+    background-color: #f7f8fc;
+    padding-top: 70px; /* For fixed nav */
 }
 
-/* Headings */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Merriweather', serif;
     font-weight: 700;
-}
-
-/* Body Text */
-body, p, li, a {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
+    color: #1a253f;
 }
 
 p, li {
     text-align: justify;
     padding: 1px 3px;
     margin: 10px;
-    font-family: "Playfair Display", serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-size: medium;
+    font-size: 1.1rem;
 }
 
-/* Navigation Bar */
-/* Basic Navigation Styling */
+/* Modern Navigation Bar */
 nav {
-    background-color: #333;
-    color: #fff;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .nav-container {
@@ -60,7 +48,7 @@ nav {
     justify-content: center;
     align-items: center;
     position: relative;
-    padding: 10px 0;
+    padding: 15px 0;
 }
 
 nav ul {
@@ -75,14 +63,208 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: #1a253f;
     text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
+    font-weight: 600;
+    padding: 5px 15px;
+    border-radius: 5px;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 nav ul li a:hover {
+    color: #fff;
+    background-color: #007bff;
+}
+
+/* Modern Section Styling */
+.section {
+    padding: 80px 40px;
+    margin: 40px auto;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInUp 0.8s ease forwards;
+    width: 90%;
+    max-width: 1200px;
+    animation-play-state: paused; /* Keep animation paused initially */
+}
+
+.section:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.skills-list li i {
+    color: #007bff; /* Accent color for icons */
+    margin-right: 15px;
+    font-size: 1.5em;
+    vertical-align: middle;
+}
+
+/* Modern Progress Bars */
+.progress-bar {
+    background-color: #e9ecef;
+    border-radius: 20px;
+    height: 15px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    color: #fff;
+    text-align: right;
+    padding-right: 10px;
+    line-height: 15px;
+    border-radius: 20px;
+    background: linear-gradient(45deg, #007bff, #00a6ff);
+    transition: width 1.5s ease-in-out;
+    width: 0; /* Initial width */
+}
+
+/* Modern Buttons */
+.download-btn, button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.download-btn i {
+    margin-right: 8px;
+}
+
+.download-btn:hover, button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
+    transform: translateY(-3px);
+}
+
+.certifications-section .accordion-header {
+    background-color: #f7f8fc;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.certifications-section .accordion-header:hover {
+    background-color: #e9ecef;
+}
+
+.certifications-section .certification-icon {
     color: #007bff;
+    margin-right: 15px;
+    font-size: 1.5em;
+}
+
+.certifications-section .accordion-content {
+    padding: 0 15px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    background-color: #fff;
+    border-radius: 0 0 8px 8px;
+}
+
+.certifications-section .certification-item.active .accordion-content {
+    max-height: 200px; /* Adjust as needed */
+    padding: 15px;
+    border-top: 1px solid #e9ecef;
+}
+
+.skills-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.skills-list li strong {
+    margin-right: 10px;
+}
+
+.skills-list li i {
+    color: #007bff;
+    margin-right: 15px;
+    font-size: 1.5em;
+}
+
+.skills-section .skill {
+    margin-bottom: 20px;
+}
+
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.contact-info i {
+    color: #007bff;
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1a253f;
+    color: #f7f8fc;
+}
+
+.p-image {
+    text-align: center; /* Center the image */
+    margin-top: 20px;
+}
+
+.p-image .profile-image {
+    max-width: 250px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.1);
+}
+
+@media (min-width: 768px) {
+    #about .section {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+    .about-texts {
+        flex: 2;
+    }
+    .p-image {
+        flex: 1;
+        text-align: right;
+    }
+}
+
+.publications-section ul li{
+    margin: 20px 0;
+    border-bottom: #1a253f solid 1px;
+}
+
+.certifications-section .accordion-header .bi-chevron-down{
+    margin-left: auto;
+    transition: transform 0.3s ease;
+}
+
+.certifications-section .certification-item.active .accordion-header .bi-chevron-down {
+    transform: rotate(180deg);
 }
 
 /* Responsive Styles */
@@ -134,25 +316,6 @@ nav ul li a:hover {
         padding: 10px 0;
         display: block;
     }
-}
-
-
-/* Section Styling */
-.section {
-    padding: 100px;
-    margin: 20px 0;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transform: translateY(50px) scale(0.95);
-    animation: fadeInUp 1s ease forwards;
-    animation-play-state: paused;
-    will-change: transform, opacity;
-}
-
-.section:hover {
-    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
 }
 
 /* Project and Contact Section */
@@ -218,29 +381,6 @@ nav ul li a:hover {
     margin-bottom: 15px;
 }
 
-/* GitHub Button Styling */
-.project .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 1.1em;
-    color: #ffffff;
-    background-color: #ff4d4d;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-/* Button Hover Effect */
-.project .btn:hover {
-    background-color: #d43f3f;
-    transform: translateY(-2px);
-}
-
-/* .project .profile-image {
-    width: fit-content;
-    height: auto;
-} */
-
 /* Publications Section Styling */
 .publications-section ul {
     list-style: none;
@@ -260,7 +400,6 @@ nav ul li a:hover {
     transition: color 0.3s ease;
 }
 
-
 /* Hover effect for publication links */
 .publications-section ul li a:hover {
     color: #d43f3f;
@@ -268,24 +407,17 @@ nav ul li a:hover {
 }
 
 /* Contact Section Styling */
-.contact-section .contact-info {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
+.contact-section {
+    padding: 60px 20px;
 }
 
-.contact-info p {
-    font-size: 1.2em;
-    color: #555555;
-    display: flex;
-    align-items: center;
+.contact-section .contact-info {
+    text-align: center;
     margin-bottom: 10px;
 }
 
-.contact-info i {
-    margin-right: 10px;
-    font-size: 1.5em;
-    color: #ff4d4d;
+.contact-info p {
+    margin: 5px 0;
 }
 
 /* Map Container Styling */
@@ -293,6 +425,8 @@ nav ul li a:hover {
     margin-top: 20px;
     display: flex;
     justify-content: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .contact-section .map-container iframe {
@@ -315,12 +449,12 @@ nav ul li a:hover {
 }
 
 @keyframes slideIn {
-    0% {
-        transform: translateY(-100%);
+    from {
+        transform: translateX(-100%);
         opacity: 0;
     }
-    100% {
-        transform: translateY(0);
+    to {
+        transform: translateX(0);
         opacity: 1;
     }
 }
@@ -335,37 +469,45 @@ nav ul li a:hover {
 
 /* Profile Image Styling */
 .profile-image {
-    width: 250px;
-    height: 250px; 
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     object-fit: cover;
-    margin-left: 10px;
-    display: inline;
+    transition: transform 0.3s ease;
 }
 
-/* Responsive Image Styling */
+.profile-image:hover {
+    transform: scale(1.1);
+}
+
 @media (max-width: 600px) {
     .profile-image {
-        width: 100px;
-        height: 100px;
+        width: 120px;
+        height: 120px;
     }
     .project-image {
-        width: 100%;
+        max-width: 100%;
+        height: auto;
     }
 }
 
 /* Link Styling */
 span.career, a {
-    color: rgba(203, 110, 110, 0.575);
+    text-decoration: none;
+    color: #007bff;
 }
 
 a {
+    color: #007bff;
     text-decoration: none;
-    font-size: medium;
+    transition: color 0.3s ease;
 }
 
 a:hover {
-    cursor: pointer;
+    color: #0056b3;
+    text-decoration: underline;
 }
 
 /* Content Styling */
@@ -390,46 +532,36 @@ a:hover {
 
 /* Welcome Section */
 .hi-con {
-    font-family: "League Spartan", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 200;
     text-align: center;
-    color: rgb(255, 255, 255);
+    margin-top: 20px;
 }
 
 /* Skills Section */
 .skills-section {
-    max-width: 800px;
-    margin: 60px auto;
-    padding: 30px 20px;
-    background: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
 }
 
 .skills-section h2 {
     text-align: center;
-    margin-bottom: 40px;
-    color: #333333;
+    margin-bottom: 30px;
     font-size: 2em;
 }
 
 .skills-container .skill {
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 .skill-header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
     font-weight: 600;
-    color: #555555;
-    font-size: 1.1em;
 }
 
 .skill:hover {
-    transform: translateY(-5px);
-    transition: transform 0.3s ease;
+    transform: scale(1.02);
+    transition: transform 0.3s;
 }
 
 /* Skills section styling */
@@ -490,14 +622,6 @@ a:hover {
 }
 
 /* About Section */
-/* .about-text {
-    width: 50%;
-    display: flex; 
-    float: right;
-    justify-items: right; 
-    margin-right: 180px;
-} */
-
 .about-content {
     display: flex;
     flex-direction: column;
@@ -514,10 +638,7 @@ a:hover {
 }
 
 .profile-image {
-    width: 150px;
-    height: auto;
-    border-radius: 50%;
-    margin: 20px 0;
+    margin: 0 auto 20px;
 }
 
 /* Responsive Adjustments */
@@ -540,213 +661,113 @@ a:hover {
     }
 
     .section {
-        padding: 50px; /* Reduce padding for smaller screens */
+        padding: 60px 20px;
     }
 }
 
 /* Download CV Section */
 #download-cv-section {
     text-align: center;
-    padding: 20px;
-    background-color: #ffffff;
 }
 
 #download-cv-section h2 {
-    font-size: 2em;
     margin-bottom: 20px;
-    color: #333;
-}
-
-/* Download Button Styles */
-.download-btn, button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 25px;
-    font-size: 1em;
-    color: #fff;
-    background-color: #ff4d4d;
-    border: none;
-    border-radius: 25px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.download-btn i {
-    margin-right: 8px;
-}
-
-/* Hover Effects */
-.download-btn:hover, button:hover {
-    background-color: #e04343da;
-    transform: translateY(-3px);
 }
 
 /* Certifications Section */
 .certifications-section {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
+    padding: 20px;
+    border-radius: 8px;
 }
 
-/* Active class to trigger animations */
-.certifications-section.active {
-    opacity: 1;
-    transform: translateY(0);
+.certifications-section h2::after {
+    display: none; /* Removing the underline */
 }
 
-/* Section Title Styling */
-h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 2.5em;
-    color: #333333;
-    position: relative;
-}
-
-/* Underline for Section Title */
-h2::after {
-    content: '';
-    width: 60px;
-    height: 4px;
-    background-color: #ff4d4d;
-    display: block;
-    margin: 10px auto 0;
-}
-
-/* Filters Styling */
 .certifications-section .filters {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .certifications-section .filter-btn {
-    background-color: #e0e0e0;
-    border: none;
-    padding: 10px 20px;
-    margin: 0 5px;
+    margin: 0 10px;
+    padding: 8px 16px;
     border-radius: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    font-size: 1em;
+    background-color: #e9ecef;
+    color: #333a45;
+    font-weight: 600;
 }
 
 .certifications-section .filter-btn.active,
 .certifications-section .filter-btn:hover {
-    background-color: #ff4d4d;
-    color: #ffffff;
-    transform: translateY(-3px);
+    background-color: #007bff;
+    color: #fff;
 }
 
-/* Certifications List Styling */
 .certifications-section .certifications-list {
     list-style: none;
     padding: 0;
-    margin: 0;
 }
 
 .certifications-section .certification-item {
-    background-color: #f9f9f9;
-    margin-bottom: 15px;
+    background-color: #fff;
+    margin-bottom: 10px;
     border-radius: 8px;
-    overflow: hidden;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    cursor: pointer;
+    overflow: hidden; /* For accordion effect */
+    transition: all 0.3s ease;
 }
 
-/* Hover Effect for Certification Items */
 .certifications-section .certification-item:hover {
-    background-color: #ffe6e6;
-    transform: translateX(5px);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
-/* Accordion Header Styling */
 .certifications-section .accordion-header {
+    background-color: #f7f8fc;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-bottom: 5px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 15px 20px;
+    transition: background-color 0.3s;
 }
 
-/* Certification Icon Styling */
-.certifications-section .certification-icon {
-    font-size: 1.5em;
-    color: #ff4d4d;
-    margin-right: 15px;
-    flex-shrink: 0;
+.certifications-section .accordion-header:hover {
+    background-color: #e9ecef;
 }
 
-/* Certification Title Styling */
 .certifications-section .accordion-header span {
     flex-grow: 1;
-    font-size: 1.1em;
-    color: #555555;
+    font-weight: 600;
 }
 
-/* Accordion Icon Styling */
 .certifications-section .accordion-icon {
-    font-size: 1em;
-    color: #555555;
     transition: transform 0.3s ease;
 }
 
-/* Rotate Accordion Icon When Active */
 .certifications-section .certification-item.active .accordion-icon {
     transform: rotate(180deg);
 }
 
-/* Accordion Content Styling */
 .certifications-section .accordion-content {
+    padding: 0 15px;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.3s ease;
-    background-color: #f1f1f1;
-    padding: 0 20px;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    background-color: #fff;
+    border-radius: 0 0 8px 8px;
 }
 
-/* Show Accordion Content When Active */
 .certifications-section .certification-item.active .accordion-content {
-    max-height: 200px;
-    padding: 15px 20px;
+    max-height: 200px; /* Adjust as needed */
+    padding: 15px;
+    border-top: 1px solid #e9ecef;
 }
 
-/* Tooltip Styling (Optional Enhancement) */
-.certifications-section .certification-item[data-tooltip] {
-    position: relative;
-}
-
-.certifications-section .certification-item[data-tooltip]::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    left: 50%;
-    bottom: 110%;
-    transform: translateX(-50%);
-    background-color: rgba(0,0,0,0.75);
-    color: #fff;
-    padding: 8px 12px;
-    border-radius: 4px;
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-    z-index: 10;
-}
-
-.certifications-section .certification-item[data-tooltip]:hover::after {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Certifications List Padding */
 .certifications-list {
-    margin-right: 100px;
-    padding: 30px 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    list-style-type: none;
+    padding-left: 0;
 }
 
 /* Responsive Design Adjustments */
@@ -769,59 +790,10 @@ h2::after {
     }
 
     .section {
-        padding: 50px 20px; /* Adjust padding for mobile */
+        padding: 60px 20px;
     }
     
     .contact-section .contact-info {
-        padding: 15px;
-    }
-
-    /* Contact Section */
-.contact-section {
-    padding: 60px 20px;
-    background-color: #f4f4f4;
-}
-
-.contact-info {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center align */
-}
-
-.contact-info p {
-    font-size: 1.2em;
-    color: #555555;
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.contact-info i {
-    margin-right: 10px;
-    font-size: 1.5em;
-    color: #ff4d4d;
-}
-
-/* Map Container Styling */
-.map-container {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-}
-
-.map-container iframe {
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 100%; /* Ensures full width on smaller screens */
-    height: 300px; /* Fixed height for consistency */
-}
-}
-/* Responsive Adjustments for Contact Section */
-@media (max-width: 768px) {
-    .contact-info {
         padding: 15px;
     }
 
