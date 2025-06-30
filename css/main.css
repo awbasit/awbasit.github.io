@@ -1,6 +1,6 @@
 /* Base Styles with Dark Mode Support */
 :root {
-    --primary-color: #4361ee;
+    --primary-color: #4459b8;
     --primary-light: #6b85f1;
     --primary-dark: #2a4ac4;
     --secondary-color: #3a0ca3;
@@ -1702,28 +1702,7 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(-3px) scale(1.1);
 }
 
-/* Hover Effects */
-.hover-effect {
-    position: relative;
-    overflow: hidden;
-}
 
-.hover-effect::before {
-    content: '';
-    position: absolute;
-    top: var(--mouse-y, 50%);
-    left: var(--mouse-x, 50%);
-    transform: translate(-50%, -50%);
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    transition: width 0.3s ease, height 0.3s ease;
-}
-
-.hover-effect:hover::before {
-    width: 300px;
-    height: 300px;
-}
 
 /* Responsive Styles */
 @media (max-width: 1200px) {
@@ -1960,22 +1939,3 @@ body.dark-mode .footer-social .social-link:hover {
     border-radius: 0 !important;
 }
 
-/* Fix hover text color for cards in light mode */
-.detail-card:hover,
-.collaborator-card:hover,
-.project-card:hover,
-.certification-card:hover,
-.interest-card:hover,
-.contact-card:hover {
-    color: #222 !important;
-    background: none !important;
-    box-shadow: none !important;
-}
-.detail-card:hover h3,
-.collaborator-card:hover h4,
-.project-card:hover .project-title,
-.certification-card:hover .certification-title h3,
-.interest-card:hover h4,
-.contact-card:hover h3 {
-    color: var(--primary-color) !important;
-}
