@@ -419,7 +419,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             title: "Blockchain Supply Chain",
             description: "A blockchain-based solution for tracking cocoa supply chain to ensure transparency and sustainability.",
-            image: "images/project1.jpg",
+            image: "images/blockchain.jpg",
             tags: ["Blockchain", "Smart Contracts", "Supply Chain"],
             liveLink: "#",
             githubLink: "#"
@@ -427,14 +427,14 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             title: "Network Intrusion Detection",
             description: "Deep learning model for detecting network intrusions using convolutional neural networks.",
-            image: "images/project2.jpg",
+            image: "images/network.jpg",
             tags: ["Deep Learning", "Cybersecurity", "CNN"],
             githubLink: "#"
         },
         {
             title: "Hypothyroid Disease Prediction",
             description: "Machine learning model to predict hypothyroid disease using patient medical data.",
-            image: "images/project3.jpg",
+            image: "images/profile2.png",
             tags: ["Machine Learning", "Healthcare", "Classification"],
             liveLink: "#",
             githubLink: "#"
@@ -442,13 +442,18 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
     
     // Display projects with GSAP animations
+    const projectImages = [
+        "images/blockchain.jpg",
+        "images/network.jpg",
+        "images/profile2.png"
+    ];
     projects.forEach((project, index) => {
         const projectCard = document.createElement('div');
         projectCard.className = `project-card delay-${index % 3}`;
         
         projectCard.innerHTML = `
             <div class="project-image-container">
-                <img src="${project.image}" alt="${project.title}" class="project-image">
+                <img src="${projectImages[index] || 'images/profile2.png'}" alt="${project.title}" class="project-image">
                 <div class="project-overlay"></div>
             </div>
             <div class="project-content">
