@@ -1951,3 +1951,29 @@ body.dark-mode .footer-social .social-link:hover {
     background: var(--accent-color) !important;
     color: #181a23 !important;
 }
+
+.skills-category,
+.about-skills,
+.project-card,
+.certification-card,
+.collaborator-card,
+.detail-card {
+    background: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.skills-category,
+.about-skills {
+    padding: 0 !important;
+}
+
+/* Remove border-radius for a flat look */
+.skills-category,
+.about-skills,
+.project-card,
+.certification-card,
+.collaborator-card,
+.detail-card {
+    border-radius: 0 !important;
+}
