@@ -3,417 +3,552 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdul Wahab Basit</title>
-    <link rel="stylesheet" href="main.css">
-    <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pap3MG7PpKQeB6gnP9h3pVtp25OAt6uPcq6Z5xVw1L/J+UZhItD8iZoT3eG0U0kLuv3Km1nlhHPgyR5bUzUxjg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-
-
-
+    <title>Abdul Wahab Basit | ML/AI Researcher</title>
+    <meta name="description" content="Portfolio of Abdul Wahab Basit, Machine Learning and AI Researcher">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- CDNs -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/main.css">
 </head>
-<body>
-    <!-- Loading Screen -->
-    <div id="loading">
-        <div class="spinner"></div>
+<body class="light-mode">
+    <div id="loading" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-spinner">
+                <div class="spinner-circle"></div>
+                <div class="spinner-circle"></div>
+                <div class="spinner-circle"></div>
+            </div>
+            <h1 class="loading-text">Loading<span class="loading-dots"></span></h1>
+        </div>
     </div>
 
-    <!-- Navigation Bar -->
-    <nav>
-        <div class="nav-container">
-            <input type="checkbox" id="menu-toggle">
-            <label for="menu-toggle" class="menu-icon">&#9776;</label>
-            <ul class="menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#publications">Research</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#news-section">News</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-    
-    
-
-    <!-- Home Section with Parallax Background -->
-    <section id="home" class="section parallax">
-        <div class="content-img">
-            <!-- <img src="/images/pexels-karolina-grabowska-4464918.jpg" alt=""> -->
-            <div class="content">
-                <h1>ABDUL WAHAB BASIT</h1>
-            </div>
-            <div class="hi-con">
-                <br>HI, YOU ARE WELCOME TO MY WEBSITE. FEEL FREE TO </br>
-                <a href="#contact"><button><strong>CONTACT ME!</strong></button></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section">
-        <h2>About Me</h2>
-        <div class="about-texts">
-            <p>My love for teaching, and supporting my cohorts as well as others with less privileges to 
-                access the kind of education I have had is unquestionably remarkable.
-                I organized tutored classes from Level 100 to Level 400 classes in my 
-                University to support students facing academic challenges. Most of these classes were tutored by
-                myself while others tutored by students I hired to tutor. My efforts in this directions 
-                has seen many students complete the University with desirable and favorable CWA/GPA.
-                My efforts little efforts have caused me to receive most gifts from parents and a chance to work with 
-                <a href="https://www.iduapriemmine.com/"> AngloGold Ashanti Iduapriem Limited </a>
-                I look forward to working collaboratively with experienced advisors/supervisors to become one of the 
-                renowned researchers in ML/AI applications.  
-            </p>
-            <p>
-                I was a part-time <strong>Research Assistant</strong> to Dr. Eric Affum while I worked also as a Graduate Training candidate 
-                for Process and Plant Automation Ghana Limited, a leading automations company in Ghana. I assumed the role of
-                <strong>Site Supervisor/Project Manager</strong> for major projects in the company. Among the client companies where I supervised
-                projects include, <strong>Barry Callebaut, MTN-Ghana, and Tropical Cables</strong>. I served also as a <strong>Compliance Officer</strong> where I analyzed
-                data and presented as a <strong>data story-telling using visualization skills</strong>. 
-            </p>
-        </div>
-        <div class="p-image">
-        <img src="images/profile1.png" alt="Profile Picture" class="profile-image">
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section projects-section">
+    <header class="header">
         <div class="container">
-            <h2>Projects</h2>
-            <div id="projects-container" class="row">
-            </div>
-        </div>
-    </section>
-    
-
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-        <h2>Skills</h2>
-        <ul class="skills-list">
-            <li>
-                <i class="fas fa-code"></i>
-                <strong>Programming Languages:</strong> C++, Python, JavaScript, HTML, CSS, Node.js, Flask, React
-            </li>
-            <li>
-                <i class="fas fa-cogs"></i>
-                <strong>Frameworks:</strong> Pandas, NumPy, Scikit-learn, TensorFlow, Keras, PyTorch, Flask, React
-            </li>
-            <li>
-                <i class="fas fa-tools"></i>
-                <strong>Tools:</strong> Tableau, MySQL, Google Chart, Microsoft Office (Word, PowerPoint, Access, Excel), 
-                    Colaboratory, GitHub, Docker
-            </li>
-            <li>
-                <i class="fas fa-database"></i>
-                <strong>Databases:</strong> SQL, MongoDB
-            </li>
-            <li>
-                <i class="fas fa-cloud"></i>
-                <strong>Cloud Platforms:</strong> AWS, Google Cloud Platform
-            </li>
-        </ul>
-        <section class="skills-section">
-            <h2>Programming Languages</h2>
-            <div class="skills-container"> 
-              <div class="skill">
-                <div class="skill-header">
-                  <span><i class="fas fa-code"></i>C++</span>
-                  <span>60%</span>
-                </div>
-                <div class="progress-bar">
-                  <div class="progress C" data-percentage="60%"></div>
-                </div>
-              </div>
-              
-              <div class="skill">
-                <div class="skill-header">
-                    <span><i class="fab fa-python"></i> Python</span>
-                    <span>85%</span>
-                </div>
-                <div class="progress-bar">
-                    <div class="progress python" data-percentage="85%"></div>
-                </div>
-              </div>
-              
-              <div class="skill">
-                <div class="skill-header">
-                  <span><i class="fab fa-js"></i>JavaScript</span>
-                  <span>82%</span>
-                </div>
-                <div class="progress-bar">
-                    <div class="progress js" data-percentage="82%"></div>
-                  </div>
-              </div>
-              
-              <div class="skill">
-                <div class="skill-header">
-                  <span><i class="fas fa-code"></i>HTML & CSS</span>
-                  <span>90%</span>
-                </div>
-                <div class="progress-bar">
-                  <div class="progress Html" data-percentage="90%"></div>
-                </div>
-              </div>
-              
-              <div class="skill">
-                <div class="skill-header">
-                  <span><i class="fab fa-node-js"></i>Node.js</span>
-                  <span>70%</span>
-                </div>
-                <div class="progress-bar">
-                  <div class="progress Node" data-percentage="70%"></div>
-                </div>
-              </div>
-              
-              <div class="skill">
-                <div class="skill-header">
-                  <span><i class="fa fa-flask"></i>Flask</span>
-                  <span>80%</span>
-                </div>
-                <div class="progress-bar">
-                  <div class="progress Flask" data-percentage="80%"></div>
-                </div>
-              </div>
-              
-              <div class="skill">
-                <div class="skill-header">
-                  <span><i class="fab fa-react"></i>React</span>
-                  <span>50%</span>
-                </div>
-                <div class="progress-bar">
-                  <div class="progress React" data-percentage="50%"></div>
-                </div>
-              </div>
-              
-            </div>
-        </section>
-    </section>
-
-    <!-- Publications Section -->
-    <section id="publications" class="section publications-section">
-        <div class="research">
-            <h2>Research Experiences</h2>
-            <ul>
-                <li>Blockchain-Enabled Cocoa Supply Chain Management</li>
-                <li>Leveraging Blockchain for Sustainable Small-Scale Mining</li>
-                <li>Advancing Network Intrusion Detection Leveraging Deep Convolutional Neural Network</li>
-                <li>Hypothyroid Disease Prediction Using Machine Learning</li>
-                <li>Application of machine learning algorithms to predict rock types using geochemical data: A case study from the Obuasi Gold District mining district, Ghana</li>
-                <li>Hydrogeochemical Appraisal Of The Co-Occurrence Of Fluoride And Nitrate In Groundwater Of Gushegu Municipality In The Northen Region, Ghana</li>
-                <li>Design and development of vehicle logging and access control system with ANPR integration</li>
-                <li>Machine learning-based sentiment analysis in combating misinformation: techniques, challenges, and applications</li>
-                <li>Speech Therapy Application for Aphasic people</li>
-            </ul>
-            <h2>Research Collaborators</h2>
-                <ul>
-                    <li>Assistant Professor Emmanuel Daanoba Sunkari, Lecturer UMaT</li>
-                    <li>Dr. Eric Affum, Lecturer UMaT</li>
-                    <li>Eng. George Essah Yaw Okai, Lecturer UMaT</li>
-                    <li>Eng. Umaru Muhammad, Lecturer UMaT</li>
-                    <li>A few other colleagues, Abdul-Osman Majeed, Muhammad Bello, Eyram Kuwornu Dela.</li>
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <i class="bi bi-code-slash"></i> <span class="logo-text">A.W.B</span>
+                </a>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#home" class="nav-link active"><i class="bi bi-house-door"></i> <span>Home</span></a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link"><i class="bi bi-person"></i> <span>About</span></a></li>
+                    <li class="nav-item"><a href="#projects" class="nav-link"><i class="bi bi-kanban"></i> <span>Projects</span></a></li>
+                    <li class="nav-item"><a href="#skills" class="nav-link"><i class="bi bi-tools"></i> <span>Skills</span></a></li>
+                    <li class="nav-item"><a href="#research" class="nav-link"><i class="bi bi-book"></i> <span>Research</span></a></li>
+                    <li class="nav-item"><a href="#certifications" class="nav-link"><i class="bi bi-award"></i> <span>Certifications</span></a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link"><i class="bi bi-envelope"></i> <span>Contact</span></a></li>
+                    <li class="nav-item theme-toggle">
+                        <button id="themeToggle" class="theme-btn">
+                            <i class="bi bi-sun-fill light-icon"></i>
+                            <i class="bi bi-moon-fill dark-icon"></i>
+                        </button>
+                    </li>
                 </ul>
-                <h2>Research Interests</h2>
-                <ul>
-                    <li>Machine Learning</li>
-                    <li>Artificial Intelligence</li>
-                    <li>Deep Learning</li>
-                    <li>Natural Language Processing</li>
-                    <li>Cryptography</li>
-                    <li>Quantum Computing</li>
-                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
         </div>
-    </section>
+    </header>
 
-    <!-- Certifications Section -->
-     <section id="certifications" class="section certifications-section">
-        <h2>Certifications</h2>
-        <!-- Optional: Filter Buttons -->
-        <div class="filters">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="data-science">Data Science</button>
-            <button class="filter-btn" data-filter="machine-learning">Machine Learning</button>
-            <button class="filter-btn" data-filter="others">Others</button>
-        </div>
-        <ul class="certifications-list">
-            <li class="certification-item data-science">
-                <div class="accordion-header">
-                    <i class="fas fa-certificate certification-icon"></i>
-                    <span>Diploma in Using Python for Data Science, <strong>Alison</strong></span>
-                    <i class="fas fa-chevron-down accordion-icon"></i>
-                </div>
-                <div class="accordion-content">
-                    <p>Completed with distinction in data science applications using Python. Covered topics such as data manipulation, visualization, and machine learning algorithms.</p>
-                </div>
-            </li>
-            <li class="certification-item machine-learning">
-                <div class="accordion-header">
-                    <i class="fas fa-certificate certification-icon"></i>
-                    <span>Deep Learning and Reinforcement Learning, <strong>Coursera</strong></span>
-                    <i class="fas fa-chevron-down accordion-icon"></i>
-                </div>
-                <div class="accordion-content">
-                    <p>Focused on neural networks, convolutional networks, and reinforcement learning techniques applied to various real-world problems.</p>
-                </div>
-            </li>
-            <li class="certification-item machine-learning">
-                <div class="accordion-header">
-                    <i class="fas fa-certificate certification-icon"></i>
-                    <span>Unsupervised Machine Learning, <strong>Coursera</strong></span>
-                    <i class="fas fa-chevron-down accordion-icon"></i>
-                </div>
-                <div class="accordion-content">
-                    <p>Studied clustering algorithms, dimensionality reduction techniques, and their applications in pattern recognition.</p>
-                </div>
-            </li>
-            <li class="certification-item machine-learning">
-                <div class="accordion-header">
-                    <i class="fas fa-certificate certification-icon"></i>
-                    <span>Supervised Machine Learning: Classification, <strong>Coursera</strong></span>
-                    <i class="fas fa-chevron-down accordion-icon"></i>
-                </div>
-                <div class="accordion-content">
-                    <p>Explored classification algorithms like SVM, Decision Trees, and Random Forests with practical implementations.</p>
-                </div>
-            </li>
-            <li class="certification-item machine-learning">
-                <div class="accordion-header">
-                    <i class="fas fa-certificate certification-icon"></i>
-                    <span>Supervised Machine Learning: Regression, <strong>Coursera</strong></span>
-                    <i class="fas fa-chevron-down accordion-icon"></i>
-                </div>
-                <div class="accordion-content">
-                    <p>Delved into regression techniques including Linear Regression, Polynomial Regression, and their applications.</p>
-                </div>
-            </li>
-            <li class="certification-item data-science">
-                <div class="accordion-header">
-                    <i class="fas fa-certificate certification-icon"></i>
-                    <span>Exploratory Data Analysis, <strong>Coursera</strong></span>
-                    <i class="fas fa-chevron-down accordion-icon"></i>
-                </div>
-                <div class="accordion-content">
-                    <p>Learned techniques for summarizing datasets, identifying patterns, and visualizing data insights.</p>
-                </div>
-            </li>
-            <li class="certification-item data-science">
-                <div class="accordion-header">
-                    <i class="fas fa-certificate certification-icon"></i>
-                    <span>Data Analytics (Foundations: Data, Data, Everywhere), <strong>Coursera</strong></span>
-                    <i class="fas fa-chevron-down accordion-icon"></i>
-                </div>
-                <div class="accordion-content">
-                    <p>Covered fundamental concepts in data analytics, data management, and the importance of data in decision-making.</p>
-                </div>
-            </li>
-            <li class="certification-item others">
-                <div class="accordion-header">
-                    <i class="fas fa-certificate certification-icon"></i>
-                    <span>Certification from Kaggle for a contest, <strong>Kaggle</strong></span>
-                    <i class="fas fa-chevron-down accordion-icon"></i>
-                </div>
-                <div class="accordion-content">
-                    <p>Achieved a certification by participating and performing well in a Kaggle competition focused on [specific contest topic].</p>
-                </div>
-            </li>
-            <li class="certification-item others">
-                <div class="accordion-header">
-                    <i class="fas fa-certificate certification-icon"></i>
-                    <span>Complete Machine Learning, NLP Bootcamp and Deployment (Ongoing), <strong>Udemy</strong></span>
-                    <i class="fas fa-chevron-down accordion-icon"></i>
-                </div>
-                <div class="accordion-content">
-                    <p>Currently enrolled in an extensive bootcamp covering machine learning, natural language processing, and deployment strategies.</p>
-                </div>
-            </li>
-        </ul>
-    </section>
-
-    <section id="news-section">
+    <section id="home" class="hero">
+        <div class="hero-particles" id="particles-js"></div>
         <div class="container">
-            <h2>Latest News</h2>
-            <div id="news-list" class="news-list">
-                <ul>
-                    <li>
-                        <h3>Publication</h3>
-                        <p>I am glad to inform you that my work with Associate Professor Emmanuel Daanoba Sunkari
-                    on Application of Machine Learning Algorithms to Predict Rock Types Using Geochemical Data: A Case
-                    Study from the Obuasi Gold District, Ghana has been accepted for publication by Springer Nature 
-                    in Earth and Environmental Sciences Library (https://www.springer.com/series/16637/books) to an upcoming book,
-                    Geology and Gold Mineralization in and around Ghana
-                        </p>
-                    </li>
-                    <li>
-                        <h3>Publication</h3>
-                        <p>I am glad to inform you that my work with Dr. Eric Affum has been sent to Ghana Journal of Technology for 
-                    publication
-                        </p>
-                    </li>
-                    <li>
-                        <h3>International Conference</h3>
-                        <p>Two research papers have been submitted to the International Conference VI. 
-                        </p>
-                    </li>
-                </ul>
-            <!-- </div>
-            <form id="news-form">
-                <input type="text" id="news-title" placeholder="Enter news title" required>
-                <textarea id="news-content" placeholder="Enter news content" required></textarea>
-                <button type="submit">Add News</button>
-            </form>
-        </div> -->
+            <div class="hero-content">
+                <h1 class="hero-title" data-aos="fade-down" data-aos-delay="100">Abdul Wahab Basit</h1>
+                <h2 class="hero-subtitle" data-aos="fade-down" data-aos-delay="200">
+                    <span class="typewriter" data-text='["Machine Learning Engineer", "AI Researcher", "Data Scientist"]'></span>
+                </h2>
+                <p class="hero-text" data-aos="fade-down" data-aos-delay="300">Developing intelligent solutions and mentoring the next generation of technologists</p>
+                <div class="hero-cta" data-aos="fade-down" data-aos-delay="400">
+                    <a href="#projects" class="btn btn-primary btn-magnetic">
+                        <i class="bi bi-eye"></i> View My Work
+                    </a>
+                    <a href="#contact" class="btn btn-outline btn-magnetic">
+                        <i class="bi bi-chat-left-text"></i> Contact Me
+                    </a>
+                </div>
+                <div class="hero-social" data-aos="fade-down" data-aos-delay="500">
+                    <a href="#" class="social-link hover-effect"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" class="social-link hover-effect"><i class="bi bi-github"></i></a>
+                    <a href="#" class="social-link hover-effect"><i class="bi bi-twitter"></i></a>
+                    <a href="#" class="social-link hover-effect"><i class="bi bi-google"></i></a>
+                </div>
+            </div>
+            <div class="hero-image" data-aos="fade-left" data-aos-delay="600">
+                <div class="profile-frame">
+                    <div class="profile-img-container">
+                        <img src="images/profile1.png" alt="Abdul Wahab Basit" class="profile-img">
+                        <div class="profile-overlay"></div>
+                    </div>
+                    <div class="tech-icons">
+                        <div class="tech-icon hover-effect"><i class="bi bi-filetype-py"></i></div>
+                        <div class="tech-icon hover-effect"><i class="bi bi-filetype-js"></i></div>
+                        <div class="tech-icon hover-effect"><i class="bi bi-filetype-css"></i></div>
+                        <div class="tech-icon hover-effect"><i class="bi bi-filetype-html"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-aos="fade-up">About Me</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Get to know me better</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-content" data-aos="fade-right">
+                    <div class="about-text">
+                        <p>My passion for teaching and supporting my peers, especially those with fewer privileges to access quality education, is unwavering. I organized tutored classes from Level 100 to Level 400 at my university to help students facing academic challenges.</p>
+                        <p>I served as a part-time Research Assistant to Dr. Eric Affum while also working as a Graduate Training candidate for Process and Plant Automation Ghana Limited, a leading automation company in Ghana.</p>
+                    </div>
+                    <div class="about-details">
+                        <div class="detail-card hover-effect" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="detail-icon">
+                                <i class="bi bi-briefcase"></i>
+                            </div>
+                            <div class="detail-content">
+                                <h3>Experience</h3>
+                                <p>5+ Years in Research & Development</p>
+                            </div>
+                        </div>
+                        <div class="detail-card hover-effect" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="detail-icon">
+                                <i class="bi bi-mortarboard"></i>
+                            </div>
+                            <div class="detail-content">
+                                <h3>Education</h3>
+                                <p>MSc in Computer Science</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-skills hover-effect" data-aos="fade-left">
+                    <h3 class="skills-title">
+                        <i class="bi bi-tools"></i> Technical Skills
+                    </h3>
+                    <div class="skills-mini">
+                        <div class="skill-badge hover-effect">
+                            <i class="bi bi-filetype-py"></i> Python
+                        </div>
+                        <div class="skill-badge hover-effect">
+                            <i class="bi bi-filetype-js"></i> JavaScript
+                        </div>
+                        <div class="skill-badge hover-effect">
+                            <i class="bi bi-database"></i> SQL
+                        </div>
+                        <div class="skill-badge hover-effect">
+                            <i class="bi bi-filetype-css"></i> CSS
+                        </div>
+                        <div class="skill-badge hover-effect">
+                            <i class="bi bi-filetype-html"></i> HTML
+                        </div>
+                        <div class="skill-badge hover-effect">
+                            <i class="bi bi-git"></i> Git
+                        </div>
+                    </div>
+                    <a href="#skills" class="btn btn-outline btn-magnetic">
+                        <i class="bi bi-arrow-right"></i> View All Skills
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-aos="fade-up">Featured Projects</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">My recent work and case studies</p>
+            </div>
+            <div class="projects-grid" id="projects-container">
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-aos="fade-up">Technical Skills</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">My technical proficiency</p>
+            </div>
+            <div class="skills-container">
+                <div class="skills-category hover-effect" data-aos="fade-up" data-aos-delay="100">
+                    <h3><i class="bi bi-code-slash"></i> Programming</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <i class="bi bi-filetype-py"></i> Python
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-level="95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <i class="bi bi-filetype-js"></i> JavaScript
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-level="85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <i class="bi bi-filetype-html"></i> HTML/CSS
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-level="90%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills-category hover-effect" data-aos="fade-up" data-aos-delay="200">
+                    <h3><i class="bi bi-cpu"></i> ML/AI</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <i class="bi bi-robot"></i> Machine Learning
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-level="90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <i class="bi bi-graph-up"></i> Deep Learning
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-level="85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <i class="bi bi-bar-chart"></i> Data Visualization
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-level="80%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills-category hover-effect" data-aos="fade-up" data-aos-delay="300">
+                    <h3><i class="bi bi-clipboard-data"></i> Data</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <i class="bi bi-database"></i> SQL
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-level="80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <i class="bi bi-file-earmark-excel"></i> Excel
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-level="75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <i class="bi bi-cloud-arrow-down"></i> Data Engineering
+                            <span>70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-level="70%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills-category hover-effect" data-aos="fade-up" data-aos-delay="400">
+                    <h3><i class="bi bi-star"></i> Technical Reviews</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <i class="bi bi-journal-check"></i> Technical Reviews
+                            <span>88%</span>
+                        </div>
+                        <div class="skill-bar" style="position:relative;">
+                            <div class="skill-progress" data-level="88%"></div>
+                            <span class="progress-indicator" style="position:absolute; left:88%; top:50%; transform:translate(-50%,-50%); width:18px; height:18px; background:var(--primary-color); border-radius:50%; border:3px solid #fff; box-shadow:0 2px 8px rgba(67,97,238,0.2);"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="research" class="section research">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-aos="fade-up">Research Experience</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">My academic research contributions</p>
+            </div>
+            <div class="research-grid">
+                <div class="research-list" data-aos="fade-right">
+                    <h3><i class="bi bi-journal-text"></i> Research Projects</h3>
+                    <ul>
+                        <li><i class="bi bi-check-circle"></i> Blockchain-Enabled Cocoa Supply Chain Management</li>
+                        <li><i class="bi bi-check-circle"></i> Leveraging Blockchain for Sustainable Small-Scale Mining</li>
+                        <li><i class="bi bi-check-circle"></i> Advancing Network Intrusion Detection Using Deep CNN</li>
+                        <li><i class="bi bi-check-circle"></i> Hypothyroid Disease Prediction Using Machine Learning</li>
+                        <li><i class="bi bi-check-circle"></i> ML for Rock Type Prediction in Obuasi Gold District</li>
+                    </ul>
+                </div>
+                <div class="research-interests" data-aos="fade-left">
+                    <h3><i class="bi bi-search"></i> Research Interests</h3>
+                    <div class="interests-grid">
+                        <div class="interest-card hover-effect">
+                            <i class="bi bi-robot"></i>
+                            <h4>Machine Learning</h4>
+                        </div>
+                        <div class="interest-card hover-effect">
+                            <i class="bi bi-cpu"></i>
+                            <h4>Artificial Intelligence</h4>
+                        </div>
+                        <div class="interest-card hover-effect">
+                            <i class="bi bi-diagram-3"></i>
+                            <h4>Deep Learning</h4>
+                        </div>
+                        <div class="interest-card hover-effect">
+                            <i class="bi bi-chat-left-text"></i>
+                            <h4>NLP</h4>
+                        </div>
+                        <div class="interest-card hover-effect">
+                            <i class="bi bi-shield-lock"></i>
+                            <h4>Cryptography</h4>
+                        </div>
+                        <div class="interest-card hover-effect">
+                            <i class="bi bi-question-circle"></i>
+                            <h4>Quantum Computing</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collaborators" data-aos="fade-up">
+                <h3><i class="bi bi-people"></i> Research Collaborators</h3>
+                <div class="collaborators-grid">
+                    <div class="collaborator-card hover-effect">
+                        <div class="collaborator-avatar">
+                            <i class="bi bi-person-circle"></i>
+                        </div>
+                        <h4>Dr. Emmanuel Daanoba Sunkari</h4>
+                        <p>Assistant Professor, UMaT</p>
+                    </div>
+                    <div class="collaborator-card hover-effect">
+                        <div class="collaborator-avatar">
+                            <i class="bi bi-person-circle"></i>
+                        </div>
+                        <h4>Dr. Eric Affum</h4>
+                        <p>Lecturer, UMaT</p>
+                    </div>
+                    <div class="collaborator-card hover-effect">
+                        <div class="collaborator-avatar">
+                            <i class="bi bi-person-circle"></i>
+                        </div>
+                        <h4>Eng. George Essah Yaw Okai</h4>
+                        <p>Lecturer, UMaT</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="certifications" class="section certifications">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-aos="fade-up">Certifications</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">My professional certifications</p>
+            </div>
+            <div class="certification-filters">
+                <button class="filter-btn active" data-filter="all" data-aos="fade-up" data-aos-delay="100">
+                    <i class="bi bi-collection"></i> All
+                </button>
+                <button class="filter-btn" data-filter="data-science" data-aos="fade-up" data-aos-delay="150">
+                    <i class="bi bi-database"></i> Data Science
+                </button>
+                <button class="filter-btn" data-filter="machine-learning" data-aos="fade-up" data-aos-delay="200">
+                    <i class="bi bi-robot"></i> Machine Learning
+                </button>
+                <button class="filter-btn" data-filter="others" data-aos="fade-up" data-aos-delay="250">
+                    <i class="bi bi-stars"></i> Others
+                </button>
+            </div>
+            
+            <div class="certifications-grid">
+                <div class="certification-card hover-effect" data-category="data-science" data-aos="fade-up" data-aos-delay="100">
+                    <div class="certification-header">
+                        <div class="certification-icon">
+                            <i class="bi bi-award-fill"></i>
+                        </div>
+                        <div class="certification-title">
+                            <h3>Diploma in Using Python for Data Science</h3>
+                            <span class="certification-provider">Alison</span>
+                        </div>
+                        <div class="certification-date">
+                            <i class="bi bi-calendar"></i> 2023
+                        </div>
+                    </div>
+                    <div class="certification-body text-black">
+                        <p>Completed with distinction in data science applications using Python. Covered topics such as data manipulation, visualization, and machine learning algorithms.</p>
+                    </div>
+                    <div class="certification-footer">
+                        <a href="#" class="btn btn-outline btn-magnetic">
+                            <i class="bi bi-eye"></i> View Certificate
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section contact-section">
-        <h2>Contact</h2>
-        <div class="contact-info">
-            <p>
-                <i class="fas fa-envelope"></i> 
-                Email: <a href="mailto:awbasit99@gmail.com">awbasit99@gmail.com</a>
-            </p>
-            <p>
-                <i class="fab fa-linkedin"></i> 
-                LinkedIn: <a href="https://www.linkedin.com/public-profile/settings?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_self_edit_contact-info%3B8rWcIEYMTle%2BiRwX1EthtA%3D%3D" target="_blank">LinkedIn Profile</a>
-            </p>
-            <p>
-                <i class="fas fa-map-marker-alt"></i>
-                Location: Nungua, Accra, Ghana
-            </p>
-        </div>
-    
-        <!-- Embedded Google Map for Nungua, Accra, Ghana -->
-        <div class="map-container">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15905.449154859028!2d-0.05413893170298803!3d5.587900246068229!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9d004a2f0aeb%3A0xb2eaf85b02f8b65f!2sNungua%2C%20Accra%2C%20Ghana!5e0!3m2!1sen!2sgh!4v1695294030115!5m2!1sen!2sgh" 
-                width="600" 
-                height="450" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy">
-            </iframe>
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Let's work together</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="contact-card hover-effect">
+                        <div class="contact-icon">
+                            <i class="bi bi-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <a href="mailto:awbasit99@gmail.com">awbasit99@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-card hover-effect">
+                        <div class="contact-icon">
+                            <i class="bi bi-geo-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>Nungua, Accra, Ghana</p>
+                        </div>
+                    </div>
+                    <div class="contact-card hover-effect">
+                        <div class="contact-icon">
+                            <i class="bi bi-linkedin"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>LinkedIn</h3>
+                            <a href="https://www.linkedin.com/in/yourprofile" target="_blank">Connect with me</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form" data-aos="fade-left">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name"><i class="bi bi-person"></i> Name</label>
+                            <input type="text" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email"><i class="bi bi-envelope"></i> Email</label>
+                            <input type="email" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject"><i class="bi bi-chat-square-text"></i> Subject</label>
+                            <input type="text" id="subject" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <label for="message"><i class="bi bi-chat-left-text"></i> Message</label>
+                            <textarea id="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-magnetic">
+                            <i class="bi bi-send"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand" data-aos="fade-up">
+                    <div class="footer-logo">
+                        <i class="bi bi-code-slash"></i> A.W.B
+                    </div>
+                    <p class="footer-text">Machine Learning Engineer & AI Researcher</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link hover-effect"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="social-link hover-effect"><i class="bi bi-github"></i></a>
+                        <a href="#" class="social-link hover-effect"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="social-link hover-effect"><i class="bi bi-google"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home"><i class="bi bi-chevron-right"></i> Home</a></li>
+                        <li><a href="#about"><i class="bi bi-chevron-right"></i> About</a></li>
+                        <li><a href="#projects"><i class="bi bi-chevron-right"></i> Projects</a></li>
+                        <li><a href="#research"><i class="bi bi-chevron-right"></i> Research</a></li>
+                        <li><a href="#contact"><i class="bi bi-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="bi bi-envelope"></i> awbasit99@gmail.com</li>
+                        <li><i class="bi bi-geo-alt"></i> Nungua, Accra, Ghana</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Abdul Wahab Basit. All rights reserved.</p>
+                <a href="/assets/cv/CV__Basit.pdf" download class="btn btn-outline btn-magnetic">
+                    <i class="bi bi-download"></i> Download CV
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#home" class="back-to-top">
+        <i class="bi bi-arrow-up"></i>
+    </a>
+
+    <!-- CDNs for JS -->
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <!-- AOS (Animate On Scroll) -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- Magnetic Buttons -->
+    <script src="https://cdn.jsdelivr.net/npm/magnetic@2.0.1/dist/magnetic.min.js"></script>
     
-    <!-- Downloading CV -->
-    <section id="download-cv-section" class="section">
-        <h2>Download My CV</h2>
-        <a href="/assets/cv/CV__Basit.pdf" download class="download-btn" title="Click to download my CV" onclick="gtag('event', 'download', {'event_category': 'CV', 'event_label': 'Download CV Button'});">
-            <i class="fas fa-download"></i> Download CV
-        </a>       
-    </section>
-
-    <!-- Footer Section -->
-  <footer class="footer-section">
-    <p class="footer">&copy; 2024 Abdul Wahab Basit. All rights reserved.</p>
-  </footer>
-
-    <!-- JavaScript for smooth scrolling and advanced animations -->
-    <script src="script.js"></script>
+    <!-- Main JS -->
+    <script src="js/main.js"></script>
 </body>
 </html>
