@@ -73,7 +73,10 @@
             <div class="hero-content">
                 <h1 class="hero-title" data-aos="fade-down" data-aos-delay="100">Abdul Wahab Basit</h1>
                 <h2 class="hero-subtitle" data-aos="fade-down" data-aos-delay="200">
-                    <span class="typewriter" data-text='["Machine Learning Engineer", "AI Researcher", "Data Scientist"]'></span>
+                    <span class="typewriter-container" data-text='["Machine Learning Engineer", "AI Researcher", "Data Scientist", "Data Engineer"]'>
+                        <span class="typewriter-text"></span>
+                        <span class="typewriter-cursor"></span>
+                    </span>
                 </h2>
                 <p class="hero-text" data-aos="fade-down" data-aos-delay="300">Developing intelligent solutions and mentoring the next generation of technologists</p>
                 <div class="hero-cta" data-aos="fade-down" data-aos-delay="400">
@@ -85,10 +88,10 @@
                     </a>
                 </div>
                 <div class="hero-social" data-aos="fade-down" data-aos-delay="500">
-                    <a href="#" class="social-link hover-effect"><i class="bi bi-linkedin"></i></a>
-                    <a href="#" class="social-link hover-effect"><i class="bi bi-github"></i></a>
-                    <a href="#" class="social-link hover-effect"><i class="bi bi-twitter"></i></a>
-                    <a href="#" class="social-link hover-effect"><i class="bi bi-google"></i></a>
+                    <a href="https://www.linkedin.com/in/basit-abdul-wahab-a24ba8241/" class="social-link hover-effect" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i></a>
+                    <a href="https://github.com/wabasit" class="social-link hover-effect" target="_blank" rel="noopener"><i class="bi bi-github"></i></a>
+                    <a href="https://twitter.com/" class="social-link hover-effect" target="_blank" rel="noopener"><i class="bi bi-twitter"></i></a>
+                    <a href="mailto:awbasit99@gmail.com" class="social-link hover-effect"><i class="bi bi-google"></i></a>
                 </div>
             </div>
             <div class="hero-image" data-aos="fade-left" data-aos-delay="600">
@@ -121,7 +124,7 @@
                         <p>I served as a part-time Research Assistant to Dr. Eric Affum while also working as a Graduate Training candidate for Process and Plant Automation Ghana Limited, a leading automation company in Ghana.</p>
                     </div>
                     <div class="about-details">
-                        <div class="detail-card hover-effect" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="detail-card" data-aos="zoom-in" data-aos-delay="100">
                             <div class="detail-icon">
                                 <i class="bi bi-briefcase"></i>
                             </div>
@@ -130,7 +133,7 @@
                                 <p>5+ Years in Research & Development</p>
                             </div>
                         </div>
-                        <div class="detail-card hover-effect" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="detail-card " data-aos="zoom-in" data-aos-delay="200">
                             <div class="detail-icon">
                                 <i class="bi bi-mortarboard"></i>
                             </div>
@@ -141,7 +144,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="about-skills hover-effect" data-aos="fade-left">
+                <div class="about-skills " data-aos="fade-left">
                     <h3 class="skills-title">
                         <i class="bi bi-tools"></i> Technical Skills
                     </h3>
@@ -163,6 +166,12 @@
                         </div>
                         <div class="skill-badge hover-effect">
                             <i class="bi bi-git"></i> Git
+                        </div>
+                        <div class="skill-badge hover-effect">
+                            <i class="bi bi-box"></i> Docker
+                        </div>
+                        <div class="skill-badge hover-effect">
+                            <i class="bi bi-gear"></i> CI/CD
                         </div>
                     </div>
                     <a href="#skills" class="btn btn-outline btn-magnetic">
@@ -190,108 +199,94 @@
                 <h2 class="section-title" data-aos="fade-up">Technical Skills</h2>
                 <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">My technical proficiency</p>
             </div>
-            <div class="skills-container">
-                <div class="skills-category hover-effect" data-aos="fade-up" data-aos-delay="100">
-                    <h3><i class="bi bi-code-slash"></i> Programming</h3>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <i class="bi bi-filetype-py"></i> Python
-                            <span>95%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-level="95%"></div>
-                        </div>
+            <div class="skills-cards-grid">
+                <!-- Programming -->
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <i class="bi bi-code-slash"></i>
+                        <span>Programming</span>
                     </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <i class="bi bi-filetype-js"></i> JavaScript
-                            <span>85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-level="85%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <i class="bi bi-filetype-html"></i> HTML/CSS
-                            <span>90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-level="90%"></div>
-                        </div>
+                    <div class="skill-card-body">
+                        <div class="skill-badge"><i class="bi bi-filetype-py"></i> Python</div>
+                        <div class="skill-badge"><i class="bi bi-filetype-js"></i> JavaScript</div>
+                        <div class="skill-badge"><i class="bi bi-filetype-html"></i> HTML/CSS</div>
+                        <div class="skill-badge"><i class="bi bi-git"></i> Git</div>
                     </div>
                 </div>
-                <div class="skills-category hover-effect" data-aos="fade-up" data-aos-delay="200">
-                    <h3><i class="bi bi-cpu"></i> ML/AI</h3>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <i class="bi bi-robot"></i> Machine Learning
-                            <span>90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-level="90%"></div>
-                        </div>
+                <!-- ML/AI -->
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <i class="bi bi-cpu"></i>
+                        <span>ML / AI</span>
                     </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <i class="bi bi-graph-up"></i> Deep Learning
-                            <span>85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-level="85%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <i class="bi bi-bar-chart"></i> Data Visualization
-                            <span>80%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-level="80%"></div>
-                        </div>
+                    <div class="skill-card-body">
+                        <div class="skill-badge"><i class="bi bi-robot"></i> Machine Learning</div>
+                        <div class="skill-badge"><i class="bi bi-graph-up"></i> Deep Learning</div>
+                        <div class="skill-badge"><i class="bi bi-bar-chart"></i> Data Visualization</div>
                     </div>
                 </div>
-                <div class="skills-category hover-effect" data-aos="fade-up" data-aos-delay="300">
-                    <h3><i class="bi bi-clipboard-data"></i> Data</h3>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <i class="bi bi-database"></i> SQL
-                            <span>80%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-level="80%"></div>
-                        </div>
+                <!-- Data -->
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <i class="bi bi-clipboard-data"></i>
+                        <span>Data</span>
                     </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <i class="bi bi-file-earmark-excel"></i> Excel
-                            <span>75%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-level="75%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <i class="bi bi-cloud-arrow-down"></i> Data Engineering
-                            <span>70%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-level="70%"></div>
-                        </div>
+                    <div class="skill-card-body">
+                        <div class="skill-badge"><i class="bi bi-database"></i> SQL</div>
+                        <div class="skill-badge"><i class="bi bi-file-earmark-excel"></i> Excel</div>
+                        <div class="skill-badge"><i class="bi bi-cloud-arrow-down"></i> Data Engineering</div>
                     </div>
                 </div>
-                <div class="skills-category hover-effect" data-aos="fade-up" data-aos-delay="400">
-                    <h3><i class="bi bi-star"></i> Technical Reviews</h3>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <i class="bi bi-journal-check"></i> Technical Reviews
-                            <span>88%</span>
-                        </div>
-                        <div class="skill-bar" style="position:relative;">
-                            <div class="skill-progress" data-level="88%"></div>
-                            <span class="progress-indicator" style="position:absolute; left:88%; top:50%; transform:translate(-50%,-50%); width:18px; height:18px; background:var(--primary-color); border-radius:50%; border:3px solid #fff; box-shadow:0 2px 8px rgba(67,97,238,0.2);"></span>
-                        </div>
+                <!-- Cloud Platform -->
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <i class="bi bi-cloud"></i>
+                        <span>Cloud Platform</span>
+                    </div>
+                    <div class="skill-card-body">
+                        <div class="skill-badge"><i class="bi bi-aws"></i> AWS</div>
+                    </div>
+                </div>
+                <!-- Frameworks -->
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <i class="bi bi-layers"></i>
+                        <span>Frameworks</span>
+                    </div>
+                    <div class="skill-card-body">
+                        <div class="skill-badge">OpenCV</div>
+                        <div class="skill-badge">PyTorch</div>
+                        <div class="skill-badge">Keras</div>
+                        <div class="skill-badge">Pandas</div>
+                        <div class="skill-badge">Flask</div>
+                        <div class="skill-badge">Numpy</div>
+                        <div class="skill-badge">Pyspark</div>
+                        <div class="skill-badge">Apache Airflow</div>
+                        <div class="skill-badge">NodeJS</div>
+                    </div>
+                </div>
+                <!-- Tools -->
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <i class="bi bi-tools"></i>
+                        <span>Tools</span>
+                    </div>
+                    <div class="skill-card-body">
+                        <div class="skill-badge">Apache Kafka</div>
+                        <div class="skill-badge">Apache Spark</div>
+                        <div class="skill-badge">AWS (S3, EMR, Redshift, Glue)</div>
+                        <div class="skill-badge">Docker</div>
+                        <div class="skill-badge">CI/CD</div>
+                    </div>
+                </div>
+                <!-- Technical Reviews -->
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <i class="bi bi-star"></i>
+                        <span>Technical Reviews</span>
+                    </div>
+                    <div class="skill-card-body">
+                        <div class="skill-badge"><i class="bi bi-journal-check"></i> Technical Reviews</div>
                     </div>
                 </div>
             </div>
@@ -301,74 +296,138 @@
     <section id="research" class="section research">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title" data-aos="fade-up">Research Experience</h2>
-                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">My academic research contributions</p>
+                <h2 class="section-title" data-aos="fade-up">
+                    <i class="bi bi-book"></i> Research Experience
+                </h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                    My academic research contributions
+                </p>
             </div>
-            <div class="research-grid">
+            <div class="research-main-grid">
+                <!-- Research Projects -->
                 <div class="research-list" data-aos="fade-right">
-                    <h3><i class="bi bi-journal-text"></i> Research Projects</h3>
-                    <ul>
-                        <li><i class="bi bi-check-circle"></i> Blockchain-Enabled Cocoa Supply Chain Management</li>
-                        <li><i class="bi bi-check-circle"></i> Leveraging Blockchain for Sustainable Small-Scale Mining</li>
-                        <li><i class="bi bi-check-circle"></i> Advancing Network Intrusion Detection Using Deep CNN</li>
-                        <li><i class="bi bi-check-circle"></i> Hypothyroid Disease Prediction Using Machine Learning</li>
-                        <li><i class="bi bi-check-circle"></i> ML for Rock Type Prediction in Obuasi Gold District</li>
-                    </ul>
-                </div>
-                <div class="research-interests" data-aos="fade-left">
-                    <h3><i class="bi bi-search"></i> Research Interests</h3>
-                    <div class="interests-grid">
-                        <div class="interest-card hover-effect">
-                            <i class="bi bi-robot"></i>
-                            <h4>Machine Learning</h4>
+                    <h3 class="research-list-title">
+                        <i class="bi bi-journal-text"></i> Research Projects
+                    </h3>
+                    <div class="research-cards-grid">
+                        <div class="research-card">
+                            <button class="research-card-header">
+                                <i class="bi bi-check-circle"></i>
+                                <span>Blockchain-Enabled Cocoa Supply Chain Management</span>
+                                <span class="expand-icon"><i class="bi bi-chevron-down"></i></span>
+                            </button>
+                            <div class="research-card-body">
+                                <p>
+                                    This project explores the use of blockchain technology to enhance transparency and traceability in the cocoa supply chain, ensuring fair trade and quality assurance from farm to consumer.
+                                </p>
+                            </div>
                         </div>
-                        <div class="interest-card hover-effect">
-                            <i class="bi bi-cpu"></i>
-                            <h4>Artificial Intelligence</h4>
+                        <div class="research-card">
+                            <button class="research-card-header">
+                                <i class="bi bi-check-circle"></i>
+                                <span>Leveraging Blockchain for Sustainable Small-Scale Mining</span>
+                                <span class="expand-icon"><i class="bi bi-chevron-down"></i></span>
+                            </button>
+                            <div class="research-card-body">
+                                <p>
+                                    <!-- Add your summary here -->
+                                </p>
+                            </div>
                         </div>
-                        <div class="interest-card hover-effect">
-                            <i class="bi bi-diagram-3"></i>
-                            <h4>Deep Learning</h4>
+                        <div class="research-card">
+                            <button class="research-card-header">
+                                <i class="bi bi-check-circle"></i>
+                                <span>Advancing Network Intrusion Detection Using Deep CNN</span>
+                                <span class="expand-icon"><i class="bi bi-chevron-down"></i></span>
+                            </button>
+                            <div class="research-card-body">
+                                <p>
+                                    <!-- Add your summary here -->
+                                </p>
+                            </div>
                         </div>
-                        <div class="interest-card hover-effect">
-                            <i class="bi bi-chat-left-text"></i>
-                            <h4>NLP</h4>
+                        <div class="research-card">
+                            <button class="research-card-header">
+                                <i class="bi bi-check-circle"></i>
+                                <span>Hypothyroid Disease Prediction Using Machine Learning</span>
+                                <span class="expand-icon"><i class="bi bi-chevron-down"></i></span>
+                            </button>
+                            <div class="research-card-body">
+                                <p>
+                                    <!-- Add your summary here -->
+                                </p>
+                            </div>
                         </div>
-                        <div class="interest-card hover-effect">
-                            <i class="bi bi-shield-lock"></i>
-                            <h4>Cryptography</h4>
-                        </div>
-                        <div class="interest-card hover-effect">
-                            <i class="bi bi-question-circle"></i>
-                            <h4>Quantum Computing</h4>
+                        <div class="research-card">
+                            <button class="research-card-header">
+                                <i class="bi bi-check-circle"></i>
+                                <span>ML for Rock Type Prediction in Obuasi Gold District</span>
+                                <span class="expand-icon"><i class="bi bi-chevron-down"></i></span>
+                            </button>
+                            <div class="research-card-body">
+                                <p>
+                                    <!-- Add your summary here -->
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="collaborators" data-aos="fade-up">
-                <h3><i class="bi bi-people"></i> Research Collaborators</h3>
-                <div class="collaborators-grid">
-                    <div class="collaborator-card hover-effect">
-                        <div class="collaborator-avatar">
-                            <i class="bi bi-person-circle"></i>
+                <!-- Research Interests & Collaborators -->
+                <div class="research-side" data-aos="fade-left">
+                    <div class="research-interests">
+                        <h3><i class="bi bi-search"></i> Research Interests</h3>
+                        <div class="interests-grid">
+                            <div class="interest-card hover-effect">
+                                <i class="bi bi-robot"></i>
+                                <h4>Machine Learning</h4>
+                            </div>
+                            <div class="interest-card hover-effect">
+                                <i class="bi bi-cpu"></i>
+                                <h4>Artificial Intelligence</h4>
+                            </div>
+                            <div class="interest-card hover-effect">
+                                <i class="bi bi-diagram-3"></i>
+                                <h4>Deep Learning</h4>
+                            </div>
+                            <div class="interest-card hover-effect">
+                                <i class="bi bi-chat-left-text"></i>
+                                <h4>NLP</h4>
+                            </div>
+                            <div class="interest-card hover-effect">
+                                <i class="bi bi-shield-lock"></i>
+                                <h4>Cryptography</h4>
+                            </div>
+                            <div class="interest-card hover-effect">
+                                <i class="bi bi-question-circle"></i>
+                                <h4>Quantum Computing</h4>
+                            </div>
                         </div>
-                        <h4>Dr. Emmanuel Daanoba Sunkari</h4>
-                        <p>Assistant Professor, UMaT</p>
                     </div>
-                    <div class="collaborator-card hover-effect">
-                        <div class="collaborator-avatar">
-                            <i class="bi bi-person-circle"></i>
+                    <div class="collaborators">
+                        <h3><i class="bi bi-people"></i> Research Collaborators</h3>
+                        <div class="collaborators-grid">
+                            <div class="collaborator-card hover-effect">
+                                <div class="collaborator-avatar">
+                                    <i class="bi bi-person-circle"></i>
+                                </div>
+                                <h4>Dr. Emmanuel Daanoba Sunkari</h4>
+                                <p>Assistant Professor, UMaT</p>
+                            </div>
+                            <div class="collaborator-card hover-effect">
+                                <div class="collaborator-avatar">
+                                    <i class="bi bi-person-circle"></i>
+                                </div>
+                                <h4>Dr. Eric Affum</h4>
+                                <p>Lecturer, UMaT</p>
+                            </div>
+                            <div class="collaborator-card hover-effect">
+                                <div class="collaborator-avatar">
+                                    <i class="bi bi-person-circle"></i>
+                                </div>
+                                <h4>Eng. George Essah Yaw Okai</h4>
+                                <p>Lecturer, UMaT</p>
+                            </div>
                         </div>
-                        <h4>Dr. Eric Affum</h4>
-                        <p>Lecturer, UMaT</p>
-                    </div>
-                    <div class="collaborator-card hover-effect">
-                        <div class="collaborator-avatar">
-                            <i class="bi bi-person-circle"></i>
-                        </div>
-                        <h4>Eng. George Essah Yaw Okai</h4>
-                        <p>Lecturer, UMaT</p>
                     </div>
                 </div>
             </div>
@@ -398,29 +457,49 @@
             </div>
             
             <div class="certifications-grid">
-                <div class="certification-card hover-effect" data-category="data-science" data-aos="fade-up" data-aos-delay="100">
-                    <div class="certification-header">
-                        <div class="certification-icon">
-                            <i class="bi bi-award-fill"></i>
+                <div class="cert-card">
+                    <div class="cert-card-header">
+                        <div class="cert-icon"><i class="bi bi-award-fill"></i></div>
+                        <div>
+                            <div class="cert-title">Diploma in Using Python for Data Science</div>
+                            <div class="cert-provider">Alison</div>
                         </div>
-                        <div class="certification-title">
-                            <h3>Diploma in Using Python for Data Science</h3>
-                            <span class="certification-provider">Alison</span>
-                        </div>
-                        <div class="certification-date">
-                            <i class="bi bi-calendar"></i> 2023
-                        </div>
+                        <div class="cert-year">2023</div>
                     </div>
-                    <div class="certification-body text-black">
-                        <p>Completed with distinction in data science applications using Python. Covered topics such as data manipulation, visualization, and machine learning algorithms.</p>
+                    <div class="cert-card-body">
+                        <p>
+                            Completed with distinction in data science applications using Python. Covered topics such as data manipulation, visualization, and machine learning algorithms.
+                        </p>
                     </div>
-                    <div class="certification-footer">
+                    <div class="cert-card-footer">
                         <a href="#" class="btn btn-outline btn-magnetic">
                             <i class="bi bi-eye"></i> View Certificate
                         </a>
                     </div>
                 </div>
-                
+                <div class="cert-card">
+                    <div class="cert-card-header">
+                        <div class="cert-icon">
+                            <img src="images/cert.jpeg" alt="IBM Coursera Certificate" style="width:48px; height:48px; object-fit:cover; border-radius:50%; border:2px solid #e9ecef;">
+                        </div>
+                        <div>
+                            <div class="cert-title">Supervised Machine Learning: Regression</div>
+                            <div class="cert-provider">IBM / Coursera</div>
+                        </div>
+                        <div class="cert-year">2024</div>
+                    </div>
+                    <div class="cert-card-body">
+                        <p>
+                            Successfully completed the "Supervised Machine Learning: Regression" course, covering regression algorithms and practical applications, authorized by IBM and offered through Coursera.
+                        </p>
+                    </div>
+                    <div class="cert-card-footer">
+                        <a href="https://coursera.org/verify/G8LDESGAXFLN" class="btn btn-outline btn-magnetic" target="_blank" rel="noopener">
+                            <i class="bi bi-eye"></i> View Certificate
+                        </a>
+                    </div>
+                </div>
+                <!-- Add more cert-card blocks for other certifications -->
             </div>
         </div>
     </section>
@@ -432,38 +511,33 @@
                 <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
                 <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Let's work together</p>
             </div>
-            <div class="contact-grid">
-                <div class="contact-info" data-aos="fade-right">
-                    <div class="contact-card hover-effect">
-                        <div class="contact-icon">
-                            <i class="bi bi-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Email</h3>
+            <div class="contact-cards-grid">
+                <!-- Contact Info Card -->
+                <div class="contact-info-card">
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon"><i class="bi bi-envelope"></i></div>
+                        <div>
+                            <div class="contact-info-title">Email</div>
                             <a href="mailto:awbasit99@gmail.com">awbasit99@gmail.com</a>
                         </div>
                     </div>
-                    <div class="contact-card hover-effect">
-                        <div class="contact-icon">
-                            <i class="bi bi-geo-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Location</h3>
-                            <p>Nungua, Accra, Ghana</p>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon"><i class="bi bi-geo-alt"></i></div>
+                        <div>
+                            <div class="contact-info-title">Location</div>
+                            <div>Nungua, Accra, Ghana</div>
                         </div>
                     </div>
-                    <div class="contact-card hover-effect">
-                        <div class="contact-icon">
-                            <i class="bi bi-linkedin"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>LinkedIn</h3>
-                            <a href="https://www.linkedin.com/in/yourprofile" target="_blank">Connect with me</a>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon"><i class="bi bi-linkedin"></i></div>
+                        <div>
+                            <div class="contact-info-title">LinkedIn</div>
+                            <a href="https://www.linkedin.com/in/basit-abdul-wahab-a24ba8241/" target="_blank" rel="noopener">Connect with me</a>
                         </div>
                     </div>
                 </div>
-                
-                <div class="contact-form" data-aos="fade-left">
+                <!-- Contact Form Card -->
+                <div class="contact-form-card">
                     <form id="contactForm">
                         <div class="form-group">
                             <label for="name"><i class="bi bi-person"></i> Name</label>
@@ -499,10 +573,10 @@
                     </div>
                     <p class="footer-text">Machine Learning Engineer & AI Researcher</p>
                     <div class="footer-social">
-                        <a href="#" class="social-link hover-effect"><i class="bi bi-linkedin"></i></a>
-                        <a href="#" class="social-link hover-effect"><i class="bi bi-github"></i></a>
-                        <a href="#" class="social-link hover-effect"><i class="bi bi-twitter"></i></a>
-                        <a href="#" class="social-link hover-effect"><i class="bi bi-google"></i></a>
+                        <a href="https://www.linkedin.com/in/basit-abdul-wahab-a24ba8241/" class="social-link hover-effect" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://github.com/wabasit" class="social-link hover-effect" target="_blank" rel="noopener"><i class="bi bi-github"></i></a>
+                        <a href="https://twitter.com/" class="social-link hover-effect" target="_blank" rel="noopener"><i class="bi bi-twitter"></i></a>
+                        <a href="mailto:awbasit99@gmail.com" class="social-link hover-effect"><i class="bi bi-google"></i></a>
                     </div>
                 </div>
                 <div class="footer-links" data-aos="fade-up" data-aos-delay="100">
@@ -518,7 +592,7 @@
                 <div class="footer-contact" data-aos="fade-up" data-aos-delay="200">
                     <h3>Contact Info</h3>
                     <ul>
-                        <li><i class="bi bi-envelope"></i> awbasit99@gmail.com</li>
+                        <li><i class="bi bi-envelope"></i> <a href="mailto:awbasit99@gmail.com">awbasit99@gmail.com</a></li>
                         <li><i class="bi bi-geo-alt"></i> Nungua, Accra, Ghana</li>
                     </ul>
                 </div>
@@ -550,5 +624,62 @@
     
     <!-- Main JS -->
     <script src="js/main.js"></script>
+    <script>
+    document.querySelectorAll('.research-card-header').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const card = this.closest('.research-card');
+            card.classList.toggle('open');
+            // Optionally, close others:
+            // document.querySelectorAll('.research-card').forEach(other => {
+            //     if (other !== card) other.classList.remove('open');
+            // });
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const typewriterContainer = document.querySelector('.typewriter-container');
+        if (!typewriterContainer) return;
+
+        const typewriterText = typewriterContainer.querySelector('.typewriter-text');
+        const cursor = typewriterContainer.querySelector('.typewriter-cursor');
+        let texts = typewriterContainer.getAttribute('data-text');
+        try {
+            texts = JSON.parse(texts.replace(/'/g, '"'));
+        } catch {
+            texts = ["Your Text Here"];
+        }
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 80;
+        let pauseTime = 1400;
+
+        function type() {
+            const current = texts[textIndex];
+            if (isDeleting) {
+                typewriterText.textContent = current.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typewriterText.textContent = current.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            if (!isDeleting && charIndex === current.length) {
+                setTimeout(() => { isDeleting = true; type(); }, pauseTime);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+                setTimeout(type, 400);
+            } else {
+                setTimeout(type, isDeleting ? typingSpeed / 2 : typingSpeed);
+            }
+        }
+
+        // Start typing
+        typewriterText.textContent = '';
+        cursor.textContent = '|';
+        type();
+    });
+    </script>
 </body>
 </html>
