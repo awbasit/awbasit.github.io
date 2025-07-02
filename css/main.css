@@ -95,7 +95,6 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.1rem;
     max-width: 700px;
     margin: 0 auto;
-    font-style: italic;
     /* Improved contrast for light mode */
     text-shadow: 0 1px 2px rgba(255,255,255,0.5), 0 1px 2px rgba(0,0,0,0.08);
 }
@@ -105,7 +104,6 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.1rem;
     max-width: 700px;
     margin: 0 auto;
-    font-style: italic;
     /* Improved contrast for light mode */
     text-shadow: 0 1px 2px rgba(255,255,255,0.5), 0 1px 2px rgba(0,0,0,0.08);
 }
@@ -542,8 +540,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .profile-frame {
     position: relative;
-    width: 400px;
-    height: 400px;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
@@ -603,13 +602,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .tech-icon {
-    width: 40px;
-    height: 40px;
+    width: 100%;
+    max-width: 80px;
+    height: auto;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: var(--primary-color);
     background-color: rgba(var(--primary-color), 0.1);
     transition: var(--transition);
@@ -713,14 +713,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .detail-icon {
-    width: 50px;
-    height: 50px;
+    width: 100%;
+    max-width: 80px;
+    height: auto;
     border-radius: 50%;
     background-color: rgba(var(--primary-color), 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: var(--primary-color);
     transition: var(--transition);
     flex-shrink: 0;
@@ -841,7 +842,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .project-image-container {
     width: 100%;
-    height: 200px;
+    max-width: 100%;
+    height: auto;
     position: relative;
     overflow: hidden;
 }
@@ -893,7 +895,6 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text-light);
     margin-bottom: 20px;
     flex-grow: 1;
-    font-style: italic;
 }
 
 .project-tags {
@@ -965,8 +966,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .skills-category:hover h3,
 .skills-category:hover .skill-info i,
-.skills-category:hover .skill-info span {
-    color: white;
+.skills-category:hover .skill-info span,
+.about-skills:hover .skills-title i,
+.about-skills:hover .skill-badge,
+.skill-badge:hover {
+    color: inherit !important;
 }
 
 .skills-category h3 {
@@ -1204,15 +1208,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .collaborator-avatar {
-    width: 80px;
-    height: 80px;
+    width: 100%;
+    max-width: 80px;
+    height: auto;
     border-radius: 50%;
     background-color: rgba(var(--primary-color), 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 15px;
-    font-size: 2.5rem;
+    font-size: 1.2rem;
     color: var(--primary-color);
     transition: var(--transition);
 }
@@ -1337,14 +1342,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .certification-icon {
-    width: 50px;
-    height: 50px;
+    width: 100%;
+    max-width: 80px;
+    height: auto;
     border-radius: 50%;
     background-color: rgba(var(--primary-color), 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: var(--primary-color);
     flex-shrink: 0;
     transition: var(--transition);
@@ -1385,7 +1391,6 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text-light);
     line-height: 1.6;
     transition: var(--transition);
-    font-style: italic;
 }
 
 .certification-footer {
@@ -1453,14 +1458,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .contact-icon {
-    width: 60px;
-    height: 60px;
+    width: 100%;
+    max-width: 80px;
+    height: auto;
     border-radius: 50%;
     background-color: rgba(var(--primary-color), 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: var(--primary-color);
     flex-shrink: 0;
     transition: var(--transition);
@@ -1702,130 +1708,81 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(-3px) scale(1.1);
 }
 
-
-
-/* Responsive Styles */
-@media (max-width: 1200px) {
+/* Responsive tweaks for extra small devices */
+@media (max-width: 400px) {
     .hero-title {
-        font-size: 3rem;
+        font-size: 1.2rem;
     }
-    
-    .hero-subtitle {
-        font-size: 1.3rem;
+    .section-title {
+        font-size: 1rem;
     }
+    .profile-frame {
+        width: 60px;
+        height: 60px;
+    }
+    .btn, .btn-primary, .btn-outline {
+        padding: 6px 8px;
+        font-size: 0.7rem;
+    }
+    .project-card, .certification-card, .collaborator-card, .detail-card {
+        padding: 5px !important;
+    }
+}
+
+/* Make images and videos responsive */
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Make fixed widths responsive */
+.profile-frame, .project-image-container, .collaborator-avatar, .certification-icon, .detail-icon, .tech-icon, .social-link, .footer-logo, .footer-social .social-link {
+    max-width: 100%;
+    width: auto;
+}
+
+/* Remove hardcoded widths for .profile-frame, .project-image-container, etc. Use max-width or relative units instead. */
+.profile-frame {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
 }
 
 @media (max-width: 992px) {
-    .about-grid,
-    .contact-grid,
-    .research-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-    .hero .container {
-        flex-direction: column;
-        text-align: center;
-    }
-    .hero-content {
-        max-width: 100%;
-        margin-bottom: 40px;
-    }
-    .hero-cta {
-        justify-content: center;
-    }
-    .hero-social {
-        justify-content: center;
-    }
     .profile-frame {
-        width: 220px;
-        height: 220px;
-    }
-    .footer-content {
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-    }
-    .skills-container {
-        grid-template-columns: 1fr;
-        gap: 20px;
+        max-width: 220px;
     }
 }
-
-@media (max-width: 768px) {
-    .hamburger {
-        display: block;
-    }
-    .nav-menu {
-        position: fixed;
-        left: -100%;
-        top: 80px;
-        flex-direction: column;
-        background-color: var(--card-bg);
-        width: 100%;
-        text-align: center;
-        transition: var(--transition);
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        padding: 20px 0;
-        z-index: 1001;
-    }
-    .nav-menu.active {
-        left: 0;
-    }
-    .nav-item {
-        margin: 15px 0;
-    }
-    .section-title {
-        font-size: 2rem;
-    }
-    .section {
-        padding: 60px 0;
-    }
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    .footer-brand, .footer-links, .footer-contact {
-        text-align: center;
-    }
-    .footer-social {
-        justify-content: center;
-    }
-    .skills-container {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-    .projects-grid, .certifications-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
 @media (max-width: 576px) {
-    .hero-title {
-        font-size: 2rem;
-    }
-    .hero-subtitle {
-        font-size: 1rem;
-    }
-    .hero-cta {
-        flex-direction: column;
-        gap: 10px;
-    }
-    .section-title {
-        font-size: 1.3rem;
-    }
-    .section {
-        padding: 40px 0;
-    }
-    .footer-bottom {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-    }
     .profile-frame {
-        width: 120px;
-        height: 120px;
+        max-width: 120px;
     }
-    .skills-category, .about-skills, .project-card, .certification-card, .collaborator-card, .detail-card {
-        padding: 10px !important;
+}
+@media (max-width: 400px) {
+    .profile-frame {
+        max-width: 60px;
+    }
+}
+
+/* Remove fixed width for .project-image-container */
+.project-image-container {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Remove fixed width for .collaborator-avatar, .certification-icon, .detail-icon, .tech-icon, .social-link, .footer-logo, .footer-social .social-link */
+.collaborator-avatar, .certification-icon, .detail-icon, .tech-icon, .social-link, .footer-logo, .footer-social .social-link {
+    width: 100%;
+    max-width: 80px;
+    height: auto;
+    font-size: 1.2rem;
+}
+@media (max-width: 576px) {
+    .collaborator-avatar, .certification-icon, .detail-icon, .tech-icon, .social-link, .footer-logo, .footer-social .social-link {
+        max-width: 40px;
+        font-size: 1rem;
     }
 }
 
@@ -1937,5 +1894,20 @@ body.dark-mode .footer-social .social-link:hover {
 .collaborator-card,
 .detail-card {
     border-radius: 0 !important;
+}
+
+.nav-link:hover, .nav-link.active, .nav-link:hover i, .nav-link.active i, .project-card:hover .project-title, .project-card:hover .project-tag, .footer-links a:hover, .footer-bottom a:hover, .footer a:hover, .footer-social .social-link:hover, body.dark-mode .footer a:hover, body.dark-mode .footer-social .social-link:hover, .contact-card:hover a, .contact-card:hover p, .contact-card:hover .contact-details a:hover, .detail-card:hover, .detail-card:hover .detail-content p, .about-skills:hover .skills-title i, .about-skills:hover .skill-badge, .skill-badge:hover, .skills-category:hover h3, .skills-category:hover .skill-info i, .skills-category:hover .skill-info span, .research-list li:hover, .research-list li:hover i, .interest-card:hover, .interest-card:hover i, .collaborator-card:hover, .collaborator-card:hover p, .certification-card:hover .certification-header, .certification-card:hover .certification-body, .certification-card:hover .certification-footer, .certification-card:hover .certification-provider, .certification-card:hover .certification-date {
+    color: inherit !important;
+}
+
+/* JetBrains Mono for technical/code elements */
+.hero-title,
+.section-title,
+.skills-title,
+.skill-badge,
+.tech-icon,
+.project-title,
+.project-tag {
+    font-family: 'JetBrains Mono', monospace !important;
 }
 
