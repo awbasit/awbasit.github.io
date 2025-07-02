@@ -2195,3 +2195,61 @@ body.dark-mode .skill-badge {
     }
 }
 
+/* --- Professional Research Experience Layout --- */
+.research-main-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 48px;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.research-list-title {
+    font-size: 1.25rem;
+    color: var(--primary-color, #4459b8);
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.research-side {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+@media (max-width: 900px) {
+    .research-main-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    .research-side {
+        flex-direction: row;
+        gap: 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    .research-main-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+    .research-side {
+        flex-direction: column;
+        gap: 18px;
+    }
+}
+
+/* Optional: Soft background for the section */
+.section.research {
+    background: linear-gradient(120deg, #f8fafc 60%, #e9ecef 100%);
+    border-top: 1px solid #e9ecef;
+    border-bottom: 1px solid #e9ecef;
+}
+body.dark-mode .section.research {
+    background: linear-gradient(120deg, #181a23 60%, #23263a 100%);
+    border-top: 1px solid #23263a;
+    border-bottom: 1px solid #23263a;
+}
+
