@@ -2147,3 +2147,51 @@ body.dark-mode .skill-badge {
     color: var(--accent-color, #4cc9f0);
 }
 
+/* --- Typewriter Professional UI --- */
+.typewriter-container {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.5em;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--primary-color, #4459b8);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.5px;
+    position: relative;
+    background: linear-gradient(90deg, #f8fafc 60%, #e9ecef 100%);
+    border-radius: 8px;
+    padding: 0.1em 0.4em;
+    box-shadow: 0 2px 8px rgba(67,97,238,0.04);
+}
+
+.typewriter-text {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: middle;
+    transition: color 0.2s;
+}
+
+.typewriter-cursor {
+    display: inline-block;
+    width: 1ch;
+    color: var(--primary-color, #4459b8);
+    background: none;
+    font-weight: 700;
+    font-size: 1.1em;
+    margin-left: 2px;
+    animation: blink-cursor 0.8s steps(1) infinite;
+}
+
+@keyframes blink-cursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@media (max-width: 600px) {
+    .typewriter-container {
+        font-size: 1.1rem;
+        padding: 0.1em 0.2em;
+    }
+}
+

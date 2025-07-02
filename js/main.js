@@ -133,59 +133,45 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Enhanced Typewriter Effect with GSAP
-class Typewriter {
-    constructor(element, texts, speed = 100, pause = 2000) {
-        this.element = element;
-        this.texts = texts;
-        this.speed = speed;
-        this.pause = pause;
-        this.currentText = '';
-        this.textIndex = 0;
-        this.charIndex = 0;
-        this.isDeleting = false;
-        this.type();
-    }
-    
-    type() {
-        const currentText = this.texts[this.textIndex];
-        
-        if (this.isDeleting) {
-            this.currentText = currentText.substring(0, this.charIndex - 1);
-            this.charIndex--;
-        } else {
-            this.currentText = currentText.substring(0, this.charIndex + 1);
-            this.charIndex++;
-        }
-        
-        this.element.textContent = this.currentText;
-        
-        let typeSpeed = this.speed;
-        
-        if (this.isDeleting) {
-            typeSpeed /= 2;
-        }
-        
-        if (!this.isDeleting && this.currentText === currentText) {
-            typeSpeed = this.pause;
-            this.isDeleting = true;
-        } else if (this.isDeleting && this.currentText === '') {
-            this.isDeleting = false;
-            this.textIndex = (this.textIndex + 1) % this.texts.length;
-            typeSpeed = 500;
-        }
-        
-        setTimeout(() => this.type(), typeSpeed);
-    }
-}
-
-// Initialize Typewriter
+// Professional Typewriter Effect
 document.addEventListener('DOMContentLoaded', () => {
-    const typewriterElement = document.querySelector('.typewriter');
-    if (typewriterElement) {
-        const texts = typewriterElement.getAttribute('data-text').replace(/['"]+/g, '').split(',');
-        new Typewriter(typewriterElement, texts);
+    const typewriterContainer = document.querySelector('.typewriter-container');
+    if (!typewriterContainer) return;
+
+    const typewriterText = typewriterContainer.querySelector('.typewriter-text');
+    const cursor = typewriterContainer.querySelector('.typewriter-cursor');
+    const texts = JSON.parse(typewriterContainer.getAttribute('data-text').replace(/'/g, '"'));
+    let textIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typingSpeed = 80;
+    let pauseTime = 1400;
+
+    function type() {
+        const current = texts[textIndex];
+        if (isDeleting) {
+            typewriterText.textContent = current.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            typewriterText.textContent = current.substring(0, charIndex + 1);
+            charIndex++;
+        }
+
+        if (!isDeleting && charIndex === current.length) {
+            setTimeout(() => { isDeleting = true; type(); }, pauseTime);
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            textIndex = (textIndex + 1) % texts.length;
+            setTimeout(type, 400);
+        } else {
+            setTimeout(type, isDeleting ? typingSpeed / 2 : typingSpeed);
+        }
     }
+
+    // Start typing
+    typewriterText.textContent = '';
+    cursor.textContent = '|';
+    type();
 });
 
 // Animate Skills Progress Bars with GSAP
