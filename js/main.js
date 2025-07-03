@@ -530,26 +530,113 @@ function initProjectsLoading() {
     // Sample projects data
     const projects = [
         {
-            title: "Blockchain Supply Chain",
-            description: "A blockchain-based solution for tracking cocoa supply chain to ensure transparency and sustainability.",
-            image: "images/blockchain.jpg",
-            tags: ["Blockchain", "Smart Contracts", "Supply Chain"],
-            liveLink: "#",
-            githubLink: "#"
-        },
-        {
-            title: "Network Intrusion Detection",
-            description: "Deep learning model for detecting network intrusions using convolutional neural networks.",
-            image: "images/network.jpg",
-            tags: ["Deep Learning", "Cybersecurity", "CNN"],
-            githubLink: "#"
-        },
-        {
-            title: "Hypothyroid Disease Prediction",
-            description: "Machine learning model to predict hypothyroid disease using patient medical data.",
+            title: "Car Streaming Data Pipeline",
+            description: " Implemented robust data validation checks, improving pipeline reliability\
+             by 90%; Designed efficient Redshift Upsert strategy using staging tables, reducing duplication errors by 80%",
             image: "images/profile2.png",
-            tags: ["Machine Learning", "Healthcare", "Classification"],
+            tags: ["AWS Glue", "Step Functions", "Redshift", "Aurora MySQL", "S3", "SQL"],
+            githubLink: "#"
+        },
+        {
+            title: "Batch ETL for Rental Marketplace",
+            description: "Used Glue & Step Functions to deliver weekly rental KPIs and user engagement\
+             metrics; Used Step Functions to orchestrate Glue jobs, ensuring error handling and \
+             stepwise execution; Computed key business metrics: Occupancy Rate, Average Listing Price, \
+             Repeat Customer Rate, and Top Performing  Listings; Enhanced data transformation accuracy and traceability with custom Glue scripts and logging",
+            image: "images/profile2.png",
+            tags: ["AWS Glue", "Step Functions", "Redshift", "Aurora MySQL", "S3", "SQL"],
+            githubLink: "#"
+        },
+        {
+            title: "Batch ETL for Rental Marketplace",
+            description: "Used Glue & Step Functions to deliver weekly rental KPIs and user engagement\
+             metrics; Used Step Functions to orchestrate Glue jobs, ensuring error handling and \
+             stepwise execution; Computed key business metrics: Occupancy Rate, Average Listing Price, \
+             Repeat Customer Rate, and Top Performing  Listings; Enhanced data transformation accuracy and traceability with custom Glue scripts and logging",
+            image: "images/profile2.png",
+            tags: ["AWS Glue", "Step Functions", "Redshift", "Aurora MySQL", "S3", "SQL"],
+            githubLink: "#"
+        }
+        {
+            title: "Speech Therapy application",
+            description: "This is a speech therapy application for aphasic people",
+            image: "images/Screenshot.png",
+            tags: ["HTML", "CSS", "JavaScript"],
+            liveLink: "https://alphasia-research-site.onrender.com/",
+            githubLink: "https://github.com/yourusername/projectone"
+        },
+        {
+            title: "Rock Classifier",
+            description: "Analyzed 10,000 rock data and implemented classification models,\
+             Support Vector Machine, Random Forest, Gradient boost and Adaboost to predict \
+             the classification of rocks leveraging pandas, sklearn, matplotlib and seaborn",
+            image: "images/rock.jpg",
+            tags: ["SVM", "XGBOOST", "ADABOOST", "RANDOM FOREST"],
+            githubLink: "https://github.com/awbasit/Rocks-Classification"
+        },
+        {
+            title: "Flouride Concentration Prediction in Groundwater",
+            description: "Analyzed 2013 groundwater samples with hydrogeochemical compositions\
+             and implemented regression models, SVM, XGBoost, and Stochastic Gradient Descent \
+             XGBoost ranked as the best model with a mean squared error of 6.556056  and accuracy \
+             score 0.076923 ahead of SVM and Stochastic Gradient Descent",
+            image: "images/rock.jpg",
+            tags: ["SVM", "XGBOOST", "STOCHASTIC GRADIENT DESCENT"],
+            githubLink: "https://github.com/awbasit/Rocks-Classification"
+        },
+        {
+            title: "Employee Retention Prediction",
+            description: "This project was built to predict employee retaining or leaving",
+            image: "https://images.inc.com/uploaded_files/image/1920x1080/getty_539953664_213316.jpg",
+            tags: ["SCIKIT-LEARN", "NUMPY", "PANDAS"],
+            githubLink: "https://github.com/awbasit/employee-retention-predictor"
+        },
+        {
+            title: "Real-Time eCommerce Data Streaming with Apache Kafka and PostgreSQL",
+            description: "Designed a Kafka-based eCommerce pipeline streaming 30,000+ records,\
+             reducing ingestion lag by 70%. Implemented real-time health monitoring with <3s \
+             latency from source to dashboard",
+            image: "images/blockchain.jpg",
+            tags: ["Python", "Kafka", "PostgreSQL", "Docker"],
             liveLink: "#",
+            githubLink: "#"
+        },
+        {
+            title: "Inventory Management System Using PostgreSQL",
+            description: "Reduced inventory discrepancies by 98% and enabled real-time stock \
+             monitoring through automation and optimized querying. Optimized query performance\
+             and indexing, resulting in a 65% improvement in report generation speed",
+            image: "images/network.jpg",
+            tags: ["SQL", "Stored Procedures", "Triggers", "Python (ETL)"],
+            githubLink: "#"
+        },
+        {
+            title: "AWS Airflow & Redshift Orchestration",
+            description: "Built MWAA pipelines moving S3 data to Redshift, cutting manual load \
+             tasks by 100%. Configured AWS IAM roles, VPC, and CloudWatch logging for secure and \
+             observable operations. Reduced data latency from S3 to Redshift by 85% with streamlined \
+             Airflow task dependencies and retries. Validated pipeline success using Airflow’s monitoring UI and log inspection",
+            image: "images/profile2.png",
+            tags: ["AWS MWAA", "Apache Airflow", "S3", "Redshift", "Python"],
+            githubLink: "#"
+        },
+        {
+            title: "Music Streaming Analytics Pipeline with Airflow",
+            description: "Delivered genre/hour-based KPIs using Redshift and Airflow DAGs; improved\
+             BI report speed by 35%; Implemented robust data validation checks, improving pipeline \
+             reliability by 90%; Designed efficient Redshift Upsert strategy using staging tables, reducing duplication errors by 99%",
+            image: "images/profile2.png",
+            tags: ["RDS", "SQL", "Apache Airflow", "S3", "Redshift", "Python"],
+            githubLink: "#"
+        },
+        {
+            title: "Batch ETL for Rental Marketplace",
+            description: "Used Glue & Step Functions to deliver weekly rental KPIs and user engagement\
+             metrics; Used Step Functions to orchestrate Glue jobs, ensuring error handling and \
+             stepwise execution; Computed key business metrics: Occupancy Rate, Average Listing Price, \
+             Repeat Customer Rate, and Top Performing  Listings; Enhanced data transformation accuracy and traceability with custom Glue scripts and logging",
+            image: "images/profile2.png",
+            tags: ["AWS Glue", "Step Functions", "Redshift", "Aurora MySQL", "S3", "SQL"],
             githubLink: "#"
         }
     ];
