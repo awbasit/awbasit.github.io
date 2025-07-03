@@ -556,7 +556,7 @@ function initProjectsLoading() {
             image: "images/profile2.png",
             tags: ["AWS Glue", "Step Functions", "Redshift", "Aurora MySQL", "S3", "SQL"],
             githubLink: "#"
-        }
+        },
         {
             title: "Speech Therapy application",
             description: "This is a speech therapy application for aphasic people",
