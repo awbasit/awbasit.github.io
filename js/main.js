@@ -44,7 +44,6 @@ document.addEventListener('DOMContentLoaded', function() {
             once: true,
             mirror: false,
             disable: function() {
-                // Disable AOS on mobile devices for better performance
                 return window.innerWidth < 768;
             }
         });
@@ -57,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Enhanced Mobile Navigation with responsive handling
+// Enhanced Mobile Navigation
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 const header = document.querySelector('.header');
@@ -106,19 +105,20 @@ function initMobileNavigation() {
     }
 }
 
-// Enhanced Responsive Smooth Scrolling with GSAP
+// FIXED: Enhanced Smooth Scrolling for Navigation and Buttons
 function initSmoothScrolling() {
+    // Handle all anchor links (navigation, footer links, buttons)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             
             // Handle home link
-            if (targetId === '#home') {
+            if (targetId === '#home' || targetId === '#') {
                 if (typeof gsap !== 'undefined') {
                     gsap.to(window, {
                         scrollTo: { y: 0 },
-                        duration: window.innerWidth < 768 ? 0.8 : 1,
+                        duration: 1,
                         ease: "power2.inOut"
                     });
                 } else {
@@ -132,7 +132,7 @@ function initSmoothScrolling() {
             if (targetElement) {
                 // Calculate responsive offset
                 const headerHeight = header ? header.offsetHeight : 80;
-                const offset = window.innerWidth < 768 ? headerHeight + 20 : headerHeight;
+                const offset = headerHeight + 20;
                 
                 if (typeof gsap !== 'undefined') {
                     gsap.to(window, {
@@ -140,7 +140,7 @@ function initSmoothScrolling() {
                             y: targetElement,
                             offsetY: offset
                         },
-                        duration: window.innerWidth < 768 ? 0.8 : 1,
+                        duration: 1,
                         ease: "power2.inOut"
                     });
                 } else {
@@ -163,17 +163,25 @@ function updateActiveNavLink(activeLink) {
     document.querySelectorAll('.nav-link').forEach(link => {
         link.classList.remove('active');
     });
-    activeLink.classList.add('active');
+    
+    // Find the corresponding nav link if clicked element is not a nav link
+    const href = activeLink.getAttribute('href');
+    const correspondingNavLink = document.querySelector(`.nav-link[href="${href}"]`);
+    if (correspondingNavLink) {
+        correspondingNavLink.classList.add('active');
+    } else {
+        activeLink.classList.add('active');
+    }
 }
 
-// Enhanced Responsive Scroll Spy for Navigation
+// FIXED: Enhanced Scroll Spy for Navigation
 function initScrollSpy() {
     let ticking = false;
     
     function updateScrollSpy() {
         const scrollPosition = window.scrollY;
         const headerHeight = header ? header.offsetHeight : 80;
-        const offset = window.innerWidth < 768 ? headerHeight + 50 : headerHeight + 100;
+        const offset = headerHeight + 100;
         
         document.querySelectorAll('section').forEach(section => {
             const sectionTop = section.offsetTop - offset;
@@ -190,10 +198,10 @@ function initScrollSpy() {
             }
         });
         
-        // Enhanced Back to top button with responsive positioning
+        // FIXED: Back to top button functionality
         const backToTop = document.querySelector('.back-to-top');
         if (backToTop) {
-            const showThreshold = window.innerWidth < 768 ? 200 : 300;
+            const showThreshold = 300;
             if (scrollPosition > showThreshold) {
                 backToTop.classList.add('active');
                 backToTop.style.opacity = '1';
@@ -218,7 +226,7 @@ function initScrollSpy() {
     });
 }
 
-// Enhanced Professional Typewriter Effect with Responsive Text
+// Professional Typewriter Effect
 function initTypewriter() {
     const typewriterContainer = document.querySelector('.typewriter-container');
     if (!typewriterContainer) return;
@@ -238,11 +246,8 @@ function initTypewriter() {
     let textIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
-    
-    // Responsive typing speeds
-    const isMobile = window.innerWidth < 768;
-    let typingSpeed = isMobile ? 100 : 80;
-    let pauseTime = isMobile ? 1200 : 1400;
+    let typingSpeed = 80;
+    let pauseTime = 1400;
 
     function type() {
         const current = texts[textIndex];
@@ -271,7 +276,7 @@ function initTypewriter() {
     type();
 }
 
-// Responsive Skills Animation
+// Animate Skills Progress Bars
 function animateSkills() {
     const skillProgress = document.querySelectorAll('.skill-progress');
     
@@ -280,13 +285,9 @@ function animateSkills() {
         if (typeof gsap !== 'undefined') {
             gsap.to(progress, {
                 width: level,
-                duration: window.innerWidth < 768 ? 1 : 1.5,
+                duration: 1.5,
                 ease: "power2.out"
             });
-        } else {
-            // Fallback animation
-            progress.style.transition = `width ${window.innerWidth < 768 ? 1 : 1.5}s ease`;
-            progress.style.width = level;
         }
     });
 }
@@ -371,26 +372,24 @@ function initParticles() {
     }
 }
 
-// Enhanced Responsive Magnetic Buttons
+// Enhanced Magnetic Buttons
 function initMagneticButtons() {
     const magneticButtons = document.querySelectorAll('.btn-magnetic');
     
     // Only apply magnetic effect on non-touch devices
-    if (!('ontouchstart' in window)) {
+    if (!('ontouchstart' in window) && typeof Magnetic !== 'undefined') {
         magneticButtons.forEach(button => {
-            if (typeof Magnetic !== 'undefined') {
-                new Magnetic(button, {
-                    y: window.innerWidth < 768 ? 0.1 : 0.2,
-                    x: window.innerWidth < 768 ? 0.1 : 0.2,
-                    s: window.innerWidth < 768 ? 0.1 : 0.2,
-                    rs: 0.7
-                });
-            }
+            new Magnetic(button, {
+                y: 0.2,
+                x: 0.2,
+                s: 0.2,
+                rs: 0.7
+            });
         });
     }
 }
 
-// Enhanced Responsive Theme Toggle
+// Enhanced Theme Toggle
 function initThemeToggle() {
     const themeToggle = document.getElementById('themeToggle');
     const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
@@ -422,11 +421,11 @@ function initThemeToggle() {
     }
 }
 
-// Enhanced Responsive Intersection Observer
+// Enhanced Intersection Observer
 function initIntersectionObserver() {
     const observerOptions = {
-        threshold: window.innerWidth < 768 ? 0.05 : 0.1,
-        rootMargin: window.innerWidth < 768 ? '0px 0px -50px 0px' : '0px 0px -100px 0px'
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
@@ -450,10 +449,26 @@ function initIntersectionObserver() {
     });
 }
 
-// Enhanced Responsive Certifications Filter
+// FIXED: Enhanced Certifications Filter with proper data attributes
 function initCertificationFilter() {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const certificationCards = document.querySelectorAll('.cert-card');
+
+    // First, add data-category attributes to certification cards based on their content
+    certificationCards.forEach(card => {
+        const title = card.querySelector('.cert-title')?.textContent.toLowerCase() || '';
+        const provider = card.querySelector('.cert-provider')?.textContent.toLowerCase() || '';
+        const description = card.querySelector('.cert-card-body p')?.textContent.toLowerCase() || '';
+        
+        // Categorize based on content
+        if (title.includes('data') || title.includes('python') || description.includes('data science')) {
+            card.setAttribute('data-category', 'data-science');
+        } else if (title.includes('machine learning') || title.includes('classification') || title.includes('regression') || description.includes('machine learning')) {
+            card.setAttribute('data-category', 'machine-learning');
+        } else {
+            card.setAttribute('data-category', 'others');
+        }
+    });
 
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
@@ -465,48 +480,49 @@ function initCertificationFilter() {
             const filterValue = button.getAttribute('data-filter');
             
             certificationCards.forEach((card, index) => {
+                const shouldShow = filterValue === 'all' || card.getAttribute('data-category') === filterValue;
+                
                 if (typeof gsap !== 'undefined') {
-                    gsap.to(card, {
-                        opacity: 0,
-                        y: window.innerWidth < 768 ? 10 : 20,
-                        duration: 0.2,
-                        delay: index * 0.05,
-                        onComplete: () => {
-                            if (filterValue === 'all') {
-                                card.style.display = 'block';
-                            } else {
-                                const cardCategory = card.getAttribute('data-category');
-                                card.style.display = cardCategory === filterValue ? 'block' : 'none';
+                    if (shouldShow) {
+                        gsap.set(card, { display: 'block' });
+                        gsap.fromTo(card, 
+                            { opacity: 0, y: 20 },
+                            { 
+                                opacity: 1, 
+                                y: 0, 
+                                duration: 0.5, 
+                                delay: index * 0.1,
+                                ease: "power2.out"
                             }
-                            
-                            gsap.to(card, {
-                                opacity: 1,
-                                y: 0,
-                                duration: 0.3,
-                                delay: 0.1
-                            });
-                        }
-                    });
+                        );
+                    } else {
+                        gsap.to(card, {
+                            opacity: 0,
+                            y: -20,
+                            duration: 0.3,
+                            onComplete: () => {
+                                gsap.set(card, { display: 'none' });
+                            }
+                        });
+                    }
                 } else {
                     // Fallback animation
-                    card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-                    card.style.opacity = '0';
-                    setTimeout(() => {
-                        if (filterValue === 'all') {
-                            card.style.display = 'block';
-                        } else {
-                            const cardCategory = card.getAttribute('data-category');
-                            card.style.display = cardCategory === filterValue ? 'block' : 'none';
-                        }
+                    if (shouldShow) {
+                        card.style.display = 'block';
                         card.style.opacity = '1';
-                    }, 150);
+                        card.style.transform = 'translateY(0)';
+                    } else {
+                        card.style.display = 'none';
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(-20px)';
+                    }
                 }
             });
         });
     });
 }
 
-// Enhanced Responsive Projects Loading
+// Enhanced Projects Loading
 function initProjectsLoading() {
     const projectsContainer = document.getElementById('projects-container');
     if (!projectsContainer) return;
@@ -538,7 +554,7 @@ function initProjectsLoading() {
         }
     ];
     
-    // Display projects with responsive animations
+    // Display projects
     const projectImages = [
         "images/blockchain.jpg",
         "images/network.jpg", 
@@ -569,12 +585,12 @@ function initProjectsLoading() {
         
         projectsContainer.appendChild(projectCard);
         
-        // Responsive project card animation
+        // Animate project cards
         if (typeof gsap !== 'undefined') {
             gsap.from(projectCard, {
                 opacity: 0,
-                y: window.innerWidth < 768 ? 30 : 50,
-                duration: window.innerWidth < 768 ? 0.6 : 0.8,
+                y: 50,
+                duration: 0.8,
                 delay: index * 0.1,
                 ease: "power2.out",
                 scrollTrigger: {
@@ -587,7 +603,7 @@ function initProjectsLoading() {
     });
 }
 
-// Enhanced Responsive Contact Form
+// Enhanced Contact Form
 function initContactForm() {
     const contactForm = document.getElementById('contactForm');
     if (!contactForm) return;
@@ -603,7 +619,7 @@ function initContactForm() {
         
         console.log({ name, email, subject, message });
         
-        // Enhanced responsive success animation
+        // Success animation
         const submitButton = contactForm.querySelector('button[type="submit"]');
         const originalButtonText = submitButton.innerHTML;
         
@@ -640,9 +656,8 @@ function initContactForm() {
     });
 }
 
-// Enhanced Responsive Hover Effects
+// Enhanced Hover Effects
 function initHoverEffects() {
-    // Only apply hover effects on non-touch devices
     if (!('ontouchstart' in window)) {
         document.querySelectorAll('.hover-effect').forEach(element => {
             element.addEventListener('mousemove', (e) => {
