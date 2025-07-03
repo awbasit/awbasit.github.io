@@ -3207,7 +3207,7 @@ body {
 
 /* Research Interests - Fix light mode visibility */
 .research-interests {
-    background: var(--bg-secondary, #f8fafc);
+    background: var(--bg-secondary, #c3dbf4);
     padding: 2rem;
     border-radius: 20px;
     margin-bottom: 2rem;
@@ -3259,7 +3259,7 @@ body {
 
 /* Research Collaborators - Fix light mode visibility and center alignment */
 .collaborators {
-    background: var(--bg-secondary, #f8fafc);
+    background: var(--bg-secondary, #3b6289);
     padding: 2rem;
     border-radius: 20px;
 }
@@ -3285,7 +3285,7 @@ body {
 }
 
 .collaborator-card {
-    background: var(--bg-color, #ffffff);
+    background: var(--bg-color, #96d1f6);
     border: 2px solid var(--border-color, #e5e7eb);
     padding: 1.5rem;
     border-radius: 15px;
@@ -3386,7 +3386,7 @@ body {
     background: var(--bg-secondary, #f8fafc);
     border: 2px solid var(--border-color, #e5e7eb);
     border-radius: 50px;
-    color: var(--text-color, #1f2937);
+    color: var(--text-color, #242e3d);
     font-size: 0.9rem;
     font-weight: 500;
     cursor: pointer;
@@ -3559,6 +3559,7 @@ body {
     color: var(--text-color, #f9fafb);
 }
 
+
 /* 10. SCROLL BEHAVIOR IMPROVEMENTS */
 html {
     scroll-behavior: smooth;
@@ -3581,4 +3582,204 @@ section {
     section {
         scroll-margin-top: 80px;
     }
+}
+
+/* ===== VISIBILITY AND POSITIONING FIXES ===== */
+/* Add these CSS rules to fix the specific issues */
+
+/* 1. RESEARCH COLLABORATORS - CENTER CONTAINER AND FIX TEXT VISIBILITY */
+.research-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+}
+
+.collaborators {
+    background: var(--bg-secondary, #f8fafc);
+    padding: 2rem;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 800px; /* Limit max width for better centering */
+    margin: 0 auto; /* Center the container */
+}
+
+.collaborators h3 {
+    color: var(--text-color, #1f2937) !important;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+    text-align: center;
+}
+
+.collaborators-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.collaborator-card {
+    background: var(--bg-color, #ffffff);
+    border: 2px solid var(--border-color, #2d323c);
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 400px;
+}
+
+.collaborator-card h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-color, #131e2d) !important; /* Force dark text in light mode */
+    margin: 0 0 0.5rem 0;
+}
+
+.collaborator-card p {
+    font-size: 0.9rem;
+    color: var(--text-color, #374151) !important; /* Darker color for better visibility */
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Light mode specific overrides */
+.light-mode .collaborator-card h4 {
+    color: #1f2937 !important; /* Dark text for light mode */
+}
+
+.light-mode .collaborator-card p {
+    color: #374151 !important; /* Darker gray for light mode */
+}
+
+/* 2. CERTIFICATIONS - FIX DESCRIPTION TEXT VISIBILITY */
+.cert-card-body {
+    margin: 1rem 0;
+}
+
+.cert-card-body p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-color, #1f2937) !important; /* Use main text color instead of light gray */
+    margin: 0;
+}
+
+/* Light mode specific override for certification descriptions */
+.light-mode .cert-card-body p {
+    color: #374151 !important; /* Darker color for better readability in light mode */
+}
+
+/* Also fix the certification provider text */
+.cert-provider {
+    color: var(--primary-color, #4361ee) !important; /* Use primary color for provider */
+    font-weight: 500;
+}
+
+.cert-title {
+    color: var(--text-color, #1f2937) !important;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* 3. RESEARCH MAIN GRID - BETTER CENTERING */
+.research-main-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: start;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 4. RESPONSIVE ADJUSTMENTS */
+@media only screen and (max-width: 992px) {
+    .research-main-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .research-side {
+        align-items: center;
+        text-align: center;
+    }
+    
+    .collaborators {
+        max-width: 100%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .collaborators {
+        padding: 1.5rem;
+    }
+    
+    .collaborator-card {
+        padding: 1rem;
+        max-width: 100%;
+    }
+    
+    .collaborator-card h4 {
+        font-size: 1rem;
+    }
+    
+    .collaborator-card p {
+        font-size: 0.85rem;
+    }
+}
+
+/* 5. DARK MODE ENHANCEMENTS */
+.dark-mode .collaborator-card h4 {
+    color: #f9fafb !important; /* Light text for dark mode */
+}
+
+.dark-mode .collaborator-card p {
+    color: #d1d5db !important; /* Light gray for dark mode */
+}
+
+.dark-mode .cert-card-body p {
+    color: #d1d5db !important; /* Light gray for dark mode */
+}
+
+.dark-mode .cert-title {
+    color: #f9fafb !important; /* Light text for dark mode */
+}
+
+/* 6. ADDITIONAL CONTRAST IMPROVEMENTS */
+/* Ensure all text has sufficient contrast in light mode */
+.light-mode .research-interests h3,
+.light-mode .collaborators h3 {
+    color: #111827 !important; /* Very dark text */
+}
+
+.light-mode .interest-card h4 {
+    color: #111827 !important; /* Very dark text */
+}
+
+.light-mode .cert-card-header .cert-title {
+    color: #111827 !important; /* Very dark text */
+}
+
+.light-mode .cert-year {
+    color: #6b7280 !important; /* Medium gray for year */
+}
+
+/* 7. HOVER EFFECTS PRESERVATION */
+.collaborator-card:hover {
+    border-color: var(--primary-color, #4361ee);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(67, 97, 238, 0.15);
+}
+
+.cert-card:hover {
+    border-color: var(--primary-color, #4361ee);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(67, 97, 238, 0.15);
 }
