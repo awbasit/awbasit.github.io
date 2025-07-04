@@ -3908,133 +3908,50 @@ section {
 }
 
 /* Animation Enhancement */
-.research-card-header:focus {
+/* .research-card-header:focus {
     outline: 2px solid var(--primary-color, #4361ee);
     outline-offset: 2px;
-}
+} */
 
 /* Ensure proper stacking */
-.research-cards-grid {
+/* .research-cards-grid {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-}
+} */
 
 /* Additional hover effects */
-.research-card-header:active {
+/* .research-card-header:active {
     transform: scale(0.98);
-}
+} */
 
 /* Smooth transition for all states */
-.research-card * {
+/* .research-card * {
     transition: inherit;
-}
+} */
 
 /* MINIMAL CSS TO MAKE YOUR RESEARCH CARDS TOGGLE - DOES NOT CHANGE YOUR DESIGN */
 
 /* Hide the card body by default */
-.research-card-body {
+/* .research-card-body {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease, padding 0.3s ease;
     padding: 0 1.5rem;
-}
+} */
 
 /* Show the card body when open */
-.research-card.open .research-card-body {
-    max-height: 300px; /* Adjust if your content is longer */
-    padding: 1.5rem;
-}
+/* .research-card.open .research-card-body { */
+    /* max-height: 300px; Adjust if your content is longer */
+    /* padding: 1.5rem;
+} */
 
 /* Rotate the chevron icon when open */
-.research-card.open .expand-icon i {
+/* .research-card.open .expand-icon i {
     transform: rotate(180deg);
-}
+} */
 
 /* Smooth transition for the icon */
-.expand-icon i {
+/* .expand-icon i {
     transition: transform 0.3s ease;
-}
-
-/* COMPLETE FIX FOR RESEARCH CARD TOGGLE - ADD THIS TO YOUR CSS */
-
-/* Base card styling - preserves your design */
-.research-card {
-    background: var(--bg-color);
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    margin-bottom: 1rem;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-.research-card:hover {
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-/* Header button styling */
-.research-card-header {
-    width: 100%;
-    background: transparent;
-    border: none;
-    padding: 1rem 1.5rem;
-    text-align: left;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: var(--text-color);
-    font-weight: 500;
-    transition: background 0.3s ease;
-}
-
-.research-card-header:hover {
-    background: rgba(67, 97, 238, 0.05);
-}
-
-.research-card-header span {
-    flex: 1;
-    margin: 0 1rem;
-}
-
-/* Body - hidden by default */
-.research-card-body {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease;
-    background: var(--bg-secondary);
-    border-top: 1px solid var(--border-color);
-}
-
-/* Body - shown when open */
-.research-card.open .research-card-body {
-    max-height: 500px;
-    padding: 1.5rem;
-}
-
-/* Icon rotation */
-.expand-icon i {
-    transition: transform 0.3s ease;
-}
-
-.research-card.open .expand-icon i {
-    transform: rotate(180deg);
-}
-
-/* Text styling */
-.research-card-body p {
-    margin: 0;
-    line-height: 1.6;
-    color: var(--text-color);
-}
-
-/* Dark mode */
-.dark-mode .research-card {
-    background: var(--bg-dark);
-    border-color: var(--border-dark);
-}
-
-.dark-mode .research-card-body {
-    background: var(--bg-secondary-dark);
-    border-color: var(--border-dark);
-}
+} */
