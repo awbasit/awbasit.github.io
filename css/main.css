@@ -3803,7 +3803,7 @@ section {
 }
 
 /* Research Card Header (Clickable) */
-/* .research-card-header {
+.research-card-header {
     width: 100%;
     padding: 1.5rem;
     background: transparent;
@@ -3818,7 +3818,7 @@ section {
     color: var(--text-color, #1f2937);
     transition: all 0.3s ease;
     gap: 1rem;
-} */
+}
 
 .research-card-header:hover {
     background: rgba(67, 97, 238, 0.05);
@@ -3869,9 +3869,9 @@ section {
     border-color: var(--border-color, #374151);
 }
 
-/* .dark-mode .research-card-header {
+.dark-mode .research-card-header {
     color: var(--text-color, #f9fafb);
-} */
+}
 
 .dark-mode .research-card-body {
     background: var(--bg-secondary, #1f2937);
@@ -3883,9 +3883,9 @@ section {
 }
 
 /* Light Mode Specific Overrides */
-/* .light-mode .research-card-header {
+.light-mode .research-card-header {
     color: #1f2937 !important;
-} */
+}
 
 .light-mode .research-card-body p {
     color: #374151 !important;
@@ -3908,22 +3908,22 @@ section {
 }
 
 /* Animation Enhancement */
-/* .research-card-header:focus {
+.research-card-header:focus {
     outline: 2px solid var(--primary-color, #4361ee);
     outline-offset: 2px;
-} */
+}
 
 /* Ensure proper stacking */
-/* .research-cards-grid {
+.research-cards-grid {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-} */
+}
 
 /* Additional hover effects */
-/* .research-card-header:active {
+.research-card-header:active {
     transform: scale(0.98);
-} */
+}
 
 /* Smooth transition for all states */
 /* .research-card * {
