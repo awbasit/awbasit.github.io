@@ -2064,96 +2064,62 @@ body.dark-mode .research-card-body {
 /* --- Skills Cards Grid Layout --- */
 .skills-cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-    gap: 28px;
-    margin-top: 32px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin-top: 24px;
 }
 
 .skill-card {
     background: var(--card-bg, #fff);
-    border-radius: 14px;
-    box-shadow: 0 2px 12px rgba(67,97,238,0.07);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(67,97,238,0.08);
     border: 1px solid #e9ecef;
     display: flex;
     flex-direction: column;
-    transition: box-shadow 0.2s, transform 0.2s;
-    padding-bottom: 10px;
+    transition: box-shadow 0.18s, transform 0.18s;
+    padding: 18px 16px 12px 16px;
+    min-height: 180px;
+    align-items: flex-start;
 }
 
 .skill-card-header {
     display: flex;
     align-items: center;
-    gap: 12px;
-    font-size: 1.1rem;
+    gap: 10px;
+    font-size: 1.05rem;
     font-weight: 600;
     color: var(--primary-color, #4459b8);
-    padding: 1.1em 1.4em 0.5em 1.4em;
+    padding: 0 0 10px 0;
     border-bottom: 1px solid #e9ecef;
     background: none;
 }
 
 .skill-card-header i {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: var(--primary-color, #4459b8);
 }
 
 .skill-card-body {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    padding: 1em 1.4em 0.5em 1.4em;
+    gap: 7px;
+    padding: 10px 0 0 0;
 }
 
 .skill-badge {
     background-color: rgba(67, 97, 238, 0.08);
     color: var(--primary-color, #4459b8);
-    padding: 7px 15px;
-    border-radius: 30px;
-    font-size: 0.95rem;
+    padding: 6px 13px;
+    border-radius: 20px;
+    font-size: 0.92rem;
     font-weight: 500;
     display: flex;
     align-items: center;
-    gap: 7px;
-    margin-bottom: 6px;
+    gap: 6px;
+    margin-bottom: 4px;
     border: none;
     box-shadow: none;
     transition: none;
-}
-
-.skill-badge i {
-    font-size: 1.1rem;
-    color: var(--primary-color, #4459b8);
-}
-
-/* Responsive tweaks */
-@media (max-width: 900px) {
-    .skills-cards-grid {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    }
-}
-@media (max-width: 600px) {
-    .skills-cards-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Dark mode support */
-body.dark-mode .skill-card {
-    background: var(--card-dark, #23263a);
-    border: 1px solid #23263a;
-    box-shadow: 0 2px 12px rgba(67,97,238,0.15);
-}
-body.dark-mode .skill-card-header {
-    color: var(--accent-color, #4cc9f0);
-    border-bottom: 1px solid #23263a;
-}
-body.dark-mode .skill-card-header i,
-body.dark-mode .skill-badge i {
-    color: var(--accent-color, #4cc9f0);
-}
-body.dark-mode .skill-badge {
-    background-color: rgba(76, 201, 240, 0.08);
-    color: var(--accent-color, #4cc9f0);
 }
 
 /* --- Typewriter Professional UI --- */

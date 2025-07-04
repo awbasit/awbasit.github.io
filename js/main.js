@@ -754,12 +754,4 @@ document.addEventListener('DOMContentLoaded', function() {
     initContactForm();
     initHoverEffects();
     handleResize();
-    
-    // Initialize research card toggles
-    document.querySelectorAll('.research-card-header').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const card = this.closest('.research-card');
-            card.classList.toggle('open');
-        });
-    });
 });
