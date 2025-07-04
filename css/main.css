@@ -20,13 +20,22 @@
     --transition-slow: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.dark-mode {
+body.dark-mode {
     --text-color: #f8f9fa;
     --text-light: #adb5bd;
     --bg-color: #1a1a2e;
     --bg-light: #2a2a3a;
     --card-bg: #2a2a3a;
     --box-shadow: var(--box-shadow-dark);
+}
+
+body.light-mode {
+    --text-color: #2b2d42;
+    --text-light: #8d99ae;
+    --bg-color: #f8f9fa;
+    --bg-light: #ffffff;
+    --card-bg: #ffffff;
+    --box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -3579,9 +3588,9 @@ section {
         padding: 3rem 0;
     }
     
-    section {
+    /*section {
         scroll-margin-top: 80px;
-    }
+    }*/
 }
 
 /* ===== VISIBILITY AND POSITIONING FIXES ===== */
