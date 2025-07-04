@@ -3929,3 +3929,29 @@ section {
 .research-card * {
     transition: inherit;
 }
+
+/* MINIMAL CSS TO MAKE YOUR RESEARCH CARDS TOGGLE - DOES NOT CHANGE YOUR DESIGN */
+
+/* Hide the card body by default */
+.research-card-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding: 0 1.5rem;
+}
+
+/* Show the card body when open */
+.research-card.open .research-card-body {
+    max-height: 300px; /* Adjust if your content is longer */
+    padding: 1.5rem;
+}
+
+/* Rotate the chevron icon when open */
+.research-card.open .expand-icon i {
+    transform: rotate(180deg);
+}
+
+/* Smooth transition for the icon */
+.expand-icon i {
+    transition: transform 0.3s ease;
+}
