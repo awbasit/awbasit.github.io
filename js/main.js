@@ -547,7 +547,13 @@ function initProjectsLoading() {
         },
         {
             title: "Speech Therapy application",
-            description: "This is a speech therapy application for aphasic people",
+            description: "This is a speech therapy application for aphasic people. \
+            This is an accessibility-focused web application developed to support communication \
+            for individuals with aphasia — a condition that impairs language ability. \
+            The tool offers intuitive visual symbols, text-to-speech functionality, and \
+            personalized communication templates to help users express basic needs and \
+            emotions. Built with a responsive front-end and assistive tech integrations, \
+            the app enhances daily interactions for non-verbal patients.",
             image: "images/aphasia.png",
             tags: ["HTML", "CSS", "JavaScript"],
             liveLink: "https://alphasia-research-site.onrender.com/",
@@ -568,13 +574,18 @@ function initProjectsLoading() {
              and implemented regression models, SVM, XGBoost, and Stochastic Gradient Descent \
              XGBoost ranked as the best model with a mean squared error of 6.556056  and accuracy \
              score 0.076923 ahead of SVM and Stochastic Gradient Descent",
-            image: "images/rock.jpg",
+            image: "images/groundwater.png",
             tags: ["SVM", "XGBOOST", "STOCHASTIC GRADIENT DESCENT"],
             githubLink: "https://github.com/awbasit/Rocks-Classification"
         },
         {
             title: "Employee Retention Prediction",
-            description: "This project was built to predict employee retaining or leaving",
+            description: "This project leverages machine learning to predict employee turnover, \
+            empowering HR teams to take proactive retention measures. I designed and deployed a \
+            pipeline that processes historical HR data to identify patterns linked to attrition. \
+            The system uses classification models to assess the likelihood of resignation, offering \
+            actionable insights through a clean, interactive dashboard. Technologies used include \
+            Python, scikit-learn, and Streamlit.",
             image: "https://images.inc.com/uploaded_files/image/1920x1080/getty_539953664_213316.jpg",
             tags: ["SCIKIT-LEARN", "NUMPY", "PANDAS"],
             githubLink: "https://github.com/awbasit/employee-retention-predictor"
@@ -626,15 +637,6 @@ function initProjectsLoading() {
             image: "images/music.png",
             tags: ["RDS", "SQL", "Apache Airflow", "S3", "Redshift", "Python"],
             githubLink: "https://github.com/wabasit/music-streaming-pipeline"
-        },
-        {
-            title: "Batch ETL for Rental Marketplace",
-            description: "Used Glue & Step Functions to deliver weekly rental KPIs and user engagement\
-             metrics; Used Step Functions to orchestrate Glue jobs, ensuring error handling and \
-             stepwise execution; Computed key business metrics: Occupancy Rate, Average Listing Price, \
-             Repeat Customer Rate, and Top Performing  Listings; Enhanced data transformation accuracy and traceability with custom Glue scripts and logging",
-            image: "images/profile2.png",
-            tags: ["AWS Glue", "Step Functions", "Redshift", "Aurora MySQL", "S3", "SQL"]
         }
     ];
     
