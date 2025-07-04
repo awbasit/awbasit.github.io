@@ -533,9 +533,9 @@ function initProjectsLoading() {
             title: "Car Streaming Data Pipeline",
             description: " Implemented robust data validation checks, improving pipeline reliability\
              by 90%; Designed efficient Redshift Upsert strategy using staging tables, reducing duplication errors by 80%",
-            image: "images/profile2.png",
+            image: "images/car rental.png",
             tags: ["AWS Glue", "Step Functions", "Redshift", "Aurora MySQL", "S3", "SQL"],
-            githubLink: "#"
+            githubLink: "https://github.com/wabasit/car-rental-pipeline"
         },
         {
             title: "Batch ETL for Rental Marketplace",
@@ -543,24 +543,13 @@ function initProjectsLoading() {
              metrics; Used Step Functions to orchestrate Glue jobs, ensuring error handling and \
              stepwise execution; Computed key business metrics: Occupancy Rate, Average Listing Price, \
              Repeat Customer Rate, and Top Performing  Listings; Enhanced data transformation accuracy and traceability with custom Glue scripts and logging",
-            image: "images/profile2.png",
-            tags: ["AWS Glue", "Step Functions", "Redshift", "Aurora MySQL", "S3", "SQL"],
-            githubLink: "#"
-        },
-        {
-            title: "Batch ETL for Rental Marketplace",
-            description: "Used Glue & Step Functions to deliver weekly rental KPIs and user engagement\
-             metrics; Used Step Functions to orchestrate Glue jobs, ensuring error handling and \
-             stepwise execution; Computed key business metrics: Occupancy Rate, Average Listing Price, \
-             Repeat Customer Rate, and Top Performing  Listings; Enhanced data transformation accuracy and traceability with custom Glue scripts and logging",
-            image: "images/profile2.png",
-            tags: ["AWS Glue", "Step Functions", "Redshift", "Aurora MySQL", "S3", "SQL"],
-            githubLink: "#"
+            image: "images/rental.png",
+            tags: ["AWS Glue", "Step Functions", "Redshift", "Aurora MySQL", "S3", "SQL"]
         },
         {
             title: "Speech Therapy application",
             description: "This is a speech therapy application for aphasic people",
-            image: "images/Screenshot.png",
+            image: "images/aphasia.png",
             tags: ["HTML", "CSS", "JavaScript"],
             liveLink: "https://alphasia-research-site.onrender.com/",
             githubLink: "https://github.com/yourusername/projectone"
@@ -596,19 +585,18 @@ function initProjectsLoading() {
             description: "Designed a Kafka-based eCommerce pipeline streaming 30,000+ records,\
              reducing ingestion lag by 70%. Implemented real-time health monitoring with <3s \
              latency from source to dashboard",
-            image: "images/blockchain.jpg",
+            image: "images/ecommerce.png",
             tags: ["Python", "Kafka", "PostgreSQL", "Docker"],
-            liveLink: "#",
-            githubLink: "#"
+            githubLink: "https://github.com/wabasit/GTP-TRAINING/tree/lab5/Kafka_stream"
         },
         {
             title: "Inventory Management System Using PostgreSQL",
             description: "Reduced inventory discrepancies by 98% and enabled real-time stock \
              monitoring through automation and optimized querying. Optimized query performance\
              and indexing, resulting in a 65% improvement in report generation speed",
-            image: "images/network.jpg",
+            image: "images/inventory.png",
             tags: ["SQL", "Stored Procedures", "Triggers", "Python (ETL)"],
-            githubLink: "#"
+            githubLink: "https://github.com/wabasit/GTP-TRAINING/tree/lab3/inventory-management-system"
         },
         {
             title: "AWS Airflow & Redshift Orchestration",
@@ -616,18 +604,29 @@ function initProjectsLoading() {
              tasks by 100%. Configured AWS IAM roles, VPC, and CloudWatch logging for secure and \
              observable operations. Reduced data latency from S3 to Redshift by 85% with streamlined \
              Airflow task dependencies and retries. Validated pipeline success using Airflow’s monitoring UI and log inspection",
-            image: "images/profile2.png",
-            tags: ["AWS MWAA", "Apache Airflow", "S3", "Redshift", "Python"],
-            githubLink: "#"
+            image: "images/airflow.png",
+            tags: ["AWS MWAA", "Apache Airflow", "S3", "Redshift", "Python"]
+        },
+        {
+            title: "Flight Data Analysis Apache Airflow",
+            description: "The Flight Price Analysis Pipeline successfully automates the processing \
+            of flight price data using Airflow, MySQL, and PostgreSQL in a Dockerized environment. \
+            The pipeline architecture ensures modularity and scalability, with clear separation of \
+            staging (MySQL) and analytics (PostgreSQL) data. The flight_price_analysis DAG via the \
+            Airflow UI orchestrates six tasks to create tables, load, \
+            validate, transform, and verify data, computing the average fare per airline as the primary KPI",
+            image: "images/flight.jpg",
+            tags: ["Apache Airflow", "PostgreSQL", "Docker", "Python"],
+            githubLink: "https://github.com/wabasit/GTP-TRAINING/tree/lab6/airflow/flight_airflow_analysis"
         },
         {
             title: "Music Streaming Analytics Pipeline with Airflow",
             description: "Delivered genre/hour-based KPIs using Redshift and Airflow DAGs; improved\
              BI report speed by 35%; Implemented robust data validation checks, improving pipeline \
              reliability by 90%; Designed efficient Redshift Upsert strategy using staging tables, reducing duplication errors by 99%",
-            image: "images/profile2.png",
+            image: "images/music.png",
             tags: ["RDS", "SQL", "Apache Airflow", "S3", "Redshift", "Python"],
-            githubLink: "#"
+            githubLink: "https://github.com/wabasit/music-streaming-pipeline"
         },
         {
             title: "Batch ETL for Rental Marketplace",
@@ -636,8 +635,7 @@ function initProjectsLoading() {
              stepwise execution; Computed key business metrics: Occupancy Rate, Average Listing Price, \
              Repeat Customer Rate, and Top Performing  Listings; Enhanced data transformation accuracy and traceability with custom Glue scripts and logging",
             image: "images/profile2.png",
-            tags: ["AWS Glue", "Step Functions", "Redshift", "Aurora MySQL", "S3", "SQL"],
-            githubLink: "#"
+            tags: ["AWS Glue", "Step Functions", "Redshift", "Aurora MySQL", "S3", "SQL"]
         }
     ];
     
@@ -645,7 +643,19 @@ function initProjectsLoading() {
     const projectImages = [
         "images/blockchain.jpg",
         "images/network.jpg", 
-        "images/profile2.png"
+        "images/profile2.png",
+        "images/rental.png",
+        "images/car rental.png", 
+        "images/ecommerce.png",
+        "images/music.png",
+        "images/inventory.png",
+        "images/rock.jpg",
+        "https://images.inc.com/uploaded_files/image/1920x1080/getty_539953664_213316.jpg",
+        "images/airflow.png",
+        "images/flight.jpg",
+        "images/groundwater.png",
+        "images/employee.png",
+        "images/aphasia.png"
     ];
     
     projects.forEach((project, index) => {
