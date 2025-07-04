@@ -522,7 +522,6 @@ function initCertificationFilter() {
     });
 }
 
-// Enhanced Projects Loading
 function initProjectsLoading() {
     const projectsContainer = document.getElementById('projects-container');
     if (!projectsContainer) return;
@@ -603,7 +602,7 @@ function initProjectsLoading() {
             description: "Built MWAA pipelines moving S3 data to Redshift, cutting manual load \
              tasks by 100%. Configured AWS IAM roles, VPC, and CloudWatch logging for secure and \
              observable operations. Reduced data latency from S3 to Redshift by 85% with streamlined \
-             Airflow task dependencies and retries. Validated pipeline success using Airflow’s monitoring UI and log inspection",
+             Airflow task dependencies and retries. Validated pipeline success using Airflow's monitoring UI and log inspection",
             image: "images/airflow.png",
             tags: ["AWS MWAA", "Apache Airflow", "S3", "Redshift", "Python"]
         },
@@ -639,32 +638,14 @@ function initProjectsLoading() {
         }
     ];
     
-    // Display projects
-    const projectImages = [
-        "images/blockchain.jpg",
-        "images/network.jpg", 
-        "images/profile2.png",
-        "images/rental.png",
-        "images/car rental.png", 
-        "images/ecommerce.png",
-        "images/music.png",
-        "images/inventory.png",
-        "images/rock.jpg",
-        "https://images.inc.com/uploaded_files/image/1920x1080/getty_539953664_213316.jpg",
-        "images/airflow.png",
-        "images/flight.jpg",
-        "images/groundwater.png",
-        "images/employee.png",
-        "images/aphasia.png"
-    ];
-    
+    // FIXED: Use the image specified in each project object
     projects.forEach((project, index) => {
         const projectCard = document.createElement('div');
         projectCard.className = `project-card delay-${index % 3}`;
         
         projectCard.innerHTML = `
             <div class="project-image-container">
-                <img src="${projectImages[index] || 'images/profile2.png'}" alt="${project.title}" class="project-image">
+                <img src="${project.image || 'images/profile2.png'}" alt="${project.title}" class="project-image">
                 <div class="project-overlay"></div>
             </div>
             <div class="project-content">
