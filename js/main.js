@@ -107,51 +107,13 @@ function initMobileNavigation() {
 
 // FIXED: Enhanced Smooth Scrolling for Navigation and Buttons
 function initSmoothScrolling() {
-    // Handle all anchor links (navigation, footer links, buttons)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
-            e.preventDefault();
             const targetId = this.getAttribute('href');
-            
-            // Handle home link
-            if (targetId === '#home' || targetId === '#') {
-                if (typeof gsap !== 'undefined') {
-                    gsap.to(window, {
-                        scrollTo: { y: 0 },
-                        duration: 1,
-                        ease: "power2.inOut"
-                    });
-                } else {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                }
-                updateActiveNavLink(this);
-                return;
-            }
-
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
-                // Calculate responsive offset
-                const headerHeight = header ? header.offsetHeight : 80;
-                const offset = headerHeight + 20;
-                
-                if (typeof gsap !== 'undefined') {
-                    gsap.to(window, {
-                        scrollTo: {
-                            y: targetElement,
-                            offsetY: offset
-                        },
-                        duration: 1,
-                        ease: "power2.inOut"
-                    });
-                } else {
-                    // Fallback smooth scroll
-                    const targetPosition = targetElement.offsetTop - offset;
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-                
+                e.preventDefault();
+                targetElement.scrollIntoView({ behavior: 'smooth' });
                 updateActiveNavLink(this);
             }
         });
