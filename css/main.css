@@ -534,12 +534,16 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     width: 100%;
     max-width: 400px;
-    height: auto;
-    border-radius: 20px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
     overflow: hidden;
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     border: 10px solid var(--bg-light);
     transition: var(--transition);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .profile-img-container {
@@ -547,6 +551,11 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
     position: relative;
     overflow: hidden;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .profile-img {
@@ -554,6 +563,8 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
     object-fit: cover;
     transition: var(--transition-slow);
+    border-radius: 50%;
+    display: block;
 }
 
 .profile-overlay {
@@ -565,6 +576,7 @@ h1, h2, h3, h4, h5, h6 {
     background: linear-gradient(to top, rgba(var(--primary-dark), 0.7), transparent);
     opacity: 0;
     transition: var(--transition-slow);
+    border-radius: 50%;
 }
 
 .profile-frame:hover .profile-overlay {
@@ -573,6 +585,43 @@ h1, h2, h3, h4, h5, h6 {
 
 .profile-frame:hover .profile-img {
     transform: scale(1.05);
+}
+
+/* Responsive adjustments for smaller screens */
+@media only screen and (max-width: 1200px) {
+    .profile-frame {
+        max-width: 420px;
+        min-width: 320px;
+        border-width: 10px;
+    }
+}
+@media only screen and (max-width: 992px) {
+    .profile-frame {
+        max-width: 340px;
+        min-width: 260px;
+        border-width: 8px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .profile-frame {
+        max-width: 300px;
+        min-width: 220px;
+        border-width: 7px;
+    }
+}
+@media only screen and (max-width: 480px) {
+    .profile-frame {
+        max-width: 240px;
+        min-width: 180px;
+        border-width: 5px;
+    }
+}
+@media only screen and (max-width: 350px) {
+    .profile-frame {
+        max-width: 180px;
+        min-width: 120px;
+        border-width: 3px;
+    }
 }
 
 .tech-icons {
@@ -3124,15 +3173,23 @@ body {
 
 @media only screen and (max-width: 768px) {
     .profile-frame {
-        width: 280px;
-        height: 280px;
+        max-width: 240px;
+        min-width: 180px;
+        border-width: 6px;
     }
 }
-
 @media only screen and (max-width: 480px) {
     .profile-frame {
-        width: 250px;
-        height: 250px;
+        max-width: 200px;
+        min-width: 150px;
+        border-width: 4px;
+    }
+}
+@media only screen and (max-width: 350px) {
+    .profile-frame {
+        max-width: 160px;
+        min-width: 120px;
+        border-width: 3px;
     }
 }
 
@@ -3930,3 +3987,22 @@ section {
 /* .expand-icon i {
     transition: transform 0.3s ease;
 } */
+
+/* Always large profile image, even on mobile */
+.profile-frame {
+    max-width: 400px !important;
+    min-width: 320px !important;
+    border-width: 10px !important;
+}
+
+@media only screen and (max-width: 1200px),
+       only screen and (max-width: 992px),
+       only screen and (max-width: 768px),
+       only screen and (max-width: 480px),
+       only screen and (max-width: 350px) {
+    .profile-frame {
+        max-width: 400px !important;
+        min-width: 320px !important;
+        border-width: 10px !important;
+    }
+}
