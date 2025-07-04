@@ -321,6 +321,7 @@
                             <button class="research-card-header" style="justify-content: center; text-align: center;">
                                 <i class="bi bi-check-circle"></i>
                                 <span>Blockchain-Enabled Cocoa Supply Chain Management</span>
+                                <span class="expand-icon"><i class="bi bi-chevron-down"></i></span>
                             </button>
                             <div class="research-card-body">
                                 <p>
@@ -334,6 +335,7 @@
                             <button class="research-card-header" style="justify-content: center; text-align: center;">
                                 <i class="bi bi-check-circle"></i>
                                 <span>Leveraging Blockchain for Sustainable Small-Scale Mining</span>
+                                <span class="expand-icon"><i class="bi bi-chevron-down"></i></span>
                             </button>
                             <div class="research-card-body">
                                 <p>
@@ -348,6 +350,7 @@
                             <button class="research-card-header" style="justify-content: center; text-align: center;">
                                 <i class="bi bi-check-circle"></i>
                                 <span>Advancing Network Intrusion Detection Using Deep CNN</span>
+                                <span class="expand-icon"><i class="bi bi-chevron-down"></i></span>
                             </button>
                             <div class="research-card-body">
                                 <p>
@@ -364,6 +367,7 @@
                             <button class="research-card-header" style="justify-content: center; text-align: center;">
                                 <i class="bi bi-check-circle"></i>
                                 <span>Hypothyroid Disease Prediction Using Machine Learning</span>
+                                <span class="expand-icon"><i class="bi bi-chevron-down"></i></span>
                             </button>
                             <div class="research-card-body">
                                 <p>
@@ -380,6 +384,7 @@
                             <button class="research-card-header" style="justify-content: center; text-align: center;">
                                 <i class="bi bi-check-circle"></i>
                                 <span>ML for Rock Type Prediction in Obuasi Gold District</span>
+                                <span class="expand-icon"><i class="bi bi-chevron-down"></i></span>
                             </button>
                             <div class="research-card-body">
                                 <p>
@@ -703,14 +708,16 @@
     <!-- Main JS -->
     <script src="js/main.js"></script>
     <script>
-    document.querySelectorAll('.research-card-header').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const card = this.closest('.research-card');
-            card.classList.toggle('open');
-            // Optionally, close others:
-            // document.querySelectorAll('.research-card').forEach(other => {
-            //     if (other !== card) other.classList.remove('open');
-            // });
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.research-card-header').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const card = this.closest('.research-card');
+                // Close others
+                document.querySelectorAll('.research-card').forEach(other => {
+                    if (other !== card) other.classList.remove('open');
+                });
+                card.classList.toggle('open');
+            });
         });
     });
 
@@ -760,7 +767,21 @@
     });
     </script>
     <style>
-    .research-card-body { text-align: center; }
+    .research-card-body {
+        text-align: center;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1), padding 0.3s;
+        padding: 0 1.4em 0 2.2em;
+        opacity: 0;
+    }
+    .research-card.open .research-card-body {
+        max-height: 500px; /* or a value that fits your content */
+        padding: 1.5rem;
+        opacity: 1;
+    }
+    .research-card-header .expand-icon { transition: transform 0.3s; display: inline-flex; align-items: center; }
+    .research-card.open .expand-icon { transform: rotate(180deg); }
     </style>
 </body>
 </html>
