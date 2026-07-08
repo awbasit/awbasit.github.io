@@ -61,6 +61,11 @@ const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 const header = document.querySelector('.header');
 
+function syncHeaderHeight() {
+    if (!header) return;
+    document.documentElement.style.setProperty('--header-height', `${header.offsetHeight}px`);
+}
+
 function initMobileNavigation() {
     if (hamburger && navMenu) {
         hamburger.addEventListener('click', () => {
@@ -259,6 +264,8 @@ function initParticles() {
     if (document.getElementById('particles-js') && typeof particlesJS !== 'undefined') {
         const isMobile = window.innerWidth < 768;
         const isTablet = window.innerWidth < 1024;
+        const primaryColor = getComputedStyle(document.documentElement)
+            .getPropertyValue('--primary-color').trim() || '#4459b8';
         
         particlesJS('particles-js', {
             particles: {
@@ -270,7 +277,7 @@ function initParticles() {
                     }
                 },
                 color: {
-                    value: "#4361ee"
+                    value: primaryColor
                 },
                 shape: {
                     type: "circle",
@@ -290,7 +297,7 @@ function initParticles() {
                 line_linked: {
                     enable: !isMobile,
                     distance: isMobile ? 100 : 150,
-                    color: "#4361ee",
+                    color: primaryColor,
                     opacity: isMobile ? 0.2 : 0.4,
                     width: 1
                 },
@@ -418,6 +425,8 @@ function initCertificationFilter() {
 
     // First, add data-category attributes to certification cards based on their content
     certificationCards.forEach(card => {
+        if (card.hasAttribute('data-category')) return;
+
         const title = card.querySelector('.cert-title')?.textContent.toLowerCase() || '';
         const provider = card.querySelector('.cert-provider')?.textContent.toLowerCase() || '';
         const description = card.querySelector('.cert-card-body p')?.textContent.toLowerCase() || '';
@@ -488,161 +497,203 @@ function initProjectsLoading() {
     const projectsContainer = document.getElementById('projects-container');
     if (!projectsContainer) return;
     
-    // Sample projects data
     const projects = [
         {
-            title: "Car Streaming Data Pipeline",
-            description: " Implemented robust data validation checks, improving pipeline reliability\
-             by 90%; Designed efficient Redshift Upsert strategy using staging tables, reducing duplication errors by 80%",
-            image: "images/car rental.png",
-            tags: ["AWS Glue", "Step Functions", "Redshift", "Aurora MySQL", "S3", "SQL"],
-            githubLink: "https://github.com/wabasit/car-rental-pipeline"
+            title: "ClaraCare",
+            icon: "bi-heart-pulse",
+            problem: "Diabetes patients need accessible, accurate health-literacy guidance at scale.",
+            approach: "Built an end-to-end LLM fine-tuning pipeline using QLoRA supervised fine-tuning and DPO alignment for a diabetes health-literacy assistant.",
+            outcome: "AUROC improved from 0.73 to 0.89",
+            tags: ["QLoRA", "DPO", "PyTorch", "LLM Fine-tuning"]
         },
         {
-            title: "Batch ETL for Rental Marketplace",
-            description: "Used Glue & Step Functions to deliver weekly rental KPIs and user engagement\
-             metrics; Used Step Functions to orchestrate Glue jobs, ensuring error handling and \
-             stepwise execution; Computed key business metrics: Occupancy Rate, Average Listing Price, \
-             Repeat Customer Rate, and Top Performing  Listings; Enhanced data transformation accuracy and traceability with custom Glue scripts and logging",
-            image: "images/rental.png",
-            tags: ["AWS Glue", "Step Functions", "Redshift", "Aurora MySQL", "S3", "SQL"]
+            title: "Agentic Email Triage System",
+            icon: "bi-envelope-check",
+            problem: "High-volume inboxes need intelligent routing without losing human oversight.",
+            approach: "Orchestrated n8n workflows with Claude and Gmail API, implementing multi-LLM routing and human-in-the-loop approval gates.",
+            outcome: "Automated triage with accountable approval checkpoints",
+            tags: ["n8n", "Claude", "Gmail API", "Multi-LLM"]
         },
         {
-            title: "Speech Therapy application",
-            description: "This is a speech therapy application for aphasic people. \
-            This is an accessibility-focused web application developed to support communication \
-            for individuals with aphasia — a condition that impairs language ability. \
-            The tool offers intuitive visual symbols, text-to-speech functionality, and \
-            personalized communication templates to help users express basic needs and \
-            emotions. Built with a responsive front-end and assistive tech integrations, \
-            the app enhances daily interactions for non-verbal patients.",
-            image: "images/aphasia.png",
-            tags: ["HTML", "CSS", "JavaScript"],
-            liveLink: "https://alphasia-research-site.onrender.com/",
-            githubLink: "https://github.com/yourusername/projectone"
+            title: "WhatsApp Clinical Triage Assistant",
+            icon: "bi-chat-dots",
+            problem: "Rural Ghana lacks scalable, multilingual first-line clinical guidance for common conditions.",
+            approach: "Deployed a WhatsApp bot with Supabase/pgvector backend, deterministic clinical rule engine, and support for English, Twi, and Ga.",
+            outcome: "Multilingual malaria and hypertension triage in production",
+            tags: ["Supabase", "pgvector", "WhatsApp", "Rule Engine"]
         },
         {
-            title: "Rock Classifier",
-            description: "Analyzed 10,000 rock data and implemented classification models,\
-             Support Vector Machine, Random Forest, Gradient boost and Adaboost to predict \
-             the classification of rocks leveraging pandas, sklearn, matplotlib and seaborn",
-            image: "images/rock.jpg",
-            tags: ["SVM", "XGBOOST", "ADABOOST", "RANDOM FOREST"],
-            githubLink: "https://github.com/awbasit/Rocks-Classification"
+            title: "Paper-to-Insight Pipeline",
+            icon: "bi-journal-arrow-up",
+            problem: "Research teams spend hours manually summarizing new publications.",
+            approach: "Designed an n8n agentic workflow that ingests papers and produces structured research summaries.",
+            outcome: "Repeatable agentic summarization pipeline",
+            tags: ["n8n", "Agentic AI", "Research Automation"]
         },
         {
-            title: "Flouride Concentration Prediction in Groundwater",
-            description: "Analyzed 2013 groundwater samples with hydrogeochemical compositions\
-             and implemented regression models, SVM, XGBoost, and Stochastic Gradient Descent \
-             XGBoost ranked as the best model with a mean squared error of 6.556056  and accuracy \
-             score 0.076923 ahead of SVM and Stochastic Gradient Descent",
-            image: "images/groundwater.png",
-            tags: ["SVM", "XGBOOST", "STOCHASTIC GRADIENT DESCENT"],
-            githubLink: "https://github.com/awbasit/Rocks-Classification"
+            title: "Speech Therapy Platform for Aphasic Patients",
+            icon: "bi-mic",
+            problem: "Aphasic patients need adaptive rehab tools with validated therapeutic responses.",
+            approach: "Led full-stack development of a rehab platform with adaptive learning workflows and NLP-driven response validation.",
+            outcome: "Lead Developer — live accessibility-focused platform",
+            tags: ["NLP", "Full-stack", "Accessibility", "Adaptive Learning"],
+            liveLink: "https://alphasia-research-site.onrender.com/"
         },
         {
-            title: "Employee Retention Prediction",
-            description: "This project leverages machine learning to predict employee turnover, \
-            empowering HR teams to take proactive retention measures. I designed and deployed a \
-            pipeline that processes historical HR data to identify patterns linked to attrition. \
-            The system uses classification models to assess the likelihood of resignation, offering \
-            actionable insights through a clean, interactive dashboard. Technologies used include \
-            Python, scikit-learn, and Streamlit.",
-            image: "https://images.inc.com/uploaded_files/image/1920x1080/getty_539953664_213316.jpg",
-            tags: ["SCIKIT-LEARN", "NUMPY", "PANDAS"],
-            githubLink: "https://github.com/awbasit/employee-retention-predictor"
+            title: "Misinformation Detection via Sentiment Analysis",
+            icon: "bi-shield-exclamation",
+            problem: "Social media misinformation spreads faster than manual fact-checking can respond.",
+            approach: "Lead Researcher on ensemble classifiers (SVM, Naive Bayes, Neural Networks) combined with prompt engineering for social media text.",
+            outcome: "Lead Researcher — multi-model classification framework",
+            tags: ["SVM", "Neural Networks", "Prompt Engineering", "NLP"]
         },
         {
-            title: "Real-Time eCommerce Data Streaming with Apache Kafka and PostgreSQL",
-            description: "Designed a Kafka-based eCommerce pipeline streaming 30,000+ records,\
-             reducing ingestion lag by 70%. Implemented real-time health monitoring with <3s \
-             latency from source to dashboard",
-            image: "images/ecommerce.png",
-            tags: ["Python", "Kafka", "PostgreSQL", "Docker"],
+            title: "Maison Aura",
+            icon: "bi-bag-heart",
+            problem: "Independent perfume brands need a modern e-commerce storefront with reliable backend.",
+            approach: "Full-stack perfume e-commerce platform with React/Vite frontend and FastAPI + SQLite backend.",
+            outcome: "End-to-end e-commerce platform shipped",
+            tags: ["React", "Vite", "FastAPI", "SQLite"]
+        },
+        {
+            title: "Predictive Maintenance System",
+            icon: "bi-gear-wide-connected",
+            problem: "Industrial equipment failures cause costly unplanned downtime.",
+            approach: "Advised UMaT undergrad thesis on MetroPT-3 dataset modeling with FastAPI + Streamlit, deployed to Railway and Hugging Face Spaces.",
+            outcome: "Production deployment on Railway and Hugging Face Spaces",
+            tags: ["FastAPI", "Streamlit", "MetroPT-3", "Railway"]
+        },
+        {
+            title: "Real-Time eCommerce Data Streaming",
+            icon: "bi-cart-check",
+            problem: "E-commerce platforms need sub-second ingestion for operational dashboards.",
+            approach: "Designed a Kafka-based pipeline streaming 30,000+ records with PostgreSQL sinks and Dockerized services.",
+            outcome: "70% reduction in ingestion lag",
+            tags: ["Kafka", "PostgreSQL", "Python", "Docker"],
             githubLink: "https://github.com/wabasit/GTP-TRAINING/tree/lab5/Kafka_stream"
         },
         {
-            title: "Inventory Management System Using PostgreSQL",
-            description: "Reduced inventory discrepancies by 98% and enabled real-time stock \
-             monitoring through automation and optimized querying. Optimized query performance\
-             and indexing, resulting in a 65% improvement in report generation speed",
-            image: "images/inventory.png",
-            tags: ["SQL", "Stored Procedures", "Triggers", "Python (ETL)"],
-            githubLink: "https://github.com/wabasit/GTP-TRAINING/tree/lab3/inventory-management-system"
+            title: "Music Streaming Analytics Pipeline",
+            icon: "bi-music-note-beamed",
+            problem: "Streaming platforms need reliable genre and engagement KPIs from batch pipelines.",
+            approach: "Built Airflow DAGs with Redshift staging, upsert strategies, and data validation checks.",
+            outcome: "35% faster BI reports; 99% fewer duplication errors",
+            tags: ["Airflow", "Redshift", "S3", "Python"],
+            githubLink: "https://github.com/wabasit/music-streaming-pipeline"
         },
         {
             title: "AWS Airflow & Redshift Orchestration",
-            description: "Built MWAA pipelines moving S3 data to Redshift, cutting manual load \
-             tasks by 100%. Configured AWS IAM roles, VPC, and CloudWatch logging for secure and \
-             observable operations. Reduced data latency from S3 to Redshift by 85% with streamlined \
-             Airflow task dependencies and retries. Validated pipeline success using Airflow's monitoring UI and log inspection",
-            image: "images/airflow.png",
-            tags: ["AWS MWAA", "Apache Airflow", "S3", "Redshift", "Python"]
-        },
-        {
-            title: "Flight Data Analysis Apache Airflow",
-            description: "The Flight Price Analysis Pipeline successfully automates the processing \
-            of flight price data using Airflow, MySQL, and PostgreSQL in a Dockerized environment. \
-            The pipeline architecture ensures modularity and scalability, with clear separation of \
-            staging (MySQL) and analytics (PostgreSQL) data. The flight_price_analysis DAG via the \
-            Airflow UI orchestrates six tasks to create tables, load, \
-            validate, transform, and verify data, computing the average fare per airline as the primary KPI",
-            image: "images/flight.jpg",
-            tags: ["Apache Airflow", "PostgreSQL", "Docker", "Python"],
-            githubLink: "https://github.com/wabasit/GTP-TRAINING/tree/lab6/airflow/flight_airflow_analysis"
-        },
-        {
-            title: "Music Streaming Analytics Pipeline with Airflow",
-            description: "Delivered genre/hour-based KPIs using Redshift and Airflow DAGs; improved\
-             BI report speed by 35%; Implemented robust data validation checks, improving pipeline \
-             reliability by 90%; Designed efficient Redshift Upsert strategy using staging tables, reducing duplication errors by 99%",
-            image: "images/music.png",
-            tags: ["RDS", "SQL", "Apache Airflow", "S3", "Redshift", "Python"],
-            githubLink: "https://github.com/wabasit/music-streaming-pipeline"
+            icon: "bi-cloud-upload",
+            problem: "Manual S3-to-Redshift loads create latency and operational risk.",
+            approach: "Built MWAA pipelines with IAM, VPC, and CloudWatch observability for secure orchestration.",
+            outcome: "85% reduction in S3-to-Redshift latency",
+            tags: ["AWS MWAA", "Airflow", "Redshift", "S3"]
         }
     ];
-    
-    // FIXED: Use the image specified in each project object
+
     projects.forEach((project, index) => {
-        const projectCard = document.createElement('div');
+        const projectCard = document.createElement('article');
         projectCard.className = `project-card delay-${index % 3}`;
-        
+
+        const imageBlock = project.image
+            ? `<img src="${project.image}" alt="${project.title}" class="project-image">`
+            : `<span class="project-icon" aria-hidden="true"><i class="bi ${project.icon || 'bi-code-slash'}"></i></span>`;
+
         projectCard.innerHTML = `
             <div class="project-image-container">
-                <img src="${project.image || 'images/profile2.png'}" alt="${project.title}" class="project-image">
+                <div class="project-visual">
+                    ${imageBlock}
+                </div>
                 <div class="project-overlay"></div>
             </div>
             <div class="project-content">
                 <h3 class="project-title">${project.title}</h3>
-                <p class="project-description">${project.description}</p>
+                <p class="project-problem"><strong>Problem:</strong> ${project.problem}</p>
+                <p class="project-outcome"><strong>Outcome:</strong> ${project.outcome}</p>
                 <div class="project-tags">
                     ${project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
                 </div>
+                <button type="button" class="project-case-toggle" aria-expanded="false">
+                    <span>View approach</span>
+                    <span class="expand-icon"><i class="bi bi-chevron-down"></i></span>
+                </button>
+                <div class="project-case-body">
+                    <p><strong>Approach:</strong> ${project.approach}</p>
+                </div>
                 <div class="project-links">
-                    ${project.liveLink ? `<a href="${project.liveLink}" class="btn btn-outline btn-magnetic" target="_blank"><i class="bi bi-eye"></i> Live Demo</a>` : ''}
-                    ${project.githubLink ? `<a href="${project.githubLink}" class="btn btn-primary btn-magnetic" target="_blank"><i class="bi bi-github"></i> View Code</a>` : ''}
+                    ${project.liveLink ? `<a href="${project.liveLink}" class="btn btn-outline btn-magnetic" target="_blank" rel="noopener"><i class="bi bi-eye"></i> Live Demo</a>` : ''}
+                    ${project.githubLink ? `<a href="${project.githubLink}" class="btn btn-primary btn-magnetic" target="_blank" rel="noopener"><i class="bi bi-github"></i> View Code</a>` : ''}
                 </div>
             </div>
         `;
-        
+
+        projectCard.querySelector('.project-case-toggle').addEventListener('click', () => {
+            const toggle = projectCard.querySelector('.project-case-toggle');
+            const isOpen = projectCard.classList.toggle('open');
+            toggle.setAttribute('aria-expanded', isOpen);
+        });
+
         projectsContainer.appendChild(projectCard);
-        
-        // Animate project cards
-        if (typeof gsap !== 'undefined') {
+
+        if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
             gsap.from(projectCard, {
                 opacity: 0,
                 y: 50,
                 duration: 0.8,
-                delay: index * 0.1,
+                delay: index * 0.05,
                 ease: "power2.out",
                 scrollTrigger: {
                     trigger: projectCard,
-                    start: "top 80%",
+                    start: "top 85%",
                     toggleActions: "play none none none"
                 }
             });
         }
     });
+}
+
+// Impact stats counter — animate once on scroll into view
+function initImpactCounters() {
+    const counters = document.querySelectorAll('.counter');
+    if (!counters.length) return;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function animateCounter(el) {
+        const target = parseInt(el.getAttribute('data-target'), 10);
+        const suffix = el.getAttribute('data-suffix') || '';
+        if (prefersReducedMotion || isNaN(target)) {
+            el.textContent = target + suffix;
+            return;
+        }
+
+        const duration = 1500;
+        const start = performance.now();
+
+        function step(now) {
+            const progress = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            el.textContent = Math.floor(eased * target) + suffix;
+            if (progress < 1) {
+                requestAnimationFrame(step);
+            } else {
+                el.textContent = target + suffix;
+            }
+        }
+
+        requestAnimationFrame(step);
+    }
+
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.4 });
+
+    counters.forEach(counter => observer.observe(counter));
 }
 
 // Enhanced Contact Form
@@ -668,6 +719,9 @@ function initContactForm() {
         submitButton.innerHTML = '<i class="bi bi-check-circle"></i> Sent!';
         submitButton.disabled = true;
         
+        const primaryColor = getComputedStyle(document.documentElement)
+            .getPropertyValue('--primary-color').trim() || '#4459b8';
+
         if (typeof gsap !== 'undefined') {
             gsap.to(submitButton, {
                 backgroundColor: '#4BB543',
@@ -676,7 +730,7 @@ function initContactForm() {
             
             setTimeout(() => {
                 gsap.to(submitButton, {
-                    backgroundColor: '#4361ee',
+                    backgroundColor: primaryColor,
                     duration: 0.3,
                     onComplete: () => {
                         submitButton.innerHTML = originalButtonText;
@@ -688,7 +742,7 @@ function initContactForm() {
             // Fallback
             submitButton.style.backgroundColor = '#4BB543';
             setTimeout(() => {
-                submitButton.style.backgroundColor = '#4361ee';
+                submitButton.style.backgroundColor = primaryColor;
                 submitButton.innerHTML = originalButtonText;
                 submitButton.disabled = false;
             }, 2000);
@@ -720,6 +774,8 @@ function handleResize() {
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(() => {
+            syncHeaderHeight();
+
             // Reinitialize particles with new dimensions
             if (document.getElementById('particles-js') && typeof pJSDom !== 'undefined' && pJSDom[0]) {
                 pJSDom[0].pJS.fn.vendors.destroypJS();
@@ -741,6 +797,7 @@ function handleResize() {
 
 // Initialize all functions when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
+    syncHeaderHeight();
     initMobileNavigation();
     initSmoothScrolling();
     initScrollSpy();
@@ -751,6 +808,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initIntersectionObserver();
     initCertificationFilter();
     initProjectsLoading();
+    initImpactCounters();
     initContactForm();
     initHoverEffects();
     handleResize();
