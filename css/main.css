@@ -937,23 +937,33 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-credential {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 14px;
-    margin-bottom: 15px;
+    gap: 10px;
+    margin-bottom: 22px;
+    padding: 6px 18px 6px 6px;
+    background: var(--card-bg);
+    border: 1px solid rgba(68, 89, 184, 0.15);
+    border-radius: 40px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.hero-credential:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 14px rgba(68, 89, 184, 0.15);
+    transform: translateY(-2px);
 }
 
 .hero-credential-badge {
     flex-shrink: 0;
-    width: clamp(44px, 6vw, 60px);
-    height: clamp(44px, 6vw, 60px);
+    width: 34px;
+    height: 34px;
     border-radius: 50%;
     overflow: hidden;
     display: block;
-    border: 3px solid var(--bg-light);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     background: #fff;
-    transition: var(--transition);
 }
 
 .hero-credential-badge img {
@@ -963,17 +973,35 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
 }
 
-.hero-credential-badge:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22);
+.hero-credential-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.25;
 }
 
-.hero-credential-text {
-    margin: 0 !important;
+.hero-credential-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--primary-color);
 }
 
-.dark-mode .hero-credential-badge {
-    border-color: var(--card-dark);
+.hero-credential-role {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.dark-mode .hero-credential {
+    background: var(--bg-dark);
+    border-color: rgba(76, 201, 240, 0.15);
+}
+
+.dark-mode .hero-credential-label {
+    color: var(--accent-color);
 }
 
 /* Enhanced Typewriter Effect */
@@ -4048,7 +4076,7 @@ section {
 .research-side {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     width: 100%;
     max-width: 100%;
 }
@@ -4058,8 +4086,8 @@ section {
     padding: 2rem;
     border-radius: 20px;
     width: 100%;
-    max-width: 800px; /* Limit max width for better centering */
-    margin: 0 auto; /* Center the container */
+    max-width: 100%;
+    margin: 2.5rem auto 0;
 }
 
 .collaborators h3 {
@@ -4074,11 +4102,10 @@ section {
 }
 
 .collaborators-grid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1.5rem;
-    max-width: 600px;
+    max-width: 100%;
     margin: 0 auto;
 }
 
@@ -4090,7 +4117,7 @@ section {
     text-align: center;
     transition: all 0.3s ease;
     width: 100%;
-    max-width: 400px;
+    max-width: 100%;
 }
 
 .collaborator-card h4 {
